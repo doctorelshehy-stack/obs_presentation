@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide</title>
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#ffffff;overflow:hidden;position:relative;font-family:'Times New Roman',serif;">
+<div style="position:absolute; top:0; left:0; width:960px; height:540px; background:#ffffff;"></div>
+<div style="position:absolute; top:0; left:0; width:960px; height:540px;">
+<svg width="960" height="540" aria-hidden="true">
+  <rect x="0" y="0" width="6" height="540" fill="#2a9d8f"/>
+</svg>
+</div>
+<p style="position:absolute; top:28px; left:40px; font-size:34px; font-weight:700; color:#264653; margin:0; z-index:10;">Classification of Multiple Pregnancy</p>
+<div style="position:absolute; top:68px; left:40px; width:80px; height:3px; background:#2a9d8f; border-radius:1.5px; z-index:10;"></div>
+
+<p style="position:absolute; top:95px; left:40px; font-size:18px; font-weight:700; color:#2a9d8f; margin:0; z-index:10;">Dizygotic Twins</p>
+<p style="position:absolute; top:120px; left:40px; font-size:15px; color:#264653; margin:0; z-index:10;">Always dichorionic-diamniotic.</p>
+
+<p style="position:absolute; top:155px; left:40px; font-size:18px; font-weight:700; color:#2a9d8f; margin:0; z-index:10;">Monozygotic Twins — Classified by Timing of Cleavage</p>
+
+<div style="position:absolute; top:185px; left:40px; width:880px; z-index:10;">
+<table style="width:100%; border-collapse:collapse; font-size:14px; color:#264653;">
+  <tr style="background:#264653; color:#ffffff;">
+    <th style="padding:8px 12px; border:1px solid #264653; text-align:left;">Timing</th>
+    <th style="padding:8px 12px; border:1px solid #264653; text-align:left;">Type</th>
+    <th style="padding:8px 12px; border:1px solid #264653; text-align:left;">Features</th>
+  </tr>
+  <tr>
+    <td style="padding:6px 12px; border:1px solid #ddd; font-weight:700;">First 3 days</td>
+    <td style="padding:6px 12px; border:1px solid #ddd;">Dichorionic Diamniotic</td>
+    <td style="padding:6px 12px; border:1px solid #ddd;">Lambda sign, thick membrane, 2 placentae</td>
+  </tr>
+  <tr style="background:#f8fafa;">
+    <td style="padding:6px 12px; border:1px solid #ddd; font-weight:700;">4–8 days</td>
+    <td style="padding:6px 12px; border:1px solid #ddd;">Monochorionic Diamniotic</td>
+    <td style="padding:6px 12px; border:1px solid #ddd;">T sign, thin membrane, single placenta</td>
+  </tr>
+  <tr>
+    <td style="padding:6px 12px; border:1px solid #ddd; font-weight:700;">8–12 days</td>
+    <td style="padding:6px 12px; border:1px solid #ddd;">Monochorionic Monoamniotic</td>
+    <td style="padding:6px 12px; border:1px solid #ddd;">No intertwin membrane</td>
+  </tr>
+  <tr style="background:#f8fafa;">
+    <td style="padding:6px 12px; border:1px solid #ddd; font-weight:700;">After 12 days</td>
+    <td style="padding:6px 12px; border:1px solid #ddd;">Conjoined Twins</td>
+    <td style="padding:6px 12px; border:1px solid #ddd;">Incomplete separation</td>
+  </tr>
+</table>
+</div>
+
+<div style="position:absolute; top:370px; left:40px; width:880px; z-index:10;">
+<p style="font-size:18px; font-weight:700; color:#264653; margin:0 0 6px 0;">Chorionicity &amp; Amnionicity Diagram</p>
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+  <div style="background:#f8fafa; border-radius:8px; padding:12px; border-left:4px solid #2a9d8f;">
+    <p style="font-size:14px; font-weight:700; color:#264653; margin:0 0 4px 0;">Dichorionic-Diamniotic</p>
+    <p style="font-size:13px; color:#264653; margin:0;">Lambda sign: thick, triangular protrusion of tissue leading up to the intertwin membrane. Thick intertwin membrane. 2 separate placentae.</p>
+  </div>
+  <div style="background:#f8fafa; border-radius:8px; padding:12px; border-left:4px solid #f4a261;">
+    <p style="font-size:14px; font-weight:700; color:#264653; margin:0 0 4px 0;">Monochorionic-Diamniotic</p>
+    <p style="font-size:13px; color:#264653; margin:0;">T sign: the interface between 2 amniotic membranes. Thin intertwin membrane. Single placenta.</p>
+  </div>
+</div>
+<p style="font-size:14px; color:#e76f51; margin:8px 0 0 0; font-weight:700;">Monochorionic-Monoamniotic: No intertwin membrane.</p>
+</div><div style="position:absolute; right:32px; bottom:24px; z-index:100; width:44px; height:44px;">
+<svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+  <circle cx="22" cy="22" r="20" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+  <text x="22" y="28" text-anchor="middle" fill="#ffffff" font-family="Times New Roman, serif" font-size="18" font-weight="bold">6</text>
+</svg>
+</div></div>
+</body>
+</html>

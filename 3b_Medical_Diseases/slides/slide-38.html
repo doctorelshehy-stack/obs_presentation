@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#edf6f9;overflow:hidden;position:relative;font-family:'Times New Roman',serif;">
+<svg style="position:absolute;right:32px;bottom:24px;width:48px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="48" height="28" rx="6" fill="#2a9d8f" />
+  <text x="24" y="20" text-anchor="middle" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff">38</text>
+</svg>
+<svg style="position:absolute;top:0;left:0;width:960px;height:540px;z-index:0;" aria-hidden="true">
+  <rect x="0" y="0" width="960" height="540" fill="#ffffff" />
+  <rect x="0" y="0" width="960" height="4" fill="#2a9d8f" />
+  <rect x="0" y="0" width="4" height="540" fill="#2a9d8f" opacity="0.3" />
+  
+</svg>
+<div style="position:absolute;top:20px;left:50px;right:50px;z-index:10;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+    <div style="width:6px;height:28px;background:#e9c46a;border-radius:3px;"></div>
+    <p style="font-size:26px;font-weight:700;color:#264653;font-family:'Times New Roman',serif;margin:0;">DVT — Investigations</p>
+  </div>
+  <div style="width:100%;height:1px;background:#edf6f9;margin-bottom:10px;"></div>
+  
+<div style="background:#edf6f9;padding:10px 14px;border-radius:8px;border-left:4px solid #2a9d8f;">
+  <p style="font-size:15px;font-weight:700;color:#264653;font-family:'Times New Roman',serif;margin:0 0 8px 0;">Diagnostic Workup</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;font-size:13px;color:#264653;font-family:'Times New Roman',serif;">
+    <div style="background:#ffffff;padding:12px;border-radius:8px;border:1px solid #2a9d8f;">
+      <p style="font-weight:700;color:#2a9d8f;font-size:14px;margin:0 0 4px 0;">Imaging</p>
+      <ul style="margin:0;padding-left:18px;line-height:1.5;">
+        <li>Compression Duplex ultrasonography</li>
+        <li>Venography</li>
+        <li>MRI (suspected pelvic vein thrombosis)</li>
+        <li>If PE is obvious → start heparin immediately, then perfusion (V/Q) scan, CT, MRI</li>
+      </ul>
+    </div>
+    <div style="background:#ffffff;padding:12px;border-radius:8px;border:1px solid #e76f51;">
+      <p style="font-weight:700;color:#e76f51;font-size:14px;margin:0 0 4px 0;">Laboratory</p>
+      <ul style="margin:0;padding-left:18px;line-height:1.5;">
+        <li>CBC</li>
+        <li>Coagulation profile</li>
+        <li>D-dimer</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+</div>
+</div>
+</body>
+</html>

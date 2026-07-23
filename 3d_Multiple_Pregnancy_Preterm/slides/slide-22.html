@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide</title>
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#ffffff;overflow:hidden;position:relative;font-family:'Times New Roman',serif;">
+<div style="position:absolute; top:0; left:0; width:960px; height:540px; background:#264653;"></div>
+<div style="position:absolute; top:0; left:0; width:960px; height:540px;">
+<svg width="960" height="540" aria-hidden="true">
+  <rect x="0" y="0" width="960" height="540" fill="#264653"/>
+  <circle cx="100" cy="480" r="200" fill="#2a9d8f" opacity="0.06"/>
+  <circle cx="850" cy="80" r="180" fill="#e9c46a" opacity="0.05"/>
+  <rect x="60" y="80" width="80" height="5" fill="#e9c46a"/>
+</svg>
+</div>
+<p style="position:absolute; top:60px; left:60px; font-size:44px; font-weight:700; color:#ffffff; margin:0; z-index:10;">Key Takeaways</p>
+
+<div style="position:absolute; top:130px; left:60px; width:840px; z-index:10;">
+<div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:16px;">
+  <div style="background:rgba(255,255,255,0.1); border-radius:10px; padding:16px; border-top:3px solid #2a9d8f;">
+    <p style="font-size:18px; font-weight:700; color:#2a9d8f; margin:0 0 8px 0;">Multiple Pregnancy</p>
+    <ul style="margin:0; padding-left:16px; font-size:13px; color:rgba(255,255,255,0.9);">
+      <li>Monozygotic vs Dizygotic</li>
+      <li>Chorionicity &amp; Amnionicity</li>
+      <li>Timing of delivery by type</li>
+      <li>TTTS in 10-15% monochorionic</li>
+    </ul>
+  </div>
+  <div style="background:rgba(255,255,255,0.1); border-radius:10px; padding:16px; border-top:3px solid #e9c46a;">
+    <p style="font-size:18px; font-weight:700; color:#e9c46a; margin:0 0 8px 0;">Preterm Labor</p>
+    <ul style="margin:0; padding-left:16px; font-size:13px; color:rgba(255,255,255,0.9);">
+      <li>20-37 weeks gestation</li>
+      <li>Idiopathic most common</li>
+      <li>Corticosteroids for fetal lung maturity</li>
+      <li>Tocolytics with contraindications</li>
+    </ul>
+  </div>
+  <div style="background:rgba(255,255,255,0.1); border-radius:10px; padding:16px; border-top:3px solid #e76f51;">
+    <p style="font-size:18px; font-weight:700; color:#e76f51; margin:0 0 8px 0;">PROM</p>
+    <ul style="margin:0; padding-left:16px; font-size:13px; color:rgba(255,255,255,0.9);">
+      <li>Rupture before labor onset</li>
+      <li>Nitrazine &amp; Fern tests</li>
+      <li>Conservative vs delivery by GA</li>
+      <li>Chorioamnionitis management</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<div style="position:absolute; bottom:70px; left:60px; z-index:10;">
+  <p style="font-size:18px; color:#ffffff; margin:0; opacity:0.8;">Obstetrics &amp; Gynecology — Complete Lecture Notes</p>
+  <p style="font-size:14px; color:#e9c46a; margin:6px 0 0 0; opacity:0.6;">Full content preserved. All definitions, classifications, management protocols included.</p>
+</div><div style="position:absolute; right:32px; bottom:24px; z-index:100; width:44px; height:44px;">
+<svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+  <circle cx="22" cy="22" r="20" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+  <text x="22" y="28" text-anchor="middle" fill="#ffffff" font-family="Times New Roman, serif" font-size="18" font-weight="bold">22</text>
+</svg>
+</div></div>
+</body>
+</html>

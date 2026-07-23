@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="background:#edf6f9; overflow:hidden; font-family:"Times New Roman", serif;">
+
+<p style="position:absolute; top:28px; left:50px; font-size:30px; font-weight:700; color:#006d77; z-index:10; margin:0;">Rupture Uterus — Severity &amp; Clinical Picture</p>
+<div style="position:absolute; top:68px; left:50px; width:70px; height:3px; background:#e29578; border-radius:1.5px; z-index:10;"></div>
+
+<div style="position:absolute; top:90px; left:50px; width:420px; background:#ffffff; border-radius:8px; padding:14px 16px; z-index:10;">
+  <p style="margin:0 0 6px 0; font-size:15px; font-weight:700; color:#006d77;">Severity of Bleeding</p>
+  <div style="border-left:3px solid #e29578; padding-left:12px; margin-bottom:8px;">
+    <p style="margin:0; font-size:13px; font-weight:700; color:#e29578;">Severe bleeding</p>
+    <p style="margin:0; font-size:12px; color:#444;">If <strong>uterine artery</strong> is torn.</p>
+  </div>
+  <div style="border-left:3px solid #006d77; padding-left:12px;">
+    <p style="margin:0; font-size:13px; font-weight:700; color:#006d77;">Mild bleeding</p>
+    <p style="margin:0; font-size:12px; color:#444; line-height:1.4;">If fetus and placenta escape into the peritoneal cavity. The empty uterus retracts so bleeding is mild.</p>
+  </div>
+</div>
+
+<div style="position:absolute; top:90px; right:50px; width:420px; background:#ffffff; border-radius:8px; padding:14px 16px; z-index:10;">
+  <p style="margin:0 0 6px 0; font-size:15px; font-weight:700; color:#006d77;">Clinical Picture</p>
+  <ul style="margin:0; padding-left:16px; font-size:12px; color:#444; line-height:1.9;">
+    <li>Vaginal bleeding</li>
+    <li>Pain</li>
+    <li>Cessation of contractions</li>
+    <li>Absence / deterioration of fetal heart rate</li>
+    <li>Loss of station of the fetal head from the birth canal</li>
+    <li>Easily palpable fetal parts</li>
+    <li>Profound maternal tachycardia and hypotension</li>
+  </ul>
+</div>
+
+<div style="position:absolute; right:32px; bottom:24px; width:40px; height:40px; z-index:100;">
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <circle cx="20" cy="20" r="18" fill="#006d77" stroke="#83c5be" stroke-width="2"/>
+  <text x="20" y="26" text-anchor="middle" font-family=""Times New Roman", serif" font-size="16" font-weight="700" fill="#ffffff">19</text>
+</svg>
+</div>
+</div>
+</body>
+</html>

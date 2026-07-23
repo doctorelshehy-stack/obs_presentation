@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide</title>
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#ffffff;overflow:hidden;position:relative;font-family:'Times New Roman',serif;">
+<div style="position:absolute; top:0; left:0; width:960px; height:540px; background:#ffffff;"></div>
+<div style="position:absolute; top:0; left:0; width:960px; height:540px;">
+<svg width="960" height="540" aria-hidden="true">
+  <rect x="0" y="0" width="8" height="540" fill="#2a9d8f"/>
+  <rect x="0" y="0" width="960" height="540" fill="none"/>
+</svg>
+</div>
+<p style="position:absolute; top:24px; left:40px; font-size:32px; font-weight:700; color:#264653; margin:0; z-index:10;">Table of Contents</p>
+<div style="position:absolute; top:62px; left:40px; width:80px; height:3px; background:#2a9d8f; border-radius:1.5px; z-index:10;"></div><p style="position:absolute; top:90px; left:40px; font-size:20px; font-weight:700; color:#2a9d8f; margin:0; z-index:10;">Section 1</p><p style="position:absolute; top:112px; left:60px; font-size:15px; font-weight:400; color:#2a9d8f; margin:0; z-index:10;">• Definition & Terminology</p><p style="position:absolute; top:138px; left:60px; font-size:15px; font-weight:400; color:#2a9d8f; margin:0; z-index:10;">• Monozygotic & Dizygotic Twins</p><p style="position:absolute; top:164px; left:60px; font-size:15px; font-weight:400; color:#2a9d8f; margin:0; z-index:10;">• Incidence, Risk Factors & Classification</p><p style="position:absolute; top:190px; left:60px; font-size:15px; font-weight:400; color:#2a9d8f; margin:0; z-index:10;">• Diagnosis & Ultrasound Findings</p><p style="position:absolute; top:216px; left:60px; font-size:15px; font-weight:400; color:#2a9d8f; margin:0; z-index:10;">• Management & Delivery</p><p style="position:absolute; top:242px; left:60px; font-size:15px; font-weight:400; color:#2a9d8f; margin:0; z-index:10;">• Maternal & Fetal Complications</p><p style="position:absolute; top:268px; left:60px; font-size:15px; font-weight:400; color:#2a9d8f; margin:0; z-index:10;">• Twin-to-Twin Transfusion Syndrome</p><p style="position:absolute; top:294px; left:40px; font-size:20px; font-weight:700; color:#2a9d8f; margin:0; z-index:10;">Section 2</p><p style="position:absolute; top:316px; left:60px; font-size:15px; font-weight:400; color:#2a9d8f; margin:0; z-index:10;">• Definition & Risk Factors</p><p style="position:absolute; top:342px; left:60px; font-size:15px; font-weight:400; color:#2a9d8f; margin:0; z-index:10;">• Diagnosis & Investigations</p><p style="position:absolute; top:368px; left:60px; font-size:15px; font-weight:400; color:#2a9d8f; margin:0; z-index:10;">• Management & Tocolytic Therapy</p><p style="position:absolute; top:394px; left:60px; font-size:15px; font-weight:400; color:#2a9d8f; margin:0; z-index:10;">• Antibiotic Therapy & Mode of Delivery</p><p style="position:absolute; top:420px; left:40px; font-size:20px; font-weight:700; color:#2a9d8f; margin:0; z-index:10;">Section 3</p><p style="position:absolute; top:442px; left:60px; font-size:15px; font-weight:400; color:#2a9d8f; margin:0; z-index:10;">• Definition, Etiology & Diagnosis</p><p style="position:absolute; top:468px; left:60px; font-size:15px; font-weight:400; color:#2a9d8f; margin:0; z-index:10;">• Management & Chorioamnionitis</p><div style="position:absolute; right:32px; bottom:24px; z-index:100; width:44px; height:44px;">
+<svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+  <circle cx="22" cy="22" r="20" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+  <text x="22" y="28" text-anchor="middle" fill="#ffffff" font-family="Times New Roman, serif" font-size="18" font-weight="bold">2</text>
+</svg>
+</div></div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide</title>
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#ffffff;overflow:hidden;position:relative;font-family:'Times New Roman',serif;">
+<div style="position:absolute; top:0; left:0; width:960px; height:540px; background:#ffffff;"></div>
+<div style="position:absolute; top:0; left:0; width:960px; height:540px;">
+<svg width="960" height="540" aria-hidden="true">
+  <rect x="0" y="0" width="6" height="540" fill="#2a9d8f"/>
+</svg>
+</div>
+<p style="position:absolute; top:28px; left:40px; font-size:34px; font-weight:700; color:#264653; margin:0; z-index:10;">Monozygotic &amp; Dizygotic Twins</p>
+<div style="position:absolute; top:68px; left:40px; width:80px; height:3px; background:#2a9d8f; border-radius:1.5px; z-index:10;"></div>
+
+<div style="position:absolute; top:90px; left:40px; width:880px; z-index:10;">
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:20px;">
+  <div style="background:#f8fafa; border-radius:8px; padding:16px; border-left:4px solid #2a9d8f;">
+    <p style="font-size:18px; font-weight:700; color:#264653; margin:0 0 8px 0;">Monozygotic (Identical)</p>
+    <ul style="margin:0; padding-left:20px; font-size:14px; color:#264653;">
+      <li>Division of a single zygote</li>
+      <li>Share <b>100%</b> genetic material</li>
+      <li>Identical twins</li>
+    </ul>
+  </div>
+  <div style="background:#f8fafa; border-radius:8px; padding:16px; border-left:4px solid #f4a261;">
+    <p style="font-size:18px; font-weight:700; color:#264653; margin:0 0 8px 0;">Dizygotic (Fraternal)</p>
+    <ul style="margin:0; padding-left:20px; font-size:14px; color:#264653;">
+      <li>2 eggs × 2 separate sperm</li>
+      <li>Share ~50% genetic material</li>
+      <li>Fraternal twins</li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<div style="position:absolute; top:230px; left:40px; width:880px; z-index:10;">
+<p style="font-size:18px; font-weight:700; color:#264653; margin:0 0 8px 0;">Incidence</p>
+<p style="font-size:15px; color:#264653; margin:0;">Twins: 1 in 80 pregnancies. Triplets: 1 in 80² (1 in 6400).</p>
+</div>
+
+<div style="position:absolute; top:290px; left:40px; width:880px; z-index:10;">
+<p style="font-size:18px; font-weight:700; color:#264653; margin:0 0 8px 0;">Risk Factors</p>
+<ul style="margin:0; padding-left:20px; font-size:14px; color:#264653;">
+  <li>Prior history of multiple pregnancies</li>
+  <li>History of twins in the maternal family</li>
+  <li>Maternal weight and height — BMI ≥ 30 kg/m² and ≥ 165 cm → ↑ risk for dizygotic twin births</li>
+  <li>↑ Maternal age</li>
+  <li>↑ Parity</li>
+  <li>Racial and ethnic variation</li>
+</ul>
+</div>
+
+<div style="position:absolute; right:30px; bottom:55px; width:180px; height:120px; border-radius:8px; overflow:hidden; border:1px solid #ddd;">
+  <img src="imgs/twins-types.png" alt="Twins types diagram" style="width:100%; height:100%; object-fit:cover;">
+</div><div style="position:absolute; right:32px; bottom:24px; z-index:100; width:44px; height:44px;">
+<svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+  <circle cx="22" cy="22" r="20" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+  <text x="22" y="28" text-anchor="middle" fill="#ffffff" font-family="Times New Roman, serif" font-size="18" font-weight="bold">5</text>
+</svg>
+</div></div>
+</body>
+</html>

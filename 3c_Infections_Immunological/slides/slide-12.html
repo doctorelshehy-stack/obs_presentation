@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="background:#f0f5f5;width:960px;height:540px;overflow:hidden;font-family:'Times New Roman',serif;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#ffffff;"></div>
+<svg style="position:absolute;top:0;left:0;width:960px;height:540px;" aria-hidden="true">
+  <rect x="0" y="0" width="6" height="540" fill="#2a9d8f" />
+</svg>
+<p style="position:absolute;top:20px;left:50px;font-size:32px;font-weight:700;color:#264653;margin:0;">Herpes Simplex — Diagnosis, Prevention &amp; Management</p>
+<div style="position:absolute;top:62px;left:50px;width:70px;height:3px;background:#2a9d8f;border-radius:1.5px;"></div>
+<!-- Diagnosis Card -->
+<div style="position:absolute;top:80px;left:50px;right:50px;background:#f0f5f5;border-radius:8px;padding:8px 16px;border-left:4px solid #2a9d8f;">
+  <p style="font-size:15px;font-weight:700;color:#264653;margin:0 0 4px 0;">Diagnosis</p>
+  <p style="font-size:13px;color:#264653;margin:0 0 4px 0;"><strong>Maternal:</strong> PCR for detection of <strong>IgM and IgG</strong> antibodies.</p>
+</div>
+<!-- Prevention Card -->
+<div style="position:absolute;top:142px;left:50px;right:50px;background:#f0f5f5;border-radius:8px;padding:8px 16px;border-left:4px solid #2a9d8f;">
+  <p style="font-size:15px;font-weight:700;color:#264653;margin:0 0 4px 0;">Prevention</p>
+  <div style="background:#ffffff;border-radius:6px;padding:8px 12px;border:1px solid rgba(38,70,83,0.1);">
+    <p style="font-size:13px;color:#264653;margin:0;"><strong>Cesarean section</strong> delivery is recommended for all pregnancies complicated by <strong>primary genital HSV in labor</strong>.</p>
+  </div>
+</div>
+<!-- Management Card -->
+<div style="position:absolute;top:215px;left:50px;right:50px;background:#f0f5f5;border-radius:8px;padding:8px 16px;border-left:4px solid #e76f51;">
+  <p style="font-size:15px;font-weight:700;color:#264653;margin:0 0 4px 0;">Management</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+    <div style="background:#ffffff;border-radius:6px;padding:8px 12px;border:1px solid rgba(38,70,83,0.1);">
+      <p style="font-size:13px;font-weight:700;color:#2a9d8f;margin:0 0 2px 0;">In Pregnancy</p>
+      <p style="font-size:13px;color:#264653;margin:0;"><strong>Acyclovir</strong></p>
+    </div>
+    <div style="background:#ffffff;border-radius:6px;padding:8px 12px;border:1px solid rgba(38,70,83,0.1);">
+      <p style="font-size:13px;font-weight:700;color:#e76f51;margin:0 0 2px 0;">In Labor</p>
+      <p style="font-size:13px;color:#264653;margin:0;"><strong>Cesarean delivery</strong></p>
+    </div>
+  </div>
+</div>
+<!-- Summary Card -->
+<div style="position:absolute;top:325px;left:50px;right:50px;background:#f0f5f5;border-radius:8px;padding:8px 16px;border-left:4px solid #e9c46a;">
+  <p style="font-size:12px;color:#264653;margin:0;line-height:1.4;"><strong>Key:</strong> HSV (dsDNA) → Sexual contact/transplacental/ascending → Painful vesicular lesions → 50% vertical transmission risk in primary infection → Neonatal herpes (disseminated/CNS) → Diagnose by PCR (IgM/IgG) → Prevent with C-section if primary HSV in labor → Treat with Acyclovir in pregnancy + C-section in labor.</p>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:36px;height:36px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="36" height="36" rx="18" fill="#2a9d8f" />
+  <text x="18" y="25" text-anchor="middle" font-family="'Times New Roman',serif" font-size="16" font-weight="700" fill="#ffffff">12</text>
+</svg>
+</div>
+</body>
+</html>

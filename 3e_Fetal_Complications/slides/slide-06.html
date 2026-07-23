@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="background:#ffffff;overflow:hidden;font-family:'Times New Roman',serif;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#ffffff;"></div>
+<div style="position:absolute;top:0;left:0;width:8px;height:540px;background:#2a9d8f;z-index:1;"></div>
+<p style="position:absolute;top:24px;left:70px;font-size:36px;color:#264653;font-weight:700;z-index:2;margin:0;font-family:'Times New Roman',serif;">Examination Findings</p>
+<div style="position:absolute;top:72px;left:70px;width:80px;height:3px;background:#2a9d8f;border-radius:1.5px;z-index:2;"></div>
+<div style="position:absolute;top:90px;left:50px;width:860px;z-index:2;font-family:'Times New Roman',serif;"><div style="display:grid;grid-template-columns:180px 340px 340px;border-bottom:2px solid #264653;padding-bottom:6px;margin-bottom:6px;"><span style="font-size:14px;font-weight:700;color:#264653;">Examination</span><span style="font-size:14px;font-weight:700;color:#e76f51;">Polyhydramnios</span><span style="font-size:14px;font-weight:700;color:#264653;">Oligohydramnios</span></div><div style="display:grid;grid-template-columns:180px 340px 340px;padding:6px 0;border-bottom:1px solid #eee;"><span style="font-size:13px;font-weight:700;color:#2a9d8f;">General</span><span style="font-size:13px;color:#333;">Orthopnea and LL edema</span><span style="font-size:13px;color:#333;">—</span></div><div style="display:grid;grid-template-columns:180px 340px 340px;padding:6px 0;border-bottom:1px solid #eee;"><span style="font-size:13px;font-weight:700;color:#2a9d8f;">Fundal level</span><span style="font-size:13px;color:#333;">More than period of amenorrhea</span><span style="font-size:13px;color:#333;">Less than period of amenorrhea</span></div><div style="display:grid;grid-template-columns:180px 340px 340px;padding:6px 0;border-bottom:1px solid #eee;"><span style="font-size:13px;font-weight:700;color:#2a9d8f;">Auscultation</span><span style="font-size:13px;color:#333;">Difficult auscultation</span><span style="font-size:13px;color:#333;">Easy auscultation</span></div><div style="display:grid;grid-template-columns:180px 340px 340px;padding:6px 0;border-bottom:1px solid #eee;"><span style="font-size:13px;font-weight:700;color:#2a9d8f;">Palpation</span><span style="font-size:13px;color:#333;">Difficult palpation of fetal parts</span><span style="font-size:13px;color:#333;">Easy palpation of fetal parts</span></div><div style="display:grid;grid-template-columns:180px 340px 340px;padding:6px 0;border-bottom:1px solid #eee;"><span style="font-size:13px;font-weight:700;color:#2a9d8f;">FHS</span><span style="font-size:13px;color:#333;">Difficult to hear</span><span style="font-size:13px;color:#333;">Easily heard</span></div><div style="display:grid;grid-template-columns:180px 340px 340px;padding:6px 0;"><span style="font-size:13px;font-weight:700;color:#2a9d8f;">Vaginal Exam</span><span style="font-size:13px;color:#333;">Usually effaced cervix</span><span style="font-size:13px;color:#333;">Contraindicated if PROM</span></div></div>
+<div style="position:absolute;bottom:0;left:0;width:960px;height:4px;background:#2a9d8f;z-index:1;"></div>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:26px;z-index:100;" aria-hidden="true">
+    <rect x="0" y="0" width="40" height="26" rx="4" fill="#264653"/>
+    <text x="20" y="18" text-anchor="middle" fill="#ffffff" font-family="Times New Roman, serif" font-size="13" font-weight="700">06</text>
+</svg>
+</div>
+</body>
+</html>

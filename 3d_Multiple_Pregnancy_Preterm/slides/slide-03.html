@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide</title>
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#ffffff;overflow:hidden;position:relative;font-family:'Times New Roman',serif;">
+<div style="position:absolute; top:0; left:0; width:960px; height:540px; background:#264653;"></div>
+<div style="position:absolute; top:0; left:0; width:960px; height:540px;">
+<svg width="960" height="540" aria-hidden="true">
+  <rect x="0" y="0" width="960" height="540" fill="#264653"/>
+  <circle cx="800" cy="100" r="250" fill="#2a9d8f" opacity="0.08"/>
+  <circle cx="200" cy="400" r="180" fill="#e9c46a" opacity="0.06"/>
+  <rect x="60" y="120" width="80" height="5" fill="#e9c46a"/>
+</svg>
+</div>
+<p style="position:absolute; top:80px; left:60px; font-size:80px; font-weight:700; color:#2a9d8f; margin:0; z-index:10;">01</p>
+<p style="position:absolute; top:150px; left:60px; font-size:42px; font-weight:700; color:#ffffff; margin:0; z-index:10;">Multiple Pregnancy</p>
+<p style="position:absolute; top:210px; left:60px; font-size:18px; color:#e9c46a; margin:0; z-index:10; opacity:0.8;">Definition • Classification • Diagnosis • Management • Complications</p><div style="position:absolute; right:32px; bottom:24px; z-index:100; width:44px; height:44px;">
+<svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+  <circle cx="22" cy="22" r="20" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+  <text x="22" y="28" text-anchor="middle" fill="#ffffff" font-family="Times New Roman, serif" font-size="18" font-weight="bold">3</text>
+</svg>
+</div></div>
+</body>
+</html>

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide</title>
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#ffffff;overflow:hidden;position:relative;font-family:'Times New Roman',serif;">
+<div style="position:absolute; top:0; left:0; width:960px; height:540px; background:#ffffff;"></div>
+<div style="position:absolute; top:0; left:0; width:960px; height:540px;">
+<svg width="960" height="540" aria-hidden="true">
+  <rect x="0" y="0" width="6" height="540" fill="#2a9d8f"/>
+</svg>
+</div>
+<p style="position:absolute; top:28px; left:40px; font-size:34px; font-weight:700; color:#264653; margin:0; z-index:10;">Effects &amp; Management of Preterm PROM</p>
+<div style="position:absolute; top:68px; left:40px; width:80px; height:3px; background:#2a9d8f; border-radius:1.5px; z-index:10;"></div>
+
+<div style="position:absolute; top:85px; left:40px; width:880px; z-index:10;">
+<div style="background:#f8fafa; border-radius:6px; padding:10px; border-left:3px solid #e76f51;">
+  <p style="font-size:15px; font-weight:700; color:#e76f51; margin:0 0 4px 0;">Effects of Preterm PROM</p>
+  <ul style="margin:0; padding-left:18px; font-size:13px; color:#264653;">
+    <li>Preterm labor</li>
+    <li>Pulmonary hypoplasia due to severe oligohydramnios</li>
+    <li>Skeletal and joint deformities of the fetus due to compression</li>
+    <li>Chorioamnionitis</li>
+  </ul>
+</div>
+</div>
+
+<div style="position:absolute; top:200px; left:40px; width:880px; z-index:10;">
+<div style="background:#f8fafa; border-radius:6px; padding:8px; border-left:3px solid #2a9d8f;">
+  <p style="font-size:14px; font-weight:700; color:#2a9d8f; margin:0 0 3px 0;">General Management</p>
+  <ul style="margin:0; padding-left:16px; font-size:12px; color:#264653;">
+    <li>Bed rest</li>
+    <li>Sterile pads for inspection for meconium staining and signs of infection</li>
+  </ul>
+</div>
+</div>
+
+<div style="position:absolute; top:270px; left:40px; width:880px; z-index:10;">
+<p style="font-size:14px; font-weight:700; color:#264653; margin:0 0 5px 0;">Management by Gestational Age</p>
+<div style="display:grid; grid-template-columns:1fr 1fr 1fr; gap:12px;">
+  <div style="background:#f8fafa; border-radius:6px; padding:8px; border-top:3px solid #e76f51; text-align:center;">
+    <p style="font-size:13px; font-weight:700; color:#e76f51; margin:0 0 4px 0;">Before 26 weeks</p>
+    <p style="font-size:11px; color:#264653; margin:0;">High chorioamnionitis risk → <b>termination</b> recommended.</p>
+  </div>
+  <div style="background:#f8fafa; border-radius:6px; padding:8px; border-top:3px solid #2a9d8f; text-align:center;">
+    <p style="font-size:13px; font-weight:700; color:#2a9d8f; margin:0 0 4px 0;">26–34 weeks</p>
+    <p style="font-size:11px; color:#264653; margin:0;">Conservative: hospitalization, observe mother &amp; fetus, antibiotics, corticosteroids + tocolysis 48h.</p>
+  </div>
+  <div style="background:#f8fafa; border-radius:6px; padding:8px; border-top:3px solid #f4a261; text-align:center;">
+    <p style="font-size:13px; font-weight:700; color:#f4a261; margin:0 0 4px 0;">After 34 weeks</p>
+    <p style="font-size:11px; color:#264653; margin:0;"><b>Delivery.</b></p>
+  </div>
+</div>
+</div>
+
+<div style="position:absolute; top:380px; left:40px; width:880px; z-index:10;">
+<div style="background:#f8fafa; border-radius:6px; padding:8px; border-left:3px solid #2a9d8f;">
+  <p style="font-size:13px; font-weight:700; color:#2a9d8f; margin:0 0 3px 0;">Antibiotic Regimen (26–34 weeks)</p>
+  <p style="font-size:11px; color:#264653; margin:0;">IV ampicillin 2 g + erythromycin 250 mg/6h × 48h, then oral amoxicillin 250 mg/8h + erythromycin 250 mg/6h × 5 days.</p>
+</div>
+</div>
+
+<div style="position:absolute; top:445px; left:40px; width:880px; z-index:10;">
+<div style="background:#f8fafa; border-radius:6px; padding:6px; border-left:3px solid #e9c46a;">
+  <p style="font-size:12px; font-weight:700; color:#264653; margin:0 0 2px 0;">Student Activity</p>
+  <p style="font-size:11px; color:#264653; margin:0;">Attend bedside clinical rounds with the tutor on admitted PROM cases to revise presentation and management.</p>
+  <p style="font-size:10px; color:#2a9d8f; margin:2px 0 0 0;">Questions: https://forms.gle/VpMtMPmKr9nJ3ZWQ7</p>
+</div>
+</div><div style="position:absolute; right:32px; bottom:24px; z-index:100; width:44px; height:44px;">
+<svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+  <circle cx="22" cy="22" r="20" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+  <text x="22" y="28" text-anchor="middle" fill="#ffffff" font-family="Times New Roman, serif" font-size="18" font-weight="bold">20</text>
+</svg>
+</div></div>
+</body>
+</html>

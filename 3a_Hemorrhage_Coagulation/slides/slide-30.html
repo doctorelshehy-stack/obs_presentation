@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="background:#edf6f9; overflow:hidden; font-family:"Times New Roman", serif;">
+
+<p style="position:absolute; top:28px; left:50px; font-size:30px; font-weight:700; color:#006d77; z-index:10; margin:0;">APH — Placenta Previa vs Abruptio Placenta</p>
+<div style="position:absolute; top:68px; left:50px; width:70px; height:3px; background:#e29578; border-radius:1.5px; z-index:10;"></div>
+
+<div style="position:absolute; top:88px; left:50px; right:50px; z-index:10;">
+  <table style="width:100%; border-collapse:collapse; font-size:13px;">
+    <tr style="background:#006d77;">
+      <th style="padding:10px 12px; color:#fff; text-align:left; border:1px solid #006d77;">Feature</th>
+      <th style="padding:10px 12px; color:#fff; text-align:left; border:1px solid #006d77;">Placenta Previa</th>
+      <th style="padding:10px 12px; color:#fff; text-align:left; border:1px solid #006d77;">Abruptio Placenta</th>
+    </tr>
+    <tr style="background:#ffffff;">
+      <td style="padding:8px 10px; border:1px solid #ddd; font-weight:600; color:#006d77;">Placenta Site</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">Lower uterine segment</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">Upper uterine segment (normal)</td>
+    </tr>
+    <tr style="background:#edf6f9;">
+      <td style="padding:8px 10px; border:1px solid #ddd; font-weight:600; color:#006d77;">Pain</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">Painless</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">Painful (abdominal pain)</td>
+    </tr>
+    <tr style="background:#ffffff;">
+      <td style="padding:8px 10px; border:1px solid #ddd; font-weight:600; color:#006d77;">Uterine Tone</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">Lax, soft</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">Board-like, rigid, tender</td>
+    </tr>
+    <tr style="background:#edf6f9;">
+      <td style="padding:8px 10px; border:1px solid #ddd; font-weight:600; color:#006d77;">Fundal Height</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">Equals gestational age</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">Greater than gestational age</td>
+    </tr>
+    <tr style="background:#ffffff;">
+      <td style="padding:8px 10px; border:1px solid #ddd; font-weight:600; color:#006d77;">Fetal Palpation</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">Easy</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">Difficult</td>
+    </tr>
+    <tr style="background:#edf6f9;">
+      <td style="padding:8px 10px; border:1px solid #ddd; font-weight:600; color:#006d77;">FHS</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">Usually normal</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">Distress or absent</td>
+    </tr>
+    <tr style="background:#ffffff;">
+      <td style="padding:8px 10px; border:1px solid #ddd; font-weight:600; color:#006d77;">Bleeding</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">Always revealed</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">80% revealed / 20% concealed</td>
+    </tr>
+    <tr style="background:#edf6f9;">
+      <td style="padding:8px 10px; border:1px solid #ddd; font-weight:600; color:#006d77;">Incidence</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">1/200 pregnancies</td>
+      <td style="padding:8px 10px; border:1px solid #ddd;">1/100 pregnancies</td>
+    </tr>
+  </table>
+</div>
+
+<div style="position:absolute; right:32px; bottom:24px; width:40px; height:40px; z-index:100;">
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <circle cx="20" cy="20" r="18" fill="#006d77" stroke="#83c5be" stroke-width="2"/>
+  <text x="20" y="26" text-anchor="middle" font-family=""Times New Roman", serif" font-size="16" font-weight="700" fill="#ffffff">30</text>
+</svg>
+</div>
+</div>
+</body>
+</html>

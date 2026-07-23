@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="background:#ffffff;overflow:hidden;font-family:'Times New Roman',serif;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#264653;"></div>
+<svg style="position:absolute;top:0;right:0;width:400px;height:540px;z-index:1;" aria-hidden="true"><polygon points="400,0 960,0 960,540 200,540" fill="rgba(42,157,143,0.2)"/></svg>
+<p style="position:absolute;top:140px;left:70px;font-size:80px;color:#e9c46a;font-weight:700;z-index:2;margin:0;font-family:'Times New Roman',serif;">03</p>
+<p style="position:absolute;top:230px;left:70px;font-size:42px;color:#ffffff;font-weight:700;z-index:2;margin:0;font-family:'Times New Roman',serif;">Postterm Pregnancy</p>
+<div style="position:absolute;top:310px;left:70px;width:60px;height:3px;background:#e9c46a;z-index:2;border-radius:1.5px;"></div>
+<p style="position:absolute;top:340px;left:70px;font-size:16px;color:rgba(255,255,255,0.7);z-index:2;margin:0;font-family:'Times New Roman',serif;">Pregnancy continuing beyond 42 weeks</p>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:26px;z-index:100;" aria-hidden="true">
+    <rect x="0" y="0" width="40" height="26" rx="4" fill="#264653"/>
+    <text x="20" y="18" text-anchor="middle" fill="#ffffff" font-family="Times New Roman, serif" font-size="13" font-weight="700">19</text>
+</svg>
+</div>
+</body>
+</html>

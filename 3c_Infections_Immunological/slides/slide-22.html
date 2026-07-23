@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="background:#f0f5f5;width:960px;height:540px;overflow:hidden;font-family:'Times New Roman',serif;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#ffffff;"></div>
+<svg style="position:absolute;top:0;left:0;width:960px;height:540px;" aria-hidden="true">
+  <rect x="0" y="0" width="6" height="540" fill="#2a9d8f" />
+</svg>
+<p style="position:absolute;top:20px;left:50px;font-size:32px;font-weight:700;color:#264653;margin:0;">Exchange Transfusion</p>
+<div style="position:absolute;top:62px;left:50px;width:70px;height:3px;background:#2a9d8f;border-radius:1.5px;"></div>
+<!-- Exchange Transfusion Card -->
+<div style="position:absolute;top:80px;left:50px;right:50px;background:#f0f5f5;border-radius:8px;padding:10px 16px;border-left:4px solid #e76f51;">
+  <p style="font-size:15px;font-weight:700;color:#264653;margin:0 0 6px 0;">Exchange Transfusion</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+    <div style="background:#ffffff;border-radius:6px;padding:8px 12px;border:1px solid rgba(38,70,83,0.1);">
+      <p style="font-size:13px;font-weight:700;color:#e76f51;margin:0 0 2px 0;">Indications</p>
+      <ul style="margin:0;padding-left:14px;font-size:12px;color:#264653;line-height:1.4;">
+        <li>Cord blood bilirubin &gt; <strong>5 mg%</strong></li>
+        <li>Cord hemoglobin &lt; <strong>10 gm</strong></li>
+        <li>Rapidly rising bilirubin in the <strong>first 24 hours</strong></li>
+        <li>Clinical jaundice in the <strong>first 12 hours</strong></li>
+        <li>Past history of severely affected baby</li>
+      </ul>
+    </div>
+    <div style="background:#ffffff;border-radius:6px;padding:8px 12px;border:1px solid rgba(38,70,83,0.1);">
+      <p style="font-size:13px;font-weight:700;color:#2a9d8f;margin:0 0 2px 0;">Aims</p>
+      <ol style="margin:0;padding-left:18px;font-size:12px;color:#264653;line-height:1.6;">
+        <li>Correction of neonatal <strong>anemia</strong></li>
+        <li>Removal of <strong>excess bilirubin</strong></li>
+      </ol>
+    </div>
+  </div>
+</div>
+<!-- Phototherapy Card -->
+<div style="position:absolute;top:250px;left:50px;right:50px;background:#f0f5f5;border-radius:8px;padding:8px 16px;border-left:4px solid #2a9d8f;">
+  <p style="font-size:15px;font-weight:700;color:#264653;margin:0 0 4px 0;">Phototherapy &amp; Hydration</p>
+  <p style="font-size:13px;color:#264653;margin:0;line-height:1.4;">
+    Used as <strong>adjuvant</strong> for exchange transfusion in cases of high but not toxic bilirubin.<br><br>
+    <strong>Idea:</strong> Blue or blue-green light converts the <strong>unconjugated bilirubin</strong> into non-toxic, water-soluble isomers which are excreted in bile and urine without the need for hepatic conjugation.
+  </p>
+</div>
+<!-- Phenobarbitone Card -->
+<div style="position:absolute;top:380px;left:50px;right:50px;background:#f0f5f5;border-radius:8px;padding:8px 16px;border-left:4px solid #f4a261;">
+  <p style="font-size:14px;font-weight=700;color:#264653;margin:0 0 2px 0;">Phenobarbitone</p>
+  <p style="font-size:12px;color:#264653;margin:0;line-height:1.4;">It is an <strong>enzyme inducer</strong> that increases activity of <strong>Glucuronyl transferase</strong> enzyme leading to increase bilirubin conjugation and excretion.</p>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:36px;height:36px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="36" height="36" rx="18" fill="#2a9d8f" />
+  <text x="18" y="25" text-anchor="middle" font-family="'Times New Roman',serif" font-size="16" font-weight="700" fill="#ffffff">22</text>
+</svg>
+</div>
+</body>
+</html>

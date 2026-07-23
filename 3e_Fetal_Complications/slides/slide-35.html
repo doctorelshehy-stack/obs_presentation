@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="background:#ffffff;overflow:hidden;font-family:'Times New Roman',serif;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#ffffff;"></div>
+<div style="position:absolute;top:0;left:0;width:8px;height:540px;background:#2a9d8f;z-index:1;"></div>
+<p style="position:absolute;top:24px;left:70px;font-size:36px;color:#264653;font-weight:700;z-index:2;margin:0;font-family:'Times New Roman',serif;">Nerve Palsies</p>
+<div style="position:absolute;top:72px;left:70px;width:80px;height:3px;background:#2a9d8f;border-radius:1.5px;z-index:2;"></div>
+<p style="position:absolute;top:90px;left:50px;width:860px;z-index:2;font-family:'Times New Roman',serif;font-size:13px;color:#333;margin:0;">Erb's palsy and facial palsy are the most common nerve palsies.</p>
+<div style="position:absolute;top:120px;left:40px;width:420px;z-index:2;font-family:'Times New Roman',serif;"><div style="background:#fff5f5;border-radius:8px;padding:14px 16px;"><p style="font-size:16px;color:#e76f51;font-weight:700;margin:0 0 6px 0;">Erb's Palsy</p><p style="font-size:12px;color:#333;margin:3px 0;"><b>Cause:</b> Damage to the brachial plexus (C5, 6 and 7)</p><p style="font-size:12px;color:#333;margin:3px 0;"><b>Association:</b> Traction on the neck and shoulders during difficult deliveries</p><p style="font-size:12px;color:#333;margin:3px 0;"><b>Presentation:</b> Flaccid arm held in a pronated and internally rotated position</p><p style="font-size:12px;color:#333;margin:3px 0;"><b>Treatment:</b> Early physiotherapy; surgical treatment techniques to repair damaged nerves are now available</p></div></div>
+<div style="position:absolute;top:120px;left:490px;width:420px;z-index:2;font-family:'Times New Roman',serif;"><div style="background:#edf6f9;border-radius:8px;padding:14px 16px;"><p style="font-size:16px;color:#264653;font-weight:700;margin:0 0 6px 0;">Facial Palsy</p><p style="font-size:12px;color:#333;margin:3px 0;"><b>Cause:</b> Obstetric maneuvers, such as the use of forceps causing pressure damage</p><p style="font-size:12px;color:#333;margin:3px 0;"><b>Mechanism:</b> External pressure causing a lower motor neuron injury</p><p style="font-size:12px;color:#333;margin:3px 0;"><b>Prognosis:</b> Excellent</p><p style="font-size:12px;color:#333;margin:3px 0;"><b>Note:</b> If an upper motor neuron lesion is suspected, investigate for possible cerebral injury or congenital disorders. No specific treatment required.</p></div></div>
+<div style="position:absolute;bottom:0;left:0;width:960px;height:4px;background:#2a9d8f;z-index:1;"></div>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:26px;z-index:100;" aria-hidden="true">
+    <rect x="0" y="0" width="40" height="26" rx="4" fill="#264653"/>
+    <text x="20" y="18" text-anchor="middle" fill="#ffffff" font-family="Times New Roman, serif" font-size="13" font-weight="700">35</text>
+</svg>
+</div>
+</body>
+</html>

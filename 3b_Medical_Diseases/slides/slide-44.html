@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#264653;overflow:hidden;position:relative;font-family:'Times New Roman',serif;">
+<svg style="position:absolute;right:32px;bottom:24px;width:48px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="48" height="28" rx="6" fill="#2a9d8f" />
+  <text x="24" y="20" text-anchor="middle" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff">44</text>
+</svg>
+<svg style="position:absolute;top:0;left:0;width:960px;height:540px;z-index:0;" aria-hidden="true">
+  <rect x="0" y="0" width="960" height="540" fill="#264653" />
+  <rect x="0" y="480" width="960" height="60" fill="#2a9d8f" opacity="0.15" />
+  <circle cx="800" cy="420" r="200" fill="none" stroke="#e9c46a" stroke-width="1" opacity="0.08" />
+</svg>
+<div style="position:absolute;top:30px;left:50px;right:50px;z-index:10;">
+  <p style="font-size:36px;font-weight:700;color:#ffffff;font-family:'Times New Roman',serif;margin:0 0 4px 0;">Key Takeaways</p>
+  <div style="width:60px;height:3px;background:#e9c46a;border-radius:2px;margin-bottom:14px;"></div>
+  
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;">
+    <div style="background:rgba(42,157,143,0.12);padding:8px 10px;border-radius:6px;border-left:3px solid #2a9d8f;">
+      <p style="font-size:14px;font-weight:700;color:#e9c46a;font-family:'Times New Roman',serif;margin:0 0 4px 0;">01 Vomiting</p>
+      <ul style="margin:0;padding-left:14px;font-size:11px;color:#edf6f9;font-family:'Times New Roman',serif;line-height:1.35;">
+        <li>HG → fluid/electrolyte imbalance, weight loss</li>
+        <li>Multifactorial: hormonal, H. pylori, allergic</li>
+        <li>Management: diet, pharmacotherapy, IV hydration</li>
+        <li>Terminate if jaundice, encephalopathy, fundus changes</li>
+      </ul>
+    </div>
+    <div style="background:rgba(42,157,143,0.12);padding:8px 10px;border-radius:6px;border-left:3px solid #e9c46a;">
+      <p style="font-size:14px;font-weight:700;color:#e9c46a;font-family:'Times New Roman',serif;margin:0 0 4px 0;">02 Anemia</p>
+      <ul style="margin:0;padding-left:14px;font-size:11px;color:#edf6f9;font-family:'Times New Roman',serif;line-height:1.35;">
+        <li>Iron deficiency, megaloblastic, thalassemia</li>
+        <li>Oral/parenteral iron, folate, B12 injections</li>
+        <li>Parenteral IV iron contraindicated in 1st trimester</li>
+        <li>Thalassemia → blood transfusion, CS delivery</li>
+      </ul>
+    </div>
+    <div style="background:rgba(42,157,143,0.12);padding:8px 10px;border-radius:6px;border-left:3px solid #2a9d8f;">
+      <p style="font-size:14px;font-weight:700;color:#e9c46a;font-family:'Times New Roman',serif;margin:0 0 4px 0;">03 Cardiac</p>
+      <ul style="margin:0;padding-left:14px;font-size:11px;color:#edf6f9;font-family:'Times New Roman',serif;line-height:1.35;">
+        <li>NYHA classification guides management</li>
+        <li>Peak HF risk: 28–32 wks &amp; labor stages</li>
+        <li>Multidisciplinary care, vaginal unless contraindicated</li>
+        <li>Avoid ergot alkaloids in 3rd stage</li>
+      </ul>
+    </div>
+    <div style="background:rgba(42,157,143,0.12);padding:8px 10px;border-radius:6px;border-left:3px solid #e9c46a;">
+      <p style="font-size:14px;font-weight:700;color:#e9c46a;font-family:'Times New Roman',serif;margin:0 0 4px 0;">04 Thromboembolism</p>
+      <ul style="margin:0;padding-left:14px;font-size:11px;color:#edf6f9;font-family:'Times New Roman',serif;line-height:1.35;">
+        <li>DVT: Virchow's triad, 50% asymptomatic, Homan's sign</li>
+        <li>UFH or LMWH (enoxaparin) anticoagulation</li>
+        <li>PE: immediate heparin, IVC filter, thrombolysis</li>
+        <li>LMWH advantages: better bioavailability, lower bleeding</li>
+      </ul>
+    </div>
+    <div style="background:rgba(231,111,81,0.12);padding:8px 10px;border-radius:6px;border-left:3px solid #e76f51;">
+      <p style="font-size:14px;font-weight:700;color:#e9c46a;font-family:'Times New Roman',serif;margin:0 0 4px 0;">05 Hypertension</p>
+      <ul style="margin:0;padding-left:14px;font-size:11px;color:#edf6f9;font-family:'Times New Roman',serif;line-height:1.35;">
+        <li>4 categories: chronic, gestational, superimposed, PE</li>
+        <li>PE: vasospasm, hemoconcentration, proteinuria</li>
+        <li>MgSO₄ for convulsion prophylaxis</li>
+        <li>Delivery: ≥37wks PE, ≥34wks severe features</li>
+      </ul>
+    </div>
+    <div style="background:rgba(231,111,81,0.12);padding:8px 10px;border-radius:6px;border-left:3px solid #e76f51;">
+      <p style="font-size:14px;font-weight:700;color:#e9c46a;font-family:'Times New Roman',serif;margin:0 0 4px 0;">06 Diabetes</p>
+      <ul style="margin:0;padding-left:14px;font-size:11px;color:#edf6f9;font-family:'Times New Roman',serif;line-height:1.35;">
+        <li>GDM screen at 24–28 wks with 50g GCT</li>
+        <li>GDM-A1: diet + exercise; A2: metformin/insulin</li>
+        <li>Insulin dose: 0.7→0.9 u/kg across trimesters</li>
+        <li>Euglycemia during labor to prevent neonatal hypoglycemia</li>
+      </ul>
+    </div>
+    <div style="background:rgba(231,111,81,0.12);padding:8px 10px;border-radius:6px;border-left:3px solid #e76f51;grid-column:1/3;">
+      <p style="font-size:14px;font-weight:700;color:#e9c46a;font-family:'Times New Roman',serif;margin:0 0 4px 0;">07 Urinary Tract Infection</p>
+      <ul style="margin:0;padding-left:14px;font-size:11px;color:#edf6f9;font-family:'Times New Roman',serif;line-height:1.35;">
+        <li>Screen all pregnancies with MSU at booking</li>
+        <li>Asymptomatic bacteriuria: treat 3 days (40% progress otherwise)</li>
+        <li>Pyelonephritis: hospitalize, IV fluids, parenteral broad-spectrum antibiotics 10–14 days</li>
+      </ul>
+    </div>
+  </div>
+  
+  <div style="text-align:center;margin-top:8px;">
+    <p style="font-size:14px;color:#edf6f9;font-family:'Times New Roman',serif;opacity:0.5;">Medical Obstetric Disorders — Integrated Clinical Module — 7 Topics</p>
+  </div>
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="background:#f0f5f5;width:960px;height:540px;overflow:hidden;font-family:'Times New Roman',serif;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#ffffff;"></div>
+<svg style="position:absolute;top:0;left:0;width:960px;height:540px;" aria-hidden="true">
+  <rect x="0" y="0" width="6" height="540" fill="#2a9d8f" />
+</svg>
+<p style="position:absolute;top:20px;left:50px;font-size:32px;font-weight:700;color:#264653;margin:0;">Sensitization &amp; Pathogenesis</p>
+<div style="position:absolute;top:62px;left:50px;width:70px;height:3px;background:#2a9d8f;border-radius:1.5px;"></div>
+<!-- Sensitization card -->
+<div style="position:absolute;top:80px;left:50px;right:50px;background:#f0f5f5;border-radius:8px;padding:10px 16px;border-left:4px solid #e76f51;">
+  <p style="font-size:15px;font-weight:700;color:#264653;margin:0 0 4px 0;">Sensitization of Rh −ve Mother</p>
+  <p style="font-size:12px;color:#264653;margin:0 0 4px 0;">Occurs when Rh +ve red blood cells enter maternal circulation:</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;">
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;"><strong>During pregnancy:</strong></div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;"><strong>Before pregnancy:</strong></div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;">• Placental separation (most important)</div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;">• Previous blood transfusion of Rh +ve blood</div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;">• Abortion</div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;">• Grandmother syndrome (in utero exposure)</div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;">• Ectopic pregnancy</div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;"></div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;">• Vesicular mole</div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;"></div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;">• Amniocentesis</div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;"></div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;">• External cephalic version</div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;"></div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;">• Antepartum hemorrhage</div>
+    <div style="background:#ffffff;border-radius:4px;padding:3px 8px;font-size:11px;color:#264653;"></div>
+  </div>
+</div>
+<!-- Pathogenesis Card -->
+<div style="position:absolute;top:310px;left:50px;right:50px;background:#f0f5f5;border-radius:8px;padding:8px 16px;border-left:4px solid #2a9d8f;">
+  <p style="font-size:15px;font-weight:700;color:#264653;margin:0 0 4px 0;">Pathogenesis</p>
+  <p style="font-size:13px;color:#264653;margin:0;line-height:1.4;">
+    Attachment of <strong>IgG</strong> to fetal RBCs causes hemolysis leading to:
+  </p>
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;margin:6px 0 0 0;">
+    <div style="background:#ffffff;border-radius:4px;padding:5px 8px;font-size:11px;color:#264653;text-align:center;">
+      <strong style="color:#e76f51;">Anemia</strong><br>→ Anemic heart failure<br>→ Generalized edema
+    </div>
+    <div style="background:#ffffff;border-radius:4px;padding:5px 8px;font-size:11px;color:#264653;text-align:center;">
+      <strong style="color:#f4a261;">Extramedullary hematopoiesis</strong><br>→ Hepatosplenomegaly<br>→ Portal hypertension, ascites, hypoproteinemia, edema
+    </div>
+    <div style="background:#ffffff;border-radius:4px;padding:5px 8px;font-size:11px;color:#264653;text-align:center;">
+      <strong style="color:#e9c46a;">Excess bilirubin</strong><br>→ Jaundice<br>→ Kernicterus risk
+    </div>
+  </div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:36px;height:36px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="36" height="36" rx="18" fill="#2a9d8f" />
+  <text x="18" y="25" text-anchor="middle" font-family="'Times New Roman',serif" font-size="16" font-weight="700" fill="#ffffff">15</text>
+</svg>
+</div>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="background:#ffffff;overflow:hidden;font-family:'Times New Roman',serif;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:linear-gradient(135deg,#264653 0%,#2a9d8f 100%);"></div>
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:rgba(0,0,0,0.15);"></div>
+<svg style="position:absolute;top:-80px;right:-80px;width:400px;height:400px;z-index:1;" aria-hidden="true"><circle cx="200" cy="200" r="200" fill="rgba(255,255,255,0.05)"/></svg>
+<svg style="position:absolute;bottom:-60px;left:-60px;width:300px;height:300px;z-index:1;" aria-hidden="true"><circle cx="150" cy="150" r="150" fill="rgba(255,255,255,0.05)"/></svg>
+<div style="position:absolute;top:120px;left:70px;width:80px;height:5px;background:#e9c46a;z-index:2;border-radius:2.5px;"></div>
+<p style="position:absolute;top:120px;left:180px;font-size:28px;color:rgba(255,255,255,0.8);font-family:'Times New Roman',serif;font-weight:400;z-index:2;margin:0;">Medical Obstetric Disorders</p>
+<p style="position:absolute;top:168px;left:70px;font-size:52px;color:#e9c46a;font-family:'Times New Roman',serif;font-weight:700;z-index:2;margin:0;line-height:1.15;">Fetal Complications</p>
+<div style="position:absolute;top:240px;left:70px;width:200px;height:2px;background:rgba(255,255,255,0.3);z-index:2;"></div>
+<p style="position:absolute;top:268px;left:70px;font-size:18px;color:rgba(255,255,255,0.9);font-family:'Times New Roman',serif;font-weight:400;z-index:2;margin:0;">A Comprehensive Slide Series Covering:</p>
+<div style="position:absolute;top:300px;left:70px;z-index:2;font-size:16px;color:rgba(255,255,255,0.85);font-family:'Times New Roman',serif;"><div style="margin-bottom:8px;">✦ Amniotic Fluid Abnormalities</div><div style="margin-bottom:8px;">✦ Intrauterine Growth Restriction (IUGR)</div><div style="margin-bottom:8px;">✦ Postterm Pregnancy</div><div style="margin-bottom:8px;">✦ Macrosomia</div><div style="margin-bottom:8px;">✦ Intrauterine Fetal Death (IUFD)</div><div style="margin-bottom:8px;">✦ Fetal Birth Injuries</div></div>
+<p style="position:absolute;bottom:40px;left:70px;font-size:14px;color:rgba(255,255,255,0.5);font-family:'Times New Roman',serif;z-index:2;margin:0;">Department of Obstetrics &amp; Gynecology</p>
+</div>
+</body>
+</html>

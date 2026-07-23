@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#edf6f9;overflow:hidden;position:relative;font-family:'Times New Roman',serif;">
+<svg style="position:absolute;right:32px;bottom:24px;width:48px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="48" height="28" rx="6" fill="#2a9d8f" />
+  <text x="24" y="20" text-anchor="middle" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff">65</text>
+</svg>
+<svg style="position:absolute;top:0;left:0;width:960px;height:540px;z-index:0;" aria-hidden="true">
+  <rect x="0" y="0" width="960" height="540" fill="#ffffff" />
+  <rect x="0" y="0" width="960" height="4" fill="#2a9d8f" />
+  <rect x="0" y="0" width="4" height="540" fill="#2a9d8f" opacity="0.3" />
+  
+</svg>
+<div style="position:absolute;top:20px;left:50px;right:50px;z-index:10;">
+  <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+    <div style="width:6px;height:28px;background:#e9c46a;border-radius:3px;"></div>
+    <p style="font-size:26px;font-weight:700;color:#264653;font-family:'Times New Roman',serif;margin:0;">Diabetes — Screening & Diagnosis</p>
+  </div>
+  <div style="width:100%;height:1px;background:#edf6f9;margin-bottom:10px;"></div>
+  
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+  <div style="background:#edf6f9;padding:10px 12px;border-radius:8px;border-left:4px solid #2a9d8f;">
+    <p style="font-size:15px;font-weight:700;color:#2a9d8f;font-family:'Times New Roman',serif;margin:0 0 6px 0;">One-Hour Glucose Challenge Test (GCT)</p>
+    <ul style="margin:0;padding-left:18px;font-size:13px;color:#264653;font-family:'Times New Roman',serif;line-height:1.5;">
+      <li>50-g glucose at 24–28 weeks</li>
+      <li>No fasting required</li>
+      <li>Normal: serum/plasma glucose &lt;140 mg/dL</li>
+      <li>Positive screen → confirm with oral GTT</li>
+    </ul>
+  </div>
+  <div style="background:#edf6f9;padding:10px 12px;border-radius:8px;border-left:4px solid #e76f51;">
+    <p style="font-size:15px;font-weight:700;color:#e76f51;font-family:'Times New Roman',serif;margin:0 0 6px 0;">Three-Hour Oral Glucose Tolerance Test (GTT)</p>
+    <p style="font-size:13px;color:#264653;font-family:'Times New Roman',serif;line-height:1.35;margin:0 0 6px 0;">
+      If GCT ≥140 mg/dL → 3-hour diagnostic GTT with 100 g glucose after 8-hour fast. Use Carpenter & Coustan values.
+    </p>
+  </div>
+</div>
+<div style="background:#ffffff;border:1.5px solid #e9c46a;border-radius:8px;padding:10px 14px;margin-top:10px;">
+  <p style="font-size:14px;font-weight:700;color:#e9c46a;font-family:'Times New Roman',serif;margin:0 0 6px 0;">GTT Diagnostic Values</p>
+  <table style="width:100%;font-size:13px;color:#264653;font-family:'Times New Roman',serif;border-collapse:collapse;">
+    <tr style="background:#2a9d8f;color:#ffffff;">
+      <th style="padding:6px;text-align:left;">Time</th>
+      <th style="padding:6px;text-align:left;">NDDG</th>
+      <th style="padding:6px;text-align:left;">Carpenter & Coustan</th>
+    </tr>
+    <tr style="background:#edf6f9;">
+      <td style="padding:4px 6px;"><b>Fasting</b></td>
+      <td style="padding:4px 6px;">105 mg/dL (5.8 mmol/L)</td>
+      <td style="padding:4px 6px;">95 mg/dL (5.3 mmol/L)</td>
+    </tr>
+    <tr>
+      <td style="padding:4px 6px;"><b>1-hour</b></td>
+      <td style="padding:4px 6px;">190 mg/dL (10.5 mmol/L)</td>
+      <td style="padding:4px 6px;">180 mg/dL (10.0 mmol/L)</td>
+    </tr>
+    <tr style="background:#edf6f9;">
+      <td style="padding:4px 6px;"><b>2-hour</b></td>
+      <td style="padding:4px 6px;">165 mg/dL (9.2 mmol/L)</td>
+      <td style="padding:4px 6px;">155 mg/dL (8.6 mmol/L)</td>
+    </tr>
+    <tr>
+      <td style="padding:4px 6px;"><b>3-hour</b></td>
+      <td style="padding:4px 6px;">145 mg/dL (8.0 mmol/L)</td>
+      <td style="padding:4px 6px;">140 mg/dL (7.8 mmol/L)</td>
+    </tr>
+  </table>
+  <p style="font-size:13px;color:#264653;font-family:'Times New Roman',serif;margin:6px 0 0 0;">If any <b>two or more</b> diagnostic values are met or exceeded → diagnosis of GDM.</p>
+</div>
+
+</div>
+</div>
+</body>
+</html>

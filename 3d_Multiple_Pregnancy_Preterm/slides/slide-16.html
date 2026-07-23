@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide</title>
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#ffffff;overflow:hidden;position:relative;font-family:'Times New Roman',serif;">
+<div style="position:absolute; top:0; left:0; width:960px; height:540px; background:#ffffff;"></div>
+<div style="position:absolute; top:0; left:0; width:960px; height:540px;">
+<svg width="960" height="540" aria-hidden="true">
+  <rect x="0" y="0" width="6" height="540" fill="#2a9d8f"/>
+</svg>
+</div>
+<p style="position:absolute; top:28px; left:40px; font-size:34px; font-weight:700; color:#264653; margin:0; z-index:10;">Antibiotic Therapy &amp; Mode of Delivery</p>
+<div style="position:absolute; top:68px; left:40px; width:80px; height:3px; background:#2a9d8f; border-radius:1.5px; z-index:10;"></div>
+
+<div style="position:absolute; top:95px; left:40px; width:880px; z-index:10;">
+<div style="background:#f8fafa; border-radius:8px; padding:14px; border-left:4px solid #2a9d8f;">
+  <p style="font-size:17px; font-weight:700; color:#2a9d8f; margin:0 0 8px 0;">Antibiotic Therapy for Prevention of Group B Streptococci Infection</p>
+  <p style="font-size:14px; color:#264653; margin:0 0 6px 0;">Benzyl penicillin or ampicillin should be given for an established PTL as a prophylaxis against early onset of neonatal sepsis due to group B streptococcus.</p>
+  <p style="font-size:14px; color:#264653; margin:0;">In cases of penicillin allergy, clindamycin can be used.</p>
+</div>
+</div>
+
+<div style="position:absolute; top:205px; left:40px; width:880px; z-index:10;">
+<div style="background:#f8fafa; border-radius:8px; padding:14px; border-left:4px solid #f4a261;">
+  <p style="font-size:17px; font-weight:700; color:#f4a261; margin:0 0 8px 0;">Mode of Delivery</p>
+  <ul style="margin:0; padding-left:20px; font-size:15px; color:#264653;">
+    <li><b>Cephalic presentation:</b> Vaginal delivery is preferred, even if delivery at &lt;34 weeks.</li>
+    <li><b>Breech presentation:</b> Vaginal delivery is allowed if &gt;34 weeks; if &lt;34 weeks, cesarean section is performed.</li>
+  </ul>
+</div>
+</div>
+
+<div style="position:absolute; top:320px; left:40px; width:880px; z-index:10;">
+<div style="background:#f8fafa; border-radius:8px; padding:14px; border-left:4px solid #e9c46a;">
+  <p style="font-size:17px; font-weight:700; color:#264653; margin:0 0 6px 0;">Student Activity</p>
+  <p style="font-size:14px; color:#264653; margin:0;">The students are requested to attend with the tutor of bedside part of the clinical round a morning ward on admitted departmental cases with the diagnosis of preterm labor in order to revise the presentation and management done for these cases.</p>
+</div>
+</div><div style="position:absolute; right:32px; bottom:24px; z-index:100; width:44px; height:44px;">
+<svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+  <circle cx="22" cy="22" r="20" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+  <text x="22" y="28" text-anchor="middle" fill="#ffffff" font-family="Times New Roman, serif" font-size="18" font-weight="bold">16</text>
+</svg>
+</div></div>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slide</title>
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#ffffff;overflow:hidden;position:relative;font-family:'Times New Roman',serif;">
+<div style="position:absolute; top:0; left:0; width:960px; height:540px; background:#ffffff;"></div>
+<div style="position:absolute; top:0; left:0; width:960px; height:540px;">
+<svg width="960" height="540" aria-hidden="true">
+  <rect x="0" y="0" width="6" height="540" fill="#2a9d8f"/>
+  <circle cx="900" cy="500" r="120" fill="#2a9d8f" opacity="0.06"/>
+</svg>
+</div>
+<p style="position:absolute; top:28px; left:40px; font-size:34px; font-weight:700; color:#264653; margin:0; z-index:10;">Definition &amp; Important Terminology</p>
+<div style="position:absolute; top:68px; left:40px; width:80px; height:3px; background:#2a9d8f; border-radius:1.5px; z-index:10;"></div>
+
+<p style="position:absolute; top:95px; left:40px; font-size:18px; font-weight:700; color:#264653; margin:0; z-index:10;">Definition</p>
+<p style="position:absolute; top:120px; left:40px; font-size:16px; color:#264653; margin:0; z-index:10; max-width:880px;">A pregnancy with more than 1 fetus inside the uterus.</p>
+
+<p style="position:absolute; top:165px; left:40px; font-size:18px; font-weight:700; color:#264653; margin:0; z-index:10;">Important Terminology</p>
+
+<div style="position:absolute; top:195px; left:40px; width:880px; height:auto; z-index:10;">
+<table style="width:100%; border-collapse:collapse; font-size:14px; color:#264653;">
+  <tr style="background:#264653; color:#ffffff;">
+    <th style="padding:8px 12px; border:1px solid #264653; text-align:left; font-weight:700;">Term</th>
+    <th style="padding:8px 12px; border:1px solid #264653; text-align:left; font-weight:700;">Definition</th>
+  </tr>
+  <tr>
+    <td style="padding:6px 12px; border:1px solid #ddd; font-weight:700; color:#2a9d8f;">Zygosity</td>
+    <td style="padding:6px 12px; border:1px solid #ddd;">The genetic make up of a twin pregnancy</td>
+  </tr>
+  <tr style="background:#f8fafa;">
+    <td style="padding:6px 12px; border:1px solid #ddd; font-weight:700; color:#2a9d8f;">Monozygotic twins</td>
+    <td style="padding:6px 12px; border:1px solid #ddd;">Result from division of a single zygote. Share the same genetic material. Identical twins.</td>
+  </tr>
+  <tr>
+    <td style="padding:6px 12px; border:1px solid #ddd; font-weight:700; color:#2a9d8f;">Dizygotic twins</td>
+    <td style="padding:6px 12px; border:1px solid #ddd;">Result from 2 separate eggs fertilized by 2 separate sperm. Share approximately 50% of the genetic material. Fraternal twins.</td>
+  </tr>
+  <tr style="background:#f8fafa;">
+    <td style="padding:6px 12px; border:1px solid #ddd; font-weight:700; color:#2a9d8f;">Chorionicity</td>
+    <td style="padding:6px 12px; border:1px solid #ddd;">The number of chorions (equal to the number of placentas)</td>
+  </tr>
+  <tr>
+    <td style="padding:6px 12px; border:1px solid #ddd; font-weight:700; color:#2a9d8f;">Amnionicity</td>
+    <td style="padding:6px 12px; border:1px solid #ddd;">The number of amnions surrounding the fetuses</td>
+  </tr>
+</table>
+</div><div style="position:absolute; right:32px; bottom:24px; z-index:100; width:44px; height:44px;">
+<svg width="44" height="44" viewBox="0 0 44 44" aria-hidden="true">
+  <circle cx="22" cy="22" r="20" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+  <text x="22" y="28" text-anchor="middle" fill="#ffffff" font-family="Times New Roman, serif" font-size="18" font-weight="bold">4</text>
+</svg>
+</div></div>
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="background:#edf6f9; overflow:hidden; font-family:"Times New Roman", serif;">
+
+<p style="position:absolute; top:28px; left:50px; font-size:30px; font-weight:700; color:#006d77; z-index:10; margin:0;">Student Activity — APH</p>
+<div style="position:absolute; top:68px; left:50px; width:70px; height:3px; background:#e29578; border-radius:1.5px; z-index:10;"></div>
+
+<div style="position:absolute; top:90px; left:50px; right:50px; background:#ffffff; border-radius:10px; padding:18px 22px; border-left:4px solid #006d77; z-index:10;">
+  <p style="margin:0 0 8px 0; font-size:16px; font-weight:700; color:#006d77;">Emergency Cases Evaluation</p>
+  <p style="margin:0; font-size:13px; color:#444; line-height:1.6;">Each group of students is requested to evaluate the emergency cases registration files in order to provide a report on:</p>
+  <ul style="margin:0; padding-left:18px; font-size:13px; color:#444; line-height:1.8;">
+    <li>The number of recorded departmental admitted cases of antepartum hemorrhage during the <strong>last three months</strong></li>
+    <li><strong>Etiological classification</strong> of these cases</li>
+    <li>Their <strong>outcome</strong></li>
+  </ul>
+</div>
+
+<div style="position:absolute; top:250px; left:50px; right:50px; background:#ffffff; border-radius:10px; padding:18px 22px; border-left:4px solid #e29578; z-index:10;">
+  <p style="margin:0 0 8px 0; font-size:16px; font-weight:700; color:#e29578;">Ruptured Uterus — File Review</p>
+  <p style="margin:0; font-size:13px; color:#444; line-height:1.6;">For included cases of ruptured uterus, look into the files of these cases in order to identify the <strong>possible underlying cause</strong> of this catastrophe.</p>
+</div>
+
+<div style="position:absolute; bottom:30px; left:50px; right:50px; background:#006d77; border-radius:8px; padding:12px 18px; z-index:10;">
+  <p style="margin:0; font-size:14px; color:#ffffff; line-height:1.4; text-align:center;">📋 Questions: <a href="https://forms.gle/hzvEPyfmNCjJE1EE7" style="color:#ffddd2;">https://forms.gle/hzvEPyfmNCjJE1EE7</a></p>
+</div>
+
+<div style="position:absolute; right:32px; bottom:24px; width:40px; height:40px; z-index:100;">
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <circle cx="20" cy="20" r="18" fill="#006d77" stroke="#83c5be" stroke-width="2"/>
+  <text x="20" y="26" text-anchor="middle" font-family=""Times New Roman", serif" font-size="16" font-weight="700" fill="#ffffff">24</text>
+</svg>
+</div>
+</div>
+</body>
+</html>

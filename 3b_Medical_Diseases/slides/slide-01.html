@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#edf6f9;overflow:hidden;position:relative;font-family:'Times New Roman',serif;">
+
+<!-- Decorative shapes -->
+<svg style="position:absolute;top:0;left:0;width:960px;height:540px;z-index:0;" aria-hidden="true">
+  <rect x="0" y="0" width="420" height="540" fill="#264653" />
+  <rect x="420" y="0" width="540" height="540" fill="#ffffff" />
+  <!-- accent bar top right -->
+  <rect x="420" y="0" width="8" height="540" fill="#2a9d8f" />
+  <!-- decorative circles -->
+  <circle cx="670" cy="120" r="140" fill="none" stroke="#2a9d8f" stroke-width="1" opacity="0.15" />
+  <circle cx="720" cy="100" r="90" fill="none" stroke="#e9c46a" stroke-width="1" opacity="0.2" />
+  <circle cx="800" cy="400" r="180" fill="none" stroke="#f4a261" stroke-width="1" opacity="0.1" />
+</svg>
+
+<!-- Left side content -->
+<div style="position:absolute;top:60px;left:50px;width:320px;z-index:10;">
+  <div style="width:70px;height:5px;background:#e9c46a;border-radius:3px;margin-bottom:20px;"></div>
+  <p style="font-size:28px;font-weight:400;color:#e9c46a;font-family:'Times New Roman',serif;margin:0 0 8px 0;opacity:0.9;">Medical Disorders</p>
+  <p style="font-size:48px;font-weight:700;color:#ffffff;font-family:'Times New Roman',serif;margin:0 0 10px 0;line-height:1.1;">in Pregnancy</p>
+  <div style="width:70px;height:3px;background:#2a9d8f;border-radius:2px;margin-bottom:16px;"></div>
+  <p style="font-size:15px;font-weight:400;color:#edf6f9;font-family:'Times New Roman',serif;margin:0;opacity:0.8;line-height:1.35;">Vomiting &bull; Anemia &bull; Cardiac &bull; Thromboembolism<br>Hypertension &bull; Diabetes &bull; Urinary Tract Infection</p>
+</div>
+
+<!-- Right side -->
+<div style="position:absolute;top:340px;left:480px;width:420px;z-index:10;">
+  <p style="font-size:16px;color:#264653;font-family:'Times New Roman',serif;margin:0 0 4px 0;opacity:0.6;">Obstetrics &amp; Gynecology</p>
+  <p style="font-size:14px;color:#264653;font-family:'Times New Roman',serif;margin:0;opacity:0.4;">Complete Clinical Module &mdash; 7 Topics</p>
+</div>
+
+<!-- Bottom info -->
+<div style="position:absolute;bottom:30px;left:50px;z-index:10;">
+  <p style="font-size:14px;color:#edf6f9;font-family:'Times New Roman',serif;margin:0;opacity:0.6;">Medical Obstetric Disorders &mdash; 3b</p>
+</div>
+</div>
+</body>
+</html>

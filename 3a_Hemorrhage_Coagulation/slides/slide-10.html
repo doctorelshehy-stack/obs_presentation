@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="background:#edf6f9; overflow:hidden; font-family:"Times New Roman", serif;">
+
+<p style="position:absolute; top:28px; left:50px; font-size:30px; font-weight:700; color:#006d77; z-index:10; margin:0;">Abruptio Placenta</p>
+<div style="position:absolute; top:68px; left:50px; width:70px; height:3px; background:#e29578; border-radius:1.5px; z-index:10;"></div>
+
+<div style="position:absolute; top:90px; left:50px; right:50px; display:grid; grid-template-columns:1fr 1fr; gap:14px; z-index:10;">
+  <div style="background:#ffffff; border-radius:8px; padding:14px 16px;">
+    <p style="margin:0 0 4px 0; font-size:15px; font-weight:700; color:#006d77;">Definition</p>
+    <p style="margin:0; font-size:13px; color:#444; line-height:1.4;">APH due to premature separation of a <strong>normally situated placenta</strong> (upper uterine segment).</p>
+  </div>
+  <div style="background:#ffffff; border-radius:8px; padding:14px 16px;">
+    <p style="margin:0 0 4px 0; font-size:15px; font-weight:700; color:#006d77;">Incidence</p>
+    <p style="margin:0; font-size:28px; font-weight:700; color:#e29578; line-height:1.2;">1/100</p>
+    <p style="margin:0; font-size:13px; color:#666;">of pregnancies</p>
+  </div>
+</div>
+
+<p style="position:absolute; top:220px; left:50px; font-size:22px; font-weight:700; color:#006d77; z-index:10; margin:0;">Classification</p>
+
+<div style="position:absolute; top:258px; left:50px; right:50px; display:grid; grid-template-columns:1fr 1fr 1fr; gap:14px; z-index:10;">
+  <div style="background:#ffffff; border-radius:8px; padding:14px 16px; border-top:3px solid #006d77;">
+    <p style="margin:0 0 4px 0; font-size:14px; font-weight:700; color:#006d77;">Concealed</p>
+    <p style="margin:0; font-size:12px; color:#444; line-height:1.4;">Blood is retained behind the placenta, inside the uterus (retroplacental hematoma).</p>
+  </div>
+  <div style="background:#ffffff; border-radius:8px; padding:14px 16px; border-top:3px solid #e29578;">
+    <p style="margin:0 0 4px 0; font-size:14px; font-weight:700; color:#e29578;">Revealed (Visible)</p>
+    <p style="margin:0; font-size:12px; color:#444; line-height:1.4;">Blood escapes and appears externally as vaginal bleeding.</p>
+  </div>
+  <div style="background:#ffffff; border-radius:8px; padding:14px 16px; border-top:3px solid #83c5be;">
+    <p style="margin:0 0 4px 0; font-size:14px; font-weight:700; color:#006d77;">Combined / Mixed</p>
+    <p style="margin:0; font-size:12px; color:#444; line-height:1.4;">Part of blood is retained inside the uterus and part escapes as vaginal bleeding.</p>
+  </div>
+</div>
+
+<div style="position:absolute; bottom:30px; left:50px; right:50px; background:rgba(0,109,119,0.08); border-radius:6px; padding:10px 14px; z-index:10;">
+  <p style="margin:0; font-size:12px; color:#006d77; line-height:1.4;"><strong>Ultrasound picture:</strong> Abruptio placenta may show a retroplacental hematoma — a collection of blood between the placenta and uterine wall.</p>
+</div>
+
+<div style="position:absolute; right:32px; bottom:24px; width:40px; height:40px; z-index:100;">
+<svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+  <circle cx="20" cy="20" r="18" fill="#006d77" stroke="#83c5be" stroke-width="2"/>
+  <text x="20" y="26" text-anchor="middle" font-family=""Times New Roman", serif" font-size="16" font-weight="700" fill="#ffffff">10</text>
+</svg>
+</div>
+</div>
+</body>
+</html>

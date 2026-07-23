@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="background:#f0f5f5;width:960px;height:540px;overflow:hidden;font-family:'Times New Roman',serif;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:linear-gradient(135deg,#264653 0%,#1a3a3a 100%);"></div>
+<svg style="position:absolute;top:0;left:0;width:960px;height:540px;" aria-hidden="true">
+  <rect x="0" y="0" width="8" height="540" fill="#2a9d8f" />
+  <circle cx="860" cy="460" r="140" fill="none" stroke="#2a9d8f" stroke-width="1" opacity="0.1" />
+</svg>
+<p style="position:absolute;top:24px;left:50px;font-size:32px;font-weight:700;color:#ffffff;margin:0;">Summary &amp; Key Takeaways</p>
+<div style="position:absolute;top:62px;left:50px;width:60px;height:3px;background:#e9c46a;border-radius:1.5px;"></div>
+<div style="position:absolute;top:80px;left:50px;right:50px;bottom:50px;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+  <!-- Section 1 -->
+  <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:12px 16px;border-left:3px solid #2a9d8f;">
+    <p style="font-size:16px;font-weight:700;color:#2a9d8f;margin:0 0 6px 0;">Infectious Diseases in Pregnancy</p>
+    <ul style="margin:0;padding-left:16px;font-size:12px;color:#ffffff;opacity:0.9;line-height:1.6;">
+      <li><strong>TORCH</strong>: Toxoplasma, Others, Rubella, CMV, Herpes</li>
+      <li><strong>Toxoplasmosis</strong>: T. gondii, undercooked meat, Spiramycin</li>
+      <li><strong>Rubella</strong>: Highly teratogenic RNA virus, MMR vaccine, termination if 1st trimester</li>
+      <li><strong>CMV</strong>: Most common congenital viral infection, US + PCR diagnosis</li>
+      <li><strong>HSV</strong>: 50% vertical transmission in primary, Acyclovir, C-section in labor</li>
+    </ul>
+  </div>
+  <!-- Section 2 -->
+  <div style="background:rgba(255,255,255,0.08);border-radius:8px;padding:12px 16px;border-left:3px solid #e9c46a;">
+    <p style="font-size:16px;font-weight:700;color:#e9c46a;margin:0 0 6px 0;">RH Incompatibility</p>
+    <ul style="margin:0;padding-left:16px;font-size:12px;color:#ffffff;opacity:0.9;line-height:1.6;">
+      <li>Rh −ve mother + Rh +ve fetus → isoimmunization</li>
+      <li>Clinical forms: Hydrops fetalis, Icterus gravis, Hemolytic anemia</li>
+      <li>Liley curve zones guide management (1=term, 2=32wks, 3=deliver/IUT)</li>
+      <li>Anti D immunoglobulin prophylaxis (28 wks + postpartum)</li>
+      <li>Exchange transfusion for severe jaundice</li>
+      <li>ABO incompatibility: milder, more common, phototherapy</li>
+    </ul>
+  </div>
+</div>
+<!-- Bottom message -->
+<div style="position:absolute;bottom:20px;left:50px;right:50px;text-align:center;border-top:1px solid rgba(255,255,255,0.1);padding-top:8px;">
+  <p style="font-size:13px;color:#ffffff;opacity:0.5;margin:0;">Comprehensive Obstetric Reference — All content preserved from source materials</p>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:36px;height:36px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="36" height="36" rx="18" fill="#2a9d8f" />
+  <text x="18" y="25" text-anchor="middle" font-family="'Times New Roman',serif" font-size="16" font-weight="700" fill="#ffffff">26</text>
+</svg>
+</div>
+</body>
+</html>
