@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script></head>
+<body>
+<div class="slide-content" style="background:#03045e;font-family:"Times New Roman", serif;overflow:hidden;">
+<svg style="position:absolute;top:0;left:0;width:960px;height:540px;" aria-hidden="true">
+<circle cx="800" cy="100" r="200" fill="#0077b6" opacity="0.1"/>
+<circle cx="100" cy="450" r="150" fill="#00b4d8" opacity="0.08"/>
+</svg>
+<p style="position:absolute;top:36px;left:60px;font-size:32px;font-weight:700;color:#ffffff;">Key Takeaways</p>
+<div style="position:absolute;top:60px;left:60px;width:80px;height:3px;background:#00b4d8;border-radius:1.5px;"></div>
+<div style="position:absolute;top:100px;left:60px;display:grid;grid-template-columns:1fr 1fr;gap:12px;width:840px;">
+<div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:14px;border-left:3px solid #00b4d8;">
+<div style="font-size:13px;color:#90e0ef;line-height:1.5;">Normal labor is spontaneous vertex delivery of a single full-term viable fetus without complications.</div>
+</div>
+<div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:14px;border-left:3px solid #00b4d8;">
+<div style="font-size:13px;color:#90e0ef;line-height:1.5;">Four stages: cervical dilatation → fetal expulsion → placental delivery → observation.</div>
+</div>
+<div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:14px;border-left:3px solid #00b4d8;">
+<div style="font-size:13px;color:#90e0ef;line-height:1.5;">Active management reduces 3rd stage duration from 15 min to 5 min, lowering PPH risk.</div>
+</div>
+<div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:14px;border-left:3px solid #00b4d8;">
+<div style="font-size:13px;color:#90e0ef;line-height:1.5;">Partogram is essential for monitoring labor progress and detecting deviations early.</div>
+</div>
+<div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:14px;border-left:3px solid #00b4d8;">
+<div style="font-size:13px;color:#90e0ef;line-height:1.5;">Friedman curve describes sigmoid pattern of cervical dilatation in the active phase.</div>
+</div>
+<div style="background:rgba(255,255,255,0.06);border-radius:8px;padding:14px;border-left:3px solid #00b4d8;">
+<div style="font-size:13px;color:#90e0ef;line-height:1.5;">Mechanism of labor involves 7 cardinal movements: descent, engagement, flexion, internal rotation, extension, restitution, external rotation.</div>
+</div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;" width="40" height="40" aria-hidden="true">
+<rect x="0" y="0" width="40" height="40" rx="6" fill="#03045e" opacity="0.85"/>
+<text x="20" y="27" text-anchor="middle" font-family="Times New Roman", serif font-size="16" font-weight="700" fill="#ffffff">23</text>
+</svg>
+</div>
+</body>
+</html>

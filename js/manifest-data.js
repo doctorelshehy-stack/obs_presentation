@@ -1,6 +1,7 @@
 window.__MANIFEST__ = {
   "title": "Medical Obstetric Disorders",
-  "version": "1.0",
+  "subtitle": "Complete Obstetric Slide Library",
+  "version": "1.1",
   "topics": [
     {
       "type": "heading",
@@ -304,8 +305,264 @@ window.__MANIFEST__ = {
         "Slide 37",
         "Slide 38"
       ]
+    },
+    {
+      "type": "heading",
+      "title": "Normal & Abnormal Pregnancy",
+      "icon": "🤰",
+      "description": "Normal pregnancy, puerperium, and early pregnancy complications"
+    },
+    {
+      "id": "1_Normal_Pregnancy_Puerperium",
+      "title": "1 — Normal Pregnancy & Puerperium",
+      "description": "Physiological changes in pregnancy, antenatal care, and the puerperium",
+      "icon": "👶",
+      "folder": "1_Normal_Pregnancy_Puerperium",
+      "slidesPath": "1_Normal_Pregnancy_Puerperium",
+      "slideCount": 65,
+      "slides": [
+        "slide-01.html","slide-02.html","slide-03.html","slide-04.html","slide-05.html",
+        "slide-06.html","slide-07.html","slide-08.html","slide-09.html","slide-10.html",
+        "slide-11.html","slide-12.html","slide-13.html","slide-14.html","slide-15.html",
+        "slide-16.html","slide-17.html","slide-18.html","slide-19.html","slide-20.html",
+        "slide-21.html","slide-22.html","slide-23.html","slide-24.html","slide-25.html",
+        "slide-26.html","slide-27.html","slide-28.html","slide-29.html","slide-30.html",
+        "slide-31.html","slide-32.html","slide-33.html","slide-34.html","slide-35.html",
+        "slide-36.html","slide-37.html","slide-38.html","slide-39.html","slide-40.html",
+        "slide-41.html","slide-42.html","slide-43.html","slide-44.html","slide-45.html",
+        "slide-46.html","slide-47.html","slide-48.html","slide-49.html","slide-50.html",
+        "slide-51.html","slide-52.html","slide-53.html","slide-54.html","slide-55.html",
+        "slide-56.html","slide-57.html","slide-58.html","slide-59.html","slide-60.html",
+        "slide-61.html","slide-62.html","slide-63.html","slide-64.html","slide-65.html"
+      ],
+      "slideTitles": [
+        "Normal Pregnancy & Puerperium — Cover",
+        "Slide 02","Slide 03","Slide 04","Slide 05",
+        "Slide 06","Slide 07","Slide 08","Slide 09","Slide 10",
+        "Slide 11","Slide 12","Slide 13","Slide 14","Slide 15",
+        "Slide 16","Slide 17","Slide 18","Slide 19","Slide 20",
+        "Slide 21","Slide 22","Slide 23","Slide 24","Slide 25",
+        "Slide 26","Slide 27","Slide 28","Slide 29","Slide 30",
+        "Slide 31","Slide 32","Slide 33","Slide 34","Slide 35",
+        "Slide 36","Slide 37","Slide 38","Slide 39","Slide 40",
+        "Slide 41","Slide 42","Slide 43","Slide 44","Slide 45",
+        "Slide 46","Slide 47","Slide 48","Slide 49","Slide 50",
+        "Slide 51","Slide 52","Slide 53","Slide 54","Slide 55",
+        "Slide 56","Slide 57","Slide 58","Slide 59","Slide 60",
+        "Slide 61","Slide 62","Slide 63","Slide 64","Slide 65"
+      ]
+    },
+    {
+      "id": "2_Early_Pregnancy_Complications",
+      "title": "2 — Early Pregnancy Complications",
+      "description": "Miscarriage, ectopic pregnancy, gestational trophoblastic disease, hyperemesis gravidarum",
+      "icon": "⚠️",
+      "folder": "2_Early_Pregnancy_Complications slides",
+      "slidesPath": "2_Early_Pregnancy_Complications slides",
+      "slideCount": 61,
+      "slides": [
+        "slide-01.html","slide-02.html","slide-03.html","slide-04.html","slide-05.html",
+        "slide-06.html","slide-07.html","slide-08.html","slide-09.html","slide-10.html",
+        "slide-11.html","slide-12.html","slide-13.html","slide-14.html","slide-15.html",
+        "slide-16.html","slide-17.html","slide-18.html","slide-19.html","slide-20.html",
+        "slide-21.html","slide-22.html","slide-23.html","slide-24.html","slide-25.html",
+        "slide-26.html","slide-27.html","slide-28.html","slide-29.html","slide-30.html",
+        "slide-31.html","slide-32.html","slide-33.html","slide-34.html","slide-35.html",
+        "slide-36.html","slide-37.html","slide-38.html","slide-39.html","slide-40.html",
+        "slide-41.html","slide-42.html","slide-43.html","slide-44.html","slide-45.html",
+        "slide-46.html","slide-47.html","slide-48.html","slide-49.html","slide-50.html",
+        "slide-51.html","slide-52.html","slide-53.html","slide-54.html","slide-55.html",
+        "slide-56.html","slide-57.html","slide-58.html","slide-59.html","slide-60.html",
+        "slide-61.html"
+      ],
+      "slideTitles": [
+        "Early Pregnancy Complications — Cover",
+        "Slide 02","Slide 03","Slide 04","Slide 05",
+        "Slide 06","Slide 07","Slide 08","Slide 09","Slide 10",
+        "Slide 11","Slide 12","Slide 13","Slide 14","Slide 15",
+        "Slide 16","Slide 17","Slide 18","Slide 19","Slide 20",
+        "Slide 21","Slide 22","Slide 23","Slide 24","Slide 25",
+        "Slide 26","Slide 27","Slide 28","Slide 29","Slide 30",
+        "Slide 31","Slide 32","Slide 33","Slide 34","Slide 35",
+        "Slide 36","Slide 37","Slide 38","Slide 39","Slide 40",
+        "Slide 41","Slide 42","Slide 43","Slide 44","Slide 45",
+        "Slide 46","Slide 47","Slide 48","Slide 49","Slide 50",
+        "Slide 51","Slide 52","Slide 53","Slide 54","Slide 55",
+        "Slide 56","Slide 57","Slide 58","Slide 59","Slide 60",
+        "Slide 61"
+      ]
+    },
+    {
+      "type": "heading",
+      "title": "Labor & Delivery",
+      "icon": "🏥",
+      "description": "Normal labor, abnormal labor, malpresentations, and operative obstetrics"
+    },
+    {
+      "id": "19_Normal_Labor",
+      "title": "19 — Normal Labor",
+      "description": "Mechanism and management of normal labor",
+      "icon": "👩‍⚕️",
+      "folder": "19_Normal_Labor",
+      "slidesPath": "19_Normal_Labor/slides",
+      "slideCount": 23,
+      "slides": [
+        "slide-01.html","slide-02.html","slide-03.html","slide-04.html","slide-05.html",
+        "slide-06.html","slide-07.html","slide-08.html","slide-09.html","slide-10.html",
+        "slide-11.html","slide-12.html","slide-13.html","slide-14.html","slide-15.html",
+        "slide-16.html","slide-17.html","slide-18.html","slide-19.html","slide-20.html",
+        "slide-21.html","slide-22.html","slide-23.html"
+      ],
+      "slideTitles": [
+        "Normal Labor — Cover",
+        "Slide 02","Slide 03","Slide 04","Slide 05",
+        "Slide 06","Slide 07","Slide 08","Slide 09","Slide 10",
+        "Slide 11","Slide 12","Slide 13","Slide 14","Slide 15",
+        "Slide 16","Slide 17","Slide 18","Slide 19","Slide 20",
+        "Slide 21","Slide 22","Slide 23"
+      ]
+    },
+    {
+      "id": "slides_abnormal_labor",
+      "title": "Abnormal Labor",
+      "description": "Disorders of uterine action, obstructed labor, and abnormal labor patterns",
+      "icon": "⚡",
+      "folder": "slides_abnormal_labor",
+      "slidesPath": "slides_abnormal_labor",
+      "slideCount": 23,
+      "slides": [
+        "slide-01.html","slide-02.html","slide-03.html","slide-04.html","slide-05.html",
+        "slide-06.html","slide-07.html","slide-08.html","slide-09.html","slide-10.html",
+        "slide-11.html","slide-12.html","slide-13.html","slide-14.html","slide-15.html",
+        "slide-16.html","slide-17.html","slide-18.html","slide-19.html","slide-20.html",
+        "slide-21.html","slide-22.html","slide-23.html"
+      ],
+      "slideTitles": [
+        "Abnormal Labor — Cover",
+        "Slide 02","Slide 03","Slide 04","Slide 05",
+        "Slide 06","Slide 07","Slide 08","Slide 09","Slide 10",
+        "Slide 11","Slide 12","Slide 13","Slide 14","Slide 15",
+        "Slide 16","Slide 17","Slide 18","Slide 19","Slide 20",
+        "Slide 21","Slide 22","Slide 23"
+      ]
+    },
+    {
+      "id": "slides_malpresentations",
+      "title": "Malpresentations",
+      "description": "Breech presentation, transverse lie, compound presentation, and unstable lie",
+      "icon": "🔄",
+      "folder": "slides_malpresentations",
+      "slidesPath": "slides_malpresentations",
+      "slideCount": 40,
+      "slides": [
+        "slide-01.html","slide-02.html","slide-03.html","slide-04.html","slide-05.html",
+        "slide-06.html","slide-07.html","slide-08.html","slide-09.html","slide-10.html",
+        "slide-11.html","slide-12.html","slide-13.html","slide-14.html","slide-15.html",
+        "slide-16.html","slide-17.html","slide-18.html","slide-19.html","slide-20.html",
+        "slide-21.html","slide-22.html","slide-23.html","slide-24.html","slide-25.html",
+        "slide-26.html","slide-27.html","slide-28.html","slide-29.html","slide-30.html",
+        "slide-31.html","slide-32.html","slide-33.html","slide-34.html","slide-35.html",
+        "slide-36.html","slide-37.html","slide-38.html","slide-39.html","slide-40.html"
+      ],
+      "slideTitles": [
+        "Malpresentations — Cover",
+        "Slide 02","Slide 03","Slide 04","Slide 05",
+        "Slide 06","Slide 07","Slide 08","Slide 09","Slide 10",
+        "Slide 11","Slide 12","Slide 13","Slide 14","Slide 15",
+        "Slide 16","Slide 17","Slide 18","Slide 19","Slide 20",
+        "Slide 21","Slide 22","Slide 23","Slide 24","Slide 25",
+        "Slide 26","Slide 27","Slide 28","Slide 29","Slide 30",
+        "Slide 31","Slide 32","Slide 33","Slide 34","Slide 35",
+        "Slide 36","Slide 37","Slide 38","Slide 39","Slide 40"
+      ]
+    },
+    {
+      "id": "22_Occipitoposterior_Position",
+      "title": "22 — Occipitoposterior Position",
+      "description": "Persistent occipitoposterior position, diagnosis, and management",
+      "icon": "🩺",
+      "folder": "22_Occipitoposterior_Position",
+      "slidesPath": "22_Occipitoposterior_Position/slides",
+      "slideCount": 15,
+      "slides": [
+        "slide-01.html","slide-02.html","slide-03.html","slide-04.html","slide-05.html",
+        "slide-06.html","slide-07.html","slide-08.html","slide-09.html","slide-10.html",
+        "slide-11.html","slide-12.html","slide-13.html","slide-14.html","slide-15.html"
+      ],
+      "slideTitles": [
+        "Occipitoposterior Position — Cover",
+        "Slide 02","Slide 03","Slide 04","Slide 05",
+        "Slide 06","Slide 07","Slide 08","Slide 09","Slide 10",
+        "Slide 11","Slide 12","Slide 13","Slide 14","Slide 15"
+      ]
+    },
+    {
+      "id": "23_Face_Presentation",
+      "title": "23 — Face Presentation",
+      "description": "Face presentation, diagnosis, mechanism of labor, and management",
+      "icon": "🩺",
+      "folder": "23_Face_Presentation",
+      "slidesPath": "23_Face_Presentation/slides",
+      "slideCount": 12,
+      "slides": [
+        "slide-01.html","slide-02.html","slide-03.html","slide-04.html","slide-05.html",
+        "slide-06.html","slide-07.html","slide-08.html","slide-09.html","slide-10.html",
+        "slide-11.html","slide-12.html"
+      ],
+      "slideTitles": [
+        "Face Presentation — Cover",
+        "Slide 02","Slide 03","Slide 04","Slide 05",
+        "Slide 06","Slide 07","Slide 08","Slide 09","Slide 10",
+        "Slide 11","Slide 12"
+      ]
+    },
+    {
+      "type": "heading",
+      "title": "Postpartum & Operative Obstetrics",
+      "icon": "🔧",
+      "description": "Postpartum care, operative vaginal delivery, and cesarean section"
+    },
+    {
+      "id": "5_Postpartum_Operative_Obstetrics",
+      "title": "5 — Postpartum & Operative Obstetrics",
+      "description": "Postpartum hemorrhage, retained placenta, uterine inversion, operative vaginal delivery, and cesarean section",
+      "icon": "🔧",
+      "folder": "slides 5_Postpartum_Operative_Obstetrics",
+      "slidesPath": "slides 5_Postpartum_Operative_Obstetrics",
+      "slideCount": 62,
+      "slides": [
+        "slide-01.html","slide-02.html","slide-03.html","slide-04.html","slide-05.html",
+        "slide-06.html","slide-07.html","slide-08.html","slide-09.html","slide-10.html",
+        "slide-11.html","slide-12.html","slide-13.html","slide-14.html","slide-15.html",
+        "slide-16.html","slide-17.html","slide-18.html","slide-19.html","slide-20.html",
+        "slide-21.html","slide-22.html","slide-23.html","slide-24.html","slide-25.html",
+        "slide-26.html","slide-27.html","slide-28.html","slide-29.html","slide-30.html",
+        "slide-31.html","slide-32.html","slide-33.html","slide-34.html","slide-35.html",
+        "slide-36.html","slide-37.html","slide-38.html","slide-39.html","slide-40.html",
+        "slide-41.html","slide-42.html","slide-43.html","slide-44.html","slide-45.html",
+        "slide-46.html","slide-47.html","slide-48.html","slide-49.html","slide-50.html",
+        "slide-51.html","slide-52.html","slide-53.html","slide-54.html","slide-55.html",
+        "slide-56.html","slide-57.html","slide-58.html","slide-59.html","slide-60.html",
+        "slide-61.html","slide-62.html"
+      ],
+      "slideTitles": [
+        "Postpartum & Operative Obstetrics — Cover",
+        "Slide 02","Slide 03","Slide 04","Slide 05",
+        "Slide 06","Slide 07","Slide 08","Slide 09","Slide 10",
+        "Slide 11","Slide 12","Slide 13","Slide 14","Slide 15",
+        "Slide 16","Slide 17","Slide 18","Slide 19","Slide 20",
+        "Slide 21","Slide 22","Slide 23","Slide 24","Slide 25",
+        "Slide 26","Slide 27","Slide 28","Slide 29","Slide 30",
+        "Slide 31","Slide 32","Slide 33","Slide 34","Slide 35",
+        "Slide 36","Slide 37","Slide 38","Slide 39","Slide 40",
+        "Slide 41","Slide 42","Slide 43","Slide 44","Slide 45",
+        "Slide 46","Slide 47","Slide 48","Slide 49","Slide 50",
+        "Slide 51","Slide 52","Slide 53","Slide 54","Slide 55",
+        "Slide 56","Slide 57","Slide 58","Slide 59","Slide 60",
+        "Slide 61","Slide 62"
+      ]
     }
   ],
-  "totalTopics": 5,
-  "totalSlides": 191
+  "totalTopics": 13,
+  "totalSlides": 492
 };

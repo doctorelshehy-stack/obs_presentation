@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px; height:540px; background:#fdf0d5; font-family:'Times New Roman',serif; color:#264653; overflow:hidden;">
+
+<div style="position:absolute; top:0; left:0; width:960px; height:540px; background:#fdf0d5;"></div>
+<div style="position:absolute; top:30px; left:60px;">
+  <p style="font-size:32px; color:#264653; font-weight:700; margin:0;">Methotrexate &mdash; Protocols</p>
+  <div style="width:80px; height:4px; background:#2a9d8f; margin-top:10px;"></div>
+</div>
+<div style="position:absolute; top:95px; left:60px; right:60px;">
+  <table style="width:100%; border-collapse:collapse; font-size:14px; color:#264653; background:#ffffff; box-shadow:0 2px 8px rgba(0,0,0,0.08); border-radius:8px; overflow:hidden;">
+    <tr style="background:#264653; color:#ffffff;">
+      <th style="padding:10px 12px; text-align:left; font-weight:700;">Parameter</th>
+      <th style="padding:10px 12px; text-align:left; font-weight:700;">Single Dose</th>
+      <th style="padding:10px 12px; text-align:left; font-weight:700;">Two Dose</th>
+    </tr>
+    <tr style="border-bottom:1px solid #e9ecef;">
+      <td style="padding:8px 12px; font-weight:700;">Dosing</td>
+      <td style="padding:8px 12px;">One dose; repeat if necessary</td>
+      <td style="padding:8px 12px;">Days 0 and 4</td>
+    </tr>
+    <tr style="border-bottom:1px solid #e9ecef;">
+      <td style="padding:8px 12px; font-weight:700;">Medication Dosage</td>
+      <td style="padding:8px 12px;">50 mg/m&sup2; BSA on day-1</td>
+      <td style="padding:8px 12px;">50 mg/m&sup2; BSA per dose</td>
+    </tr>
+    <tr style="border-bottom:1px solid #e9ecef;">
+      <td style="padding:8px 12px; font-weight:700;">Serum &beta;-hCG level</td>
+      <td style="padding:8px 12px;">Days 0, 4, and 7</td>
+      <td style="padding:8px 12px;">Days 0, 4, 7. Days 11 and 14 if repeat dose given</td>
+    </tr>
+    <tr style="border-bottom:1px solid #e9ecef;">
+      <td style="padding:8px 12px; font-weight:700;">Indication for additional dose</td>
+      <td style="padding:8px 12px;">If &beta;-hCG does not decline by 15% from day 4 to day 7</td>
+      <td style="padding:8px 12px;">If &lt;15% decline from day 4 to 7 OR day 7 to 11</td>
+    </tr>
+    <tr>
+      <td style="padding:8px 12px; font-weight:700;">Post-therapy surveillance</td>
+      <td style="padding:8px 12px;">Weekly until &beta;-hCG undetectable</td>
+      <td style="padding:8px 12px;">Weekly until &beta;-hCG undetectable</td>
+    </tr>
+  </table>
+  <div style="background:rgba(233,196,106,0.15); border-radius:8px; padding:10px 16px; margin-top:12px;">
+    <p style="font-size:13px; color:#264653; margin:0;"><strong>Key monitoring:</strong> &ge;15% decline in &beta;-hCG between measured timepoints indicates treatment response.</p>
+  </div>
+</div>
+
+
+<div style="position:absolute; right:32px; bottom:24px; z-index:100;">
+  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="18" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+    <text x="20" y="26" text-anchor="middle" font-family="Times New Roman, serif" font-size="16" font-weight="700" fill="#ffffff">37</text>
+  </svg>
+</div>
+</div>
+</body>
+</html>

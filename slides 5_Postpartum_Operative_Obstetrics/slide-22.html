@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px; height:540px; background:#fdf0d5; font-family:'Times New Roman',serif; color:#264653; overflow:hidden;">
+
+<div style="position:absolute; top:24px; left:40px;">
+  <p style="font-size:20px; color:#2a9d8f; font-weight:700; margin:0 0 4px 0;">Student Activity &amp; Questions</p>
+  <p style="font-size:14px; color:#264653; margin:0 0 10px 0;">Complications of Third Stage of Labor</p>
+  <div style="width:60px; height:3px; background:#e9c46a; margin-bottom:10px;"></div>
+</div>
+<div style="position:absolute; top:96px; left:40px; right:40px; display:grid; grid-template-columns:1fr; gap:16px;">
+  <div style="background:#ffffff; border-radius:8px; padding:18px 24px; box-shadow:0 2px 8px rgba(0,0,0,0.08); border-left:4px solid #2a9d8f;">
+    <p style="font-size:17px; color:#2a9d8f; font-weight:700; margin:0 0 8px 0;">Student Activity</p>
+    <p style="font-size:15px; color:#264653; margin:0; line-height:1.5;">Each group of students are requested to prepare illustrative diagrams of each form of postpartum hemorrhage and collapse aided by their tutor of bedside part of the clinical round.</p>
+  </div>
+  <div style="background:#ffffff; border-radius:8px; padding:18px 24px; box-shadow:0 2px 8px rgba(0,0,0,0.08); border-left:4px solid #f4a261;">
+    <p style="font-size:17px; color:#f4a261; font-weight:700; margin:0 0 8px 0;">Questions</p>
+    <p style="font-size:15px; color:#264653; margin:0;">Link: <span style="color:#2a9d8f;">https://forms.gle/DH4XFpZ7vchmqPCt5</span></p>
+  </div>
+</div>
+
+
+<div style="position:absolute; right:32px; bottom:24px; z-index:100;">
+  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="18" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+    <text x="20" y="26" text-anchor="middle" font-family="Times New Roman, serif" font-size="16" font-weight="700" fill="#ffffff">22</text>
+  </svg>
+</div>
+</div>
+</body>
+</html>

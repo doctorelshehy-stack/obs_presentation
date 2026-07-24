@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#264653;font-family:'Times New Roman',serif;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#264653;"></div>
+<div style="position:absolute;top:25px;left:60px;z-index:10;">
+  <p style="font-size:30px;font-weight:700;color:#ffffff;margin:0;">Shoulder Dystocia — Complications</p>
+  <div style="width:60px;height:4px;background:#2a9d8f;margin:6px 0 12px 0;"></div>
+</div>
+<div style="position:absolute;top:78px;left:60px;right:60px;z-index:10;display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:16px;border-left:4px solid #e76f51;">
+    <p style="font-size:20px;font-weight:700;color:#e76f51;margin:0 0 8px 0;">Fetal Complications</p>
+    <ul style="margin:0;padding-left:20px;color:#ffffff;font-size:15px;line-height:1.6;">
+      <li><b style="color:#f4a261;">Brachial plexus injury</b></li>
+      <li><b style="color:#f4a261;">Erb's palsy</b></li>
+      <li>Bone fractures (humerus and clavicle)</li>
+      <li>Hypoxic ischemic brain injury</li>
+      <li><b style="color:#e76f51;">Fetal death</b></li>
+    </ul>
+  </div>
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:16px;border-left:4px solid #e76f51;">
+    <p style="font-size:20px;font-weight:700;color:#e76f51;margin:0 0 8px 0;">Maternal Complications</p>
+    <ul style="margin:0;padding-left:20px;color:#ffffff;font-size:15px;line-height:1.6;">
+      <li><b style="color:#e76f51;">Post-partum hemorrhage</b></li>
+      <li>Vaginal lacerations and anal tears</li>
+      <li><b style="color:#e76f51;">Uterine rupture</b></li>
+      <li>Maternal psychological stress</li>
+    </ul>
+  </div>
+</div>
+<div style="position:absolute;top:320px;left:60px;right:60px;z-index:10;">
+  <div style="background:rgba(233,196,106,0.1);border-radius:8px;padding:12px 16px;border:1px solid #e9c46a;">
+    <p style="font-size:15px;color:#e9c46a;margin:0;font-weight:700;">ILOs of Shoulder Dystocia Chapter</p>
+    <ul style="margin:0;padding-left:20px;color:#ffffff;font-size:13px;line-height:1.4;">
+      <li>Understand definition of shoulder dystocia</li>
+      <li>Outline the risk factors of such obstetric emergency</li>
+      <li>Describe the clinical picture and management of shoulder dystocia</li>
+      <li>Explain possible maternal and fetal complications</li>
+    </ul>
+  </div>
+</div>
+<div style="position:absolute;top:440px;left:60px;right:60px;z-index:10;">
+  <div style="background:rgba(231,111,81,0.15);border-radius:6px;padding:6px 12px;border:1px solid #e76f51;">
+    <p style="font-size:12px;color:#edf6f9;margin:0;"><b style="color:#e9c46a;">Student Activity:</b> Attend departmental skill lab to revise various maneuvers for management of shoulder dystocia on pelvic manikin.</p>
+  </div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="40" height="32" rx="4" fill="#2a9d8f"/>
+  <text x="20" y="22" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">39</text>
+</svg>
+</div>
+</body>
+</html>

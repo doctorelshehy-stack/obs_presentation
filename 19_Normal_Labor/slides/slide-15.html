@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script></head>
+<body>
+<div class="slide-content" style="background:#ffffff;font-family:"Times New Roman", serif;overflow:hidden;">
+<svg style="position:absolute;top:0;left:0;width:960px;height:8px;" aria-hidden="true"><rect x="0" y="0" width="960" height="8" fill="#00b4d8"/></svg>
+<p style="position:absolute;top:-5px;left:60px;font-size:26px;font-weight:700;color:#03045e;">Second Stage of Labor</p>
+<div style="position:absolute;top:48px;left:60px;width:80px;height:3px;background:#00b4d8;border-radius:1.5px;"></div>
+<div style="position:absolute;top:66px;left:60px;font-size:13px;color:#03045e;line-height:1.6;max-width:840px;">
+<p style="margin:0 0 6px 0;">Begins from <b>full dilatation of cervix</b> and ends with <b>expulsion of fetus</b>.</p>
+<p style="margin:0 0 6px 0;">In the second stage, the <b>expulsive efforts by a woman</b> play more important role than uterine contractions.</p>
+</div>
+<table style="position:absolute;top:160px;left:60px;width:840px;border-collapse:collapse;font-size:12px;">
+<tr style="background:#03045e;color:#ffffff;">
+<th style="padding:8px 12px;text-align:left;">Condition</th>
+<th style="padding:8px 12px;text-align:center;">Nulliparous</th>
+<th style="padding:8px 12px;text-align:center;">Multiparous</th>
+</tr>
+<tr style="background:#caf0f8;"><td style="padding:8px 12px;font-weight:600;">Normal</td><td style="padding:8px 12px;text-align:center;">1 hr</td><td style="padding:8px 12px;text-align:center;">30 mins</td></tr>
+<tr><td style="padding:8px 12px;font-weight:600;">Prolonged (without epidural)</td><td style="padding:8px 12px;text-align:center;">2 hrs (+1 for arrest)</td><td style="padding:8px 12px;text-align:center;">1 hr (+1 for arrest)</td></tr>
+<tr style="background:#caf0f8;"><td style="padding:8px 12px;font-weight:600;">Prolonged (with epidural)</td><td style="padding:8px 12px;text-align:center;">3 hrs (+1 for arrest)</td><td style="padding:8px 12px;text-align:center;">2 hrs (+1 for arrest)</td></tr>
+</table>
+<div style="position:absolute;top:330px;left:60px;background:rgba(0,180,216,0.06);border-radius:8px;padding:14px;width:820px;border-left:3px solid #0077b6;">
+<div style="font-size:13px;font-weight:700;color:#0077b6;margin-bottom:4px;">2nd Stage Arrest</div>
+<div style="font-size:12px;color:#03045e;line-height:1.5;">When there is no change in descent of head for <b>1 hour more than prolonged</b>.</div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;" width="40" height="40" aria-hidden="true">
+<rect x="0" y="0" width="40" height="40" rx="6" fill="#03045e" opacity="0.85"/>
+<text x="20" y="27" text-anchor="middle" font-family="Times New Roman", serif font-size="16" font-weight="700" fill="#ffffff">15</text>
+</svg>
+</div>
+</body>
+</html>

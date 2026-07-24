@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px; height:540px; background:#fdf0d5; font-family:'Times New Roman',serif; color:#264653; overflow:hidden;">
+
+<div style="position:absolute; top:20px; left:36px;">
+  <p style="font-size:20px; color:#2a9d8f; font-weight:700; margin:0 0 2px 0;">CS — Subsequent Deliveries &amp; Special Procedures</p>
+  <p style="font-size:13px; color:#264653; margin:0 0 6px 0;">Operative Obstetrics</p>
+  <div style="width:60px; height:3px; background:#e9c46a; margin-bottom:6px;"></div>
+</div>
+<div style="position:absolute; top:74px; left:36px; right:36px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+  <div style="background:#ffffff; border-radius:8px; padding:10px 14px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    <p style="font-size:15px; color:#2a9d8f; font-weight:700; margin:0 0 4px 0;">VBAC (Vaginal Birth after CS)</p>
+    <ul style="font-size:13px; color:#264653; margin:0; padding-left:18px; line-height:1.5;">
+      <li>The dictum &ldquo;once cesarean always cesarean&rdquo; is changed to &ldquo;once lower segment cesarean always hospital delivery (in a well-equipped hospital).&rdquo;</li>
+      <li>Repeated CS if indicated.</li>
+      <li>If no indication for repeated CS, a trial of vaginal delivery is allowed in hospital with careful observation (VBAC).</li>
+      <li><strong>Applies only for lower segment CS.</strong> No vaginal trial for upper segment CS (higher risk of ruptured uterus: 4% or more).</li>
+    </ul>
+  </div>
+  <div style="display:grid; grid-template-columns:1fr; gap:8px;">
+    <div style="background:#ffffff; border-radius:8px; padding:8px 14px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <p style="font-size:14px; color:#e76f51; font-weight:700; margin:0 0 2px 0;">Indications of Cesarean Hysterectomy</p>
+      <ul style="font-size:12px; color:#264653; margin:0; padding-left:16px; line-height:1.4;">
+        <li>Uncontrolled postpartum hemorrhage</li>
+        <li>Concealed accidental hemorrhage (uterus doesn&rsquo;t respond to usual measures)</li>
+        <li>Operable carcinoma of the cervix</li>
+        <li>Placenta accreta</li>
+        <li>Multiple fibroids in a relatively old patient</li>
+      </ul>
+    </div>
+    <div style="background:#ffffff; border-radius:8px; padding:8px 14px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <p style="font-size:14px; color:#264653; font-weight:700; margin:0 0 2px 0;">Postmortem CS</p>
+      <p style="font-size:12px; color:#264653; margin:0;">Emergency CS within <strong>10 minutes of the death</strong> of the mother to save the living fetus.</p>
+      <p style="font-size:14px; color:#264653; font-weight:700; margin:6px 0 2px 0;">Sterilization during CS</p>
+      <p style="font-size:12px; color:#264653; margin:0;">Patient may ask for sterilization during 3rd or 4th CS. Performed by excision of a portion of both tubes and ligation, or bilateral excision of interstitial portion of fallopian tube.</p>
+    </div>
+  </div>
+</div>
+
+
+<div style="position:absolute; right:32px; bottom:24px; z-index:100;">
+  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="18" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+    <text x="20" y="26" text-anchor="middle" font-family="Times New Roman, serif" font-size="16" font-weight="700" fill="#ffffff">44</text>
+  </svg>
+</div>
+</div>
+</body>
+</html>

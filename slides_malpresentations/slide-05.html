@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#264653;font-family:'Times New Roman',serif;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#264653;"></div>
+<div style="position:absolute;top:30px;left:60px;z-index:10;">
+  <p style="font-size:32px;font-weight:700;color:#ffffff;margin:0;">Brow Presentation — Diagnosis</p>
+  <div style="width:60px;height:4px;background:#2a9d8f;margin:6px 0 15px 0;"></div>
+</div>
+<div style="position:absolute;top:85px;left:60px;right:60px;z-index:10;">
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:16px;margin-bottom:16px;border-left:4px solid #e9c46a;">
+    <p style="font-size:22px;font-weight:700;color:#e9c46a;margin:0 0 10px 0;">During Pregnancy</p>
+    <ul style="margin:0;padding-left:20px;color:#ffffff;font-size:16px;line-height:1.7;">
+      <li>The <b style="color:#f4a261;">occiput and sinciput</b> are felt at the same level on abdominal palpation</li>
+      <li><b style="color:#f4a261;">Ultrasound</b> is conclusive in confirming diagnosis</li>
+    </ul>
+  </div>
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:16px;border-left:4px solid #e76f51;">
+    <p style="font-size:22px;font-weight:700;color:#e9c46a;margin:0 0 10px 0;">During Labor (Per Vaginal Examination)</p>
+    <ul style="margin:0;padding-left:20px;color:#ffffff;font-size:16px;line-height:1.7;">
+      <li>The <b style="color:#f4a261;">frontal bone</b> is felt</li>
+      <li>The <b style="color:#f4a261;">supraorbital ridge</b> is felt</li>
+      <li>The <b style="color:#f4a261;">root of the nose</b> is felt</li>
+      <li>The <b style="color:#e76f51;">chin is NOT felt</b> (key distinguishing feature from face presentation)</li>
+    </ul>
+  </div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="40" height="32" rx="4" fill="#2a9d8f"/>
+  <text x="20" y="22" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">5</text>
+</svg>
+</div>
+</body>
+</html>

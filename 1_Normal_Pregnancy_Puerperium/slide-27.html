@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#264653;font-family:'Times New Roman',serif;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#264653;"></div>
+<div style="position:absolute;top:22px;left:60px;z-index:10;">
+  <p style="font-size:30px;color:#ffffff;font-weight:700;margin:0;">Diagnosis of 1st Trimester</p>
+  <div style="width:60px;height:4px;background:#2a9d8f;margin:6px 0 12px 0;"></div>
+</div>
+<div style="position:absolute;top:70px;left:55px;right:55px;bottom:55px;z-index:10;overflow:hidden;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;">
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #2a9d8f;margin-bottom:10px;">
+  <p style="font-size:17px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Symptoms</p>
+  <div style="font-size:14px;color:#ffffff;margin:0;line-height:1.4;"><ul style="margin:0;padding-left:18px;color:#ffffff;font-size:14px;line-height:1.5;">
+      <li><b>Secondary amenorrhea</b></li>
+      <li><b>Frequency of micturition:</b> Pressure by enlarged uterus on UB + pelvic congestion</li>
+      <li><b>Nausea and vomiting:</b> Appears at 6 wks, disappears at 12 wks</li>
+      <li><b>Breast symptoms:</b> Enlargement, mastodynia, fullness</li>
+</ul></div>
+</div>
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #e9c46a;margin-bottom:10px;">
+  <p style="font-size:17px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Signs</p>
+  <div style="font-size:13px;color:#ffffff;margin:0;line-height:1.4;"><ul style="margin:0;padding-left:18px;color:#ffffff;font-size:14px;line-height:1.5;">
+      <li><b>Skin:</b> Chloasma, linea nigra, striae</li>
+      <li><b>Breast:</b> Pigmentation, Montgomery tubercles, colostrum</li>
+      <li><b>Vaginal & cervical:</b> Bluish discoloration of vulva, vagina, cervix</li>
+      <li><b>Uterine signs:</b> Size ↑, shape globular, consistency soft</li>
+      <li><b>Hegar sign:</b> Difference in consistency between cervix (firm) and body (softer)</li>
+      <li><b>Palmar sign:</b> Painless contractions followed by relaxation, no cervical dilatation</li>
+</ul></div>
+</div>
+</div>
+<div style="margin-top:4px;">
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #e76f51;margin-bottom:10px;">
+  <div style="font-size:13px;color:#ffffff;margin:0;line-height:1.4;"><p style="font-size:13px;color:#ffffff;margin:0;line-height:1.4;"><b style="color:#e76f51;">Hegar's sign</b> — extra uterine softening in the lower uterine segment, detected by bimanual examination. The cervix feels firm while the isthmus is thin and soft.</p></div>
+</div>
+</div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="40" height="32" rx="4" fill="#2a9d8f"/>
+  <text x="20" y="22" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">27</text>
+</svg>
+</div>
+</body>
+</html>

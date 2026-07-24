@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#264653;font-family:'Times New Roman',serif;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#264653;"></div>
+<div style="position:absolute;top:25px;left:60px;z-index:10;">
+  <p style="font-size:30px;font-weight:700;color:#ffffff;margin:0;">Assisted Breech Delivery — Sequential Maneuvers</p>
+  <div style="width:60px;height:4px;background:#2a9d8f;margin:6px 0 12px 0;"></div>
+</div>
+<div style="position:absolute;top:78px;left:60px;right:60px;z-index:10;">
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;margin-bottom:8px;border-left:4px solid #2a9d8f;">
+    <p style="font-size:16px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">1. Initial Delivery &amp; Traction</p>
+    <p style="font-size:13px;color:#ffffff;margin:0;line-height:1.4;">With a <b style="color:#f4a261;">towel wrapped around fetal hips</b>, gentle downward and outward traction is applied with maternal expulsive efforts until the <b style="color:#f4a261;">scapula is reached</b>. An assistant applies gentle fundal pressure to keep the head flexed.</p>
+  </div>
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;margin-bottom:8px;border-left:4px solid #e9c46a;">
+    <p style="font-size:16px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">2. Arm Delivery — Løvset Maneuver</p>
+    <p style="font-size:13px;color:#ffffff;margin:0;line-height:1.4;">Once the scapula is visible, <b style="color:#f4a261;">rotate the infant 90°</b> and gently sweep the <b style="color:#f4a261;">anterior arm</b> out of the vagina by pressing on the inner aspect of the arm or elbow. Then rotate the infant <b style="color:#f4a261;">180° in the reverse direction</b>, and sweep the other arm out. Finally rotate back 90° so the back is anterior.</p>
+  </div>
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #e76f51;">
+    <p style="font-size:16px;font-weight:700;color:#e76f51;margin:0 0 4px 0;">3. Head Delivery</p>
+    <p style="font-size:13px;color:#ffffff;margin:0;line-height:1.4;">The fetal head should be maintained in a <b style="color:#f4a261;">flexed position</b> to allow passage of the smallest diameter. This can be accomplished by:</p>
+    <ul style="margin:0;padding-left:18px;color:#ffffff;font-size:12px;line-height:1.4;">
+      <li><b style="color:#f4a261;">Mauriceau-Smellie-Veit maneuver:</b> Operator's index and middle fingers over the maxilla, assistant applies suprapubic pressure</li>
+      <li><b style="color:#f4a261;">Piper forceps:</b> Used to maintain the head in a flexed position</li>
+    </ul>
+    <p style="font-size:13px;color:#e76f51;margin:8px 0 0 0;"><b>⚠ Important:</b> Avoid extreme elevation of the body during head delivery, which may cause hyperextension of the cervical spine and potential neurologic injury.</p>
+  </div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="40" height="32" rx="4" fill="#2a9d8f"/>
+  <text x="20" y="22" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">21</text>
+</svg>
+</div>
+</body>
+</html>

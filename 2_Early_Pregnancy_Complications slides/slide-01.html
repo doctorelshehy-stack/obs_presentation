@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px; height:540px; background:#fdf0d5; font-family:'Times New Roman',serif; color:#264653; overflow:hidden;">
+
+<div style="position:absolute; top:0; left:0; width:960px; height:540px; background:linear-gradient(135deg, #264653 0%, #2a9d8f 100%);"></div>
+<div style="position:absolute; top:0; left:0; width:960px; height:540px;">
+  <svg width="960" height="540" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="800" cy="100" r="200" fill="rgba(233,196,106,0.08)"/>
+    <circle cx="150" cy="450" r="150" fill="rgba(244,162,97,0.08)"/>
+    <circle cx="480" cy="270" r="300" fill="rgba(231,111,81,0.05)"/>
+    <line x1="60" y1="180" x2="160" y2="180" stroke="#e9c46a" stroke-width="5"/>
+  </svg>
+</div>
+<div style="position:absolute; top:120px; left:70px;">
+  <p style="font-size:28px; color:rgba(255,255,255,0.7); margin:0; font-weight:400;">Department of Obstetrics &amp; Gynecology</p>
+  <p style="font-size:52px; color:#e9c46a; margin:20px 0 0 0; font-weight:700; line-height:1.1;">Early Pregnancy<br>Complications</p>
+  <p style="font-size:22px; color:rgba(255,255,255,0.85); margin:30px 0 0 0; font-weight:400;">Abortion &bull; Ectopic Pregnancy &bull; Gestational Trophoblastic Disease</p>
+  <p style="font-size:16px; color:rgba(255,255,255,0.5); margin:50px 0 0 0;">Obstetrics &amp; Gynecology &mdash; Clinical Module</p>
+</div>
+
+
+</div>
+</body>
+</html>

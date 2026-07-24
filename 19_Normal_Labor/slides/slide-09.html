@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script></head>
+<body>
+<div class="slide-content" style="background:#ffffff;font-family:"Times New Roman", serif;overflow:hidden;">
+<svg style="position:absolute;top:0;left:0;width:960px;height:8px;" aria-hidden="true"><rect x="0" y="0" width="960" height="8" fill="#00b4d8"/></svg>
+<p style="position:absolute;top:-5px;left:60px;font-size:28px;font-weight:700;color:#03045e;">Uterine Contractions</p>
+<div style="position:absolute;top:52px;left:60px;width:80px;height:3px;background:#00b4d8;border-radius:1.5px;"></div>
+<div style="position:absolute;top:70px;left:60px;font-size:13px;color:#03045e;line-height:1.6;max-width:840px;">
+<p style="margin:0 0 8px 0;">Throughout pregnancy, a pregnant female experiences contractions which are <b>painless and irregular</b> called as <b>Braxton Hicks contractions</b>.</p>
+<p style="margin:0 0 8px 0;">During labor: the contractions are <b>painful</b> and lead to <b>dilatation of cervix</b>.</p>
+<p style="margin:0 0 8px 0;">The <b>pacemaker</b> of uterine contractions is situated at the <b>cornu</b> (the right pacemaker predominates over the left).</p>
+<p style="margin:0 0 8px 0;">Contractions spread from pacemaker area throughout uterus at <b>2 cm/sec</b>, depolarizing the whole organ within <b>15 secs</b>.</p>
+<p style="margin:0;">Contractions are predominant over the <b>fundus</b>.</p>
+</div>
+<div style="position:absolute;top:300px;left:60px;font-size:18px;font-weight:700;color:#03045e;">Units for Measuring</div>
+<div style="position:absolute;top:332px;left:60px;display:flex;gap:20px;">
+<div style="flex:1;background:#caf0f8;border-radius:8px;padding:16px;text-align:center;">
+<div style="font-size:24px;font-weight:700;color:#0077b6;">mmHg</div>
+<div style="font-size:12px;color:#03045e;margin-top:4px;">Standard pressure unit</div>
+</div>
+<div style="flex:1;background:#caf0f8;border-radius:8px;padding:16px;text-align:center;">
+<div style="font-size:18px;font-weight:700;color:#0077b6;">Montevideo Unit</div>
+<div style="font-size:12px;color:#03045e;margin-top:4px;">1 MV unit = Intensity × number of contractions in 3 minutes</div>
+</div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;" width="40" height="40" aria-hidden="true">
+<rect x="0" y="0" width="40" height="40" rx="6" fill="#03045e" opacity="0.85"/>
+<text x="20" y="27" text-anchor="middle" font-family="Times New Roman", serif font-size="16" font-weight="700" fill="#ffffff">09</text>
+</svg>
+</div>
+</body>
+</html>

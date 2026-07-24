@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px; height:540px; background:#fdf0d5; font-family:'Times New Roman',serif; color:#264653; overflow:hidden;">
+
+<div style="position:absolute; top:0; left:0; width:960px; height:540px; background:#fdf0d5;"></div>
+<div style="position:absolute; top:30px; left:60px;">
+  <p style="font-size:32px; color:#264653; font-weight:700; margin:0;">Cesarean Section Scar Pregnancy</p>
+  <div style="width:80px; height:4px; background:#2a9d8f; margin-top:10px;"></div>
+</div>
+<div style="position:absolute; top:90px; left:60px; right:60px;">
+  <div style="background:#ffffff; border-radius:8px; padding:16px 20px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    <p style="font-size:15px; color:#264653; margin:0; line-height:1.5;">Implantation of the pregnancy sac within the scar of a previous cesarean delivery. It can cause serious maternal morbidity and mortality from <strong>massive hemorrhage</strong>.</p>
+  </div>
+  <div style="background:#ffffff; border-radius:8px; padding:16px 20px; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin-top:12px;">
+    <p style="font-size:17px; color:#2a9d8f; font-weight:700; margin:0 0 8px 0;">Four Sonographic Criteria:</p>
+    <ol style="font-size:14px; color:#264653; margin:0; padding-left:18px; line-height:1.6;">
+      <li>An <strong>empty uterine cavity</strong>.</li>
+      <li>An <strong>empty cervical canal</strong>.</li>
+      <li>A gestational sac in the <strong>anterior part of the uterine isthmus</strong>.</li>
+      <li><strong>Absence of healthy myometrium</strong> between the bladder and gestational sac.</li>
+    </ol>
+  </div>
+  <div style="background:#ffffff; border-radius:8px; padding:12px 20px; box-shadow:0 2px 8px rgba(0,0,0,0.08); margin-top:12px;">
+    <p style="font-size:14px; color:#264653; margin:0; line-height:1.5;">Imaging with <strong>3D color Doppler</strong> or <strong>MRI</strong> can aid in evaluation. Treatment: methotrexate, or resection by laparoscopy or laparotomy.</p>
+  </div>
+</div>
+
+
+<div style="position:absolute; right:32px; bottom:24px; z-index:100;">
+  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="18" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+    <text x="20" y="26" text-anchor="middle" font-family="Times New Roman, serif" font-size="16" font-weight="700" fill="#ffffff">43</text>
+  </svg>
+</div>
+</div>
+</body>
+</html>

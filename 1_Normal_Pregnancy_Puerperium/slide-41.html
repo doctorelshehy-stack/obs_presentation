@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#264653;font-family:'Times New Roman',serif;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#264653;"></div>
+<div style="position:absolute;top:22px;left:60px;z-index:10;">
+  <p style="font-size:30px;color:#ffffff;font-weight:700;margin:0;">Pelvic Inlet Diameters</p>
+  <div style="width:60px;height:4px;background:#2a9d8f;margin:6px 0 10px 0;"></div>
+</div>
+<div style="position:absolute;top:72px;left:55px;right:55px;bottom:50px;z-index:10;overflow:hidden;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #2a9d8f;margin-bottom:8px;">
+  <p style="font-size:17px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Anteroposterior Diameters</p>
+  <div style="font-size:13px;color:#ffffff;margin:0;line-height:1.4;"><div style="font-size:13px;color:#ffffff;line-height:1.4;">
+    <b style="color:#e9c46a;">Anatomical (True) Conjugate</b> = 11 cm<br>
+    <span style="color:#2a9d8f;font-size:12px;">Tip of sacral promontory → upper border symphysis pubis</span><br>
+    <b style="color:#e9c46a;">Obstetric Conjugate</b> = 10.5 cm ← <b>shortest AP</b><br>
+    <span style="color:#2a9d8f;font-size:12px;">Tip of sacral promontory → most bulging point on back of symphysis (1 cm below upper border)</span><br>
+    <b style="color:#e9c46a;">Diagonal Conjugate</b> = 12.5 cm<br>
+    <span style="color:#2a9d8f;font-size:12px;">Tip of sacral promontory → lower border symphysis pubis</span>
+  </div></div>
+</div>
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #e9c46a;margin-bottom:8px;">
+  <p style="font-size:17px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Transverse & Oblique Diameters</p>
+  <div style="font-size:13px;color:#ffffff;margin:0;line-height:1.4;"><div style="font-size:13px;color:#ffffff;line-height:1.4;">
+    <b style="color:#e9c46a;">Transverse Diameters:</b><br>
+    • Anatomical transverse = <b>13 cm</b> (largest diameter in pelvis)<br>
+    <span style="font-size:12px;">Between farthest points on iliopectineal lines, 4 cm anterior to promontory, 7 cm behind symphysis</span><br>
+    • Obstetric transverse = <b>12 cm</b><br>
+    <span style="font-size:12px;">Bisects the true conjugate, slightly shorter than anatomical</span><br><br>
+    <b style="color:#e9c46a;">Oblique Diameters:</b><br>
+    • Right oblique = <b>12 cm</b> (R sacroiliac → L iliopectineal eminence)<br>
+    • Left oblique = <b>12 cm</b> (L sacroiliac → R iliopectineal eminence)<br>
+    • Sacro-cotyloid = <b>9.5 cm</b>
+  </div></div>
+</div>
+</div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="40" height="32" rx="4" fill="#2a9d8f"/>
+  <text x="20" y="22" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">41</text>
+</svg>
+</div>
+</body>
+</html>

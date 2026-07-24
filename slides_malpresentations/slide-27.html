@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#264653;font-family:'Times New Roman',serif;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#264653;"></div>
+<div style="position:absolute;top:25px;left:60px;z-index:10;">
+  <p style="font-size:30px;font-weight:700;color:#ffffff;margin:0;">Arrest of the Aftercoming Head</p>
+  <div style="width:60px;height:4px;background:#2a9d8f;margin:6px 0 12px 0;"></div>
+</div>
+<div style="position:absolute;top:78px;left:60px;right:60px;z-index:10;">
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:14px;margin-bottom:10px;border-left:4px solid #e76f51;">
+    <p style="font-size:17px;font-weight:700;color:#e76f51;margin:0 0 6px 0;">Causes and Management</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+      <div>
+        <p style="font-size:14px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Contracted Pelvis &amp; Large Head</p>
+        <ul style="margin:0;padding-left:18px;color:#ffffff;font-size:13px;line-height:1.4;">
+          <li>If fetus alive → <b style="color:#f4a261;">Symphysiotomy</b></li>
+          <li>If fetus dead → <b style="color:#e76f51;">Craniotomy</b></li>
+        </ul>
+      </div>
+      <div>
+        <p style="font-size:14px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Extension of the Head</p>
+        <ul style="margin:0;padding-left:18px;color:#ffffff;font-size:13px;line-height:1.4;">
+          <li>Burns-Marshall technique</li>
+          <li>Jaw flexion &amp; shoulder traction</li>
+          <li>Application of the forceps</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+    <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #2a9d8f;">
+      <p style="font-size:15px;font-weight:700;color:#2a9d8f;margin:0 0 4px 0;">Rigid Perineum</p>
+      <p style="font-size:14px;color:#ffffff;margin:0;">→ <b style="color:#f4a261;">Episiotomy</b></p>
+    </div>
+    <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #e76f51;">
+      <p style="font-size:15px;font-weight:700;color:#e76f51;margin:0 0 4px 0;">Incompletely Dilated Cervix</p>
+      <p style="font-size:14px;color:#ffffff;margin:0;">→ <b style="color:#e76f51;">Dührssen Incisions</b> made at <b style="color:#f4a261;">2, 6 &amp; 10 o'clock</b> positions on the cervix</p>
+    </div>
+  </div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="40" height="32" rx="4" fill="#2a9d8f"/>
+  <text x="20" y="22" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">27</text>
+</svg>
+</div>
+</body>
+</html>

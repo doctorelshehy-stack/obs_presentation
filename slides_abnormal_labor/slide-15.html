@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#264653;font-family:'Times New Roman',serif;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#264653;"></div>
+<div style="position:absolute;top:25px;left:60px;z-index:10;">
+  <p style="font-size:30px;font-weight:700;color:#ffffff;margin:0;">Obstructed Labor — Management &amp; Complications</p>
+  <div style="width:60px;height:4px;background:#2a9d8f;margin:6px 0 12px 0;"></div>
+</div>
+<div style="position:absolute;top:78px;left:60px;right:60px;z-index:10;display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:14px;border-left:4px solid #2a9d8f;">
+    <p style="font-size:18px;font-weight:700;color:#2a9d8f;margin:0 0 6px 0;">Management</p>
+    <p style="font-size:15px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Prevention</p>
+    <ul style="margin:0;padding-left:18px;color:#ffffff;font-size:13px;line-height:1.4;">
+      <li>Proper assessment with regular ANC visits</li>
+      <li>Early detection of maternal or fetal causes</li>
+      <li><b style="color:#f4a261;">Partogram</b> should be strictly followed</li>
+    </ul>
+    <p style="font-size:15px;font-weight:700;color:#e9c46a;margin:8px 0 4px 0;">General Management</p>
+    <ul style="margin:0;padding-left:18px;color:#ffffff;font-size:13px;line-height:1.4;">
+      <li>Assessment of general condition</li>
+      <li>Correction of dehydration with IV fluids</li>
+      <li>Broad spectrum antibiotics</li>
+      <li>Catheterization</li>
+      <li>Correction of acidosis</li>
+    </ul>
+    <p style="font-size:15px;font-weight:700;color:#e76f51;margin:8px 0 4px 0;">Obstetric Management</p>
+    <ul style="margin:0;padding-left:18px;color:#ffffff;font-size:13px;line-height:1.4;">
+      <li><b style="color:#e76f51;">Cesarean section</b> with <b style="color:#f4a261;">active management of 3rd stage</b> (fear of PPH)</li>
+      <li>Exploration of the birth canal</li>
+    </ul>
+  </div>
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:14px;border-left:4px solid #e76f51;">
+    <p style="font-size:18px;font-weight:700;color:#e76f51;margin:0 0 6px 0;">Complications</p>
+    <p style="font-size:15px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Maternal</p>
+    <ul style="margin:0;padding-left:18px;color:#ffffff;font-size:13px;line-height:1.5;">
+      <li><b style="color:#e76f51;">Postpartum hemorrhage</b></li>
+      <li><b style="color:#e76f51;">Rupture uterus</b></li>
+      <li>Sepsis</li>
+      <li>Fistula (vesicovaginal)</li>
+    </ul>
+    <p style="font-size:15px;font-weight:700;color:#e9c46a;margin:8px 0 4px 0;">Fetal</p>
+    <ul style="margin:0;padding-left:18px;color:#ffffff;font-size:13px;line-height:1.5;">
+      <li>Neonatal sepsis</li>
+      <li>Convulsions (fits)</li>
+      <li>Severe asphyxia</li>
+      <li><b style="color:#e76f51;">Death</b></li>
+    </ul>
+  </div>
+</div>
+<div style="position:absolute;top:420px;left:60px;right:60px;z-index:10;">
+  <div style="background:rgba(231,111,81,0.15);border-radius:6px;padding:6px 12px;border:1px solid #e76f51;">
+    <p style="font-size:12px;color:#edf6f9;margin:0;"><b style="color:#e9c46a;">Student Activity:</b> Check departmental emergency records for referred cases of obstructed labor, revise presentation and management.</p>
+  </div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="40" height="32" rx="4" fill="#2a9d8f"/>
+  <text x="20" y="22" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">15</text>
+</svg>
+</div>
+</body>
+</html>

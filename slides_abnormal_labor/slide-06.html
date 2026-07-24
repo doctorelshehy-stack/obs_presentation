@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#264653;font-family:'Times New Roman',serif;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#264653;"></div>
+<div style="position:absolute;top:25px;left:60px;z-index:10;">
+  <p style="font-size:30px;font-weight:700;color:#ffffff;margin:0;">Precipitate Labor</p>
+  <div style="width:60px;height:4px;background:#2a9d8f;margin:6px 0 12px 0;"></div>
+</div>
+<div style="position:absolute;top:80px;left:60px;right:60px;z-index:10;">
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;margin-bottom:10px;border-left:4px solid #e76f51;">
+    <p style="font-size:18px;font-weight:700;color:#e76f51;margin:0 0 4px 0;">Definition</p>
+    <p style="font-size:15px;color:#ffffff;margin:0;">A labor lasting <b style="color:#f4a261;">less than 3 hours</b>.</p>
+    <p style="font-size:15px;font-weight:700;color:#e9c46a;margin:10px 0 4px 0;">Etiology</p>
+    <p style="font-size:14px;color:#ffffff;margin:0;line-height:1.3;">More common in <b style="color:#f4a261;">multiparas</b> with: Strong uterine contractions + Small sized baby + Roomy pelvis.</p>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px;">
+    <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:10px;border-left:4px solid #e76f51;">
+      <p style="font-size:15px;font-weight:700;color:#e76f51;margin:0 0 4px 0;">Maternal Complications</p>
+      <ul style="margin:0;padding-left:16px;color:#ffffff;font-size:12px;line-height:1.4;">
+        <li>Lacerations: cervix, vagina, perineum</li>
+        <li>Placental abruption</li>
+        <li>Shock</li>
+        <li>Inversion of the uterus</li>
+        <li>Postpartum hemorrhage (no time for retraction)</li>
+        <li>Sepsis (lacerations &amp; unsuitable circumstances)</li>
+      </ul>
+    </div>
+    <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:10px;border-left:4px solid #e76f51;">
+      <p style="font-size:15px;font-weight:700;color:#e76f51;margin:0 0 4px 0;">Fetal Complications</p>
+      <ul style="margin:0;padding-left:16px;color:#ffffff;font-size:12px;line-height:1.4;">
+        <li>Intracranial hemorrhage (sudden compression/decompression)</li>
+        <li>Fetal asphyxia (reduced placental perfusion)</li>
+        <li>Avulsion of the umbilical cord</li>
+        <li>Fetal injury due to falling down</li>
+      </ul>
+    </div>
+  </div>
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:10px;border-left:4px solid #2a9d8f;">
+    <p style="font-size:15px;font-weight:700;color:#2a9d8f;margin:0 0 4px 0;">Management</p>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;">
+      <div><p style="font-size:12px;font-weight:700;color:#e9c46a;margin:0 0 2px 0;">Before Delivery</p><p style="font-size:11px;color:#ffffff;margin:0;">Hospitalize patient with previous precipitate labor before EDD.</p></div>
+      <div><p style="font-size:12px;font-weight:700;color:#e9c46a;margin:0 0 2px 0;">During Delivery</p><p style="font-size:11px;color:#ffffff;margin:0;">Tocolytics (B agonists), inhalation anesthesia (N₂O + O₂), episiotomy.</p></div>
+      <div><p style="font-size:12px;font-weight:700;color:#e9c46a;margin:0 0 2px 0;">After Delivery</p><p style="font-size:11px;color:#ffffff;margin:0;">Proper examination of genital system and fetus for injuries.</p></div>
+    </div>
+  </div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="40" height="32" rx="4" fill="#2a9d8f"/>
+  <text x="20" y="22" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">6</text>
+</svg>
+</div>
+</body>
+</html>

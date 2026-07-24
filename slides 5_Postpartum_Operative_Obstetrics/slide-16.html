@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px; height:540px; background:#fdf0d5; font-family:'Times New Roman',serif; color:#264653; overflow:hidden;">
+
+<div style="position:absolute; top:24px; left:40px;">
+  <p style="font-size:20px; color:#2a9d8f; font-weight:700; margin:0 0 4px 0;">Uterine Inversion — Risk Factors &amp; Degrees</p>
+  <p style="font-size:14px; color:#264653; margin:0 0 10px 0;">Complications of Third Stage of Labor</p>
+  <div style="width:60px; height:3px; background:#e9c46a; margin-bottom:10px;"></div>
+</div>
+<div style="position:absolute; top:96px; left:40px; right:40px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+  <div style="background:#ffffff; border-radius:8px; padding:12px 16px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    <p style="font-size:15px; color:#e76f51; font-weight:700; margin:0 0 4px 0;">Risk Factors</p>
+    <ul style="font-size:13px; color:#264653; margin:0; padding-left:18px; line-height:1.5;">
+      <li>Rapid labor</li>
+      <li>Invasive placentation</li>
+      <li>Manual removal of placenta</li>
+      <li>Short umbilical cord</li>
+    </ul>
+  </div>
+  <div style="background:#ffffff; border-radius:8px; padding:12px 16px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    <p style="font-size:15px; color:#2a9d8f; font-weight:700; margin:0 0 6px 0;">Degrees of Uterine Inversion</p>
+    <ul style="font-size:13px; color:#264653; margin:0; padding-left:18px; line-height:1.7;">
+      <li><strong>1st degree (incomplete):</strong> The fundus is depressed within the endometrial cavity.</li>
+      <li><strong>2nd degree (complete):</strong> The fundus protrudes through the cervical os.</li>
+      <li><strong>3rd degree (prolapsed):</strong> The fundus protrudes to or beyond the introitus.</li>
+    </ul>
+  </div>
+</div>
+<div style="position:absolute; bottom:70px; left:40px; right:40px; display:grid; grid-template-columns:1fr 1fr; gap:12px;">
+  <div style="background:#ffffff; border-radius:8px; padding:10px 16px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    <p style="font-size:15px; color:#e76f51; font-weight:700; margin:0 0 4px 0;">Symptoms</p>
+    <ul style="font-size:13px; color:#264653; margin:0; padding-left:18px; line-height:1.5;">
+      <li><strong>Pain:</strong> May be felt in the lower abdomen with bearing down.</li>
+      <li><strong>Hemorrhage:</strong> Due to uterine atony.</li>
+    </ul>
+  </div>
+  <div style="background:#ffffff; border-radius:8px; padding:10px 16px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    <p style="font-size:15px; color:#2a9d8f; font-weight:700; margin:0 0 4px 0;">Signs</p>
+    <ul style="font-size:13px; color:#264653; margin:0; padding-left:18px; line-height:1.5;">
+      <li><strong>General:</strong> Variable degrees of shock (hemorrhagic or neurogenic)</li>
+      <li><strong>Abdominal:</strong> Incomplete: cupping of fundus; Complete: uterus not felt</li>
+      <li><strong>Vaginal:</strong> Large mass in vagina covered by dark red endometrium</li>
+    </ul>
+  </div>
+</div>
+
+
+<div style="position:absolute; right:32px; bottom:24px; z-index:100;">
+  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="18" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+    <text x="20" y="26" text-anchor="middle" font-family="Times New Roman, serif" font-size="16" font-weight="700" fill="#ffffff">16</text>
+  </svg>
+</div>
+</div>
+</body>
+</html>

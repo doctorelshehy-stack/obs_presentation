@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script></head>
+<body>
+<div class="slide-content" style="background:#ffffff;font-family:"Times New Roman", serif;overflow:hidden;">
+<svg style="position:absolute;top:0;left:0;width:960px;height:8px;" aria-hidden="true"><rect x="0" y="0" width="960" height="8" fill="#00b4d8"/></svg>
+<p style="position:absolute;top:-5px;left:60px;font-size:28px;font-weight:700;color:#03045e;">Prelabor</p>
+<div style="position:absolute;top:52px;left:60px;width:80px;height:3px;background:#00b4d8;border-radius:1.5px;"></div>
+<div style="position:absolute;top:70px;left:60px;font-size:14px;color:#03045e;line-height:1.6;max-width:840px;">
+<p style="margin:0 0 10px 0;">It is the premonitory stage of labor and begins <b>2-3 weeks before</b> the onset of true labor in primigravida and <b>a few days before</b> in multipara.</p>
+<p style="margin:0 0 10px 0;">It is associated with an <b>increase in oxytocin receptors</b> in myometrium.</p>
+</div>
+<div style="position:absolute;top:200px;left:60px;display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;width:840px;">
+<div style="background:#caf0f8;border-radius:8px;padding:18px;text-align:center;border-top:3px solid #00b4d8;">
+<svg width="36" height="36" style="margin:0 auto 8px;" aria-hidden="true"><circle cx="18" cy="18" r="16" fill="#00b4d8" opacity="0.15"/><text x="18" y="23" text-anchor="middle" font-family=""Times New Roman", serif" font-size="14" fill="#0077b6">↓</text></svg>
+<div style="font-size:15px;font-weight:700;color:#0077b6;margin-bottom:4px;">Lightening</div>
+<div style="font-size:12px;color:#03045e;line-height:1.4;">Decrease in fundal height seen at term. Due to the descend of presenting part into the pelvis.</div>
+</div>
+<div style="background:#caf0f8;border-radius:8px;padding:18px;text-align:center;border-top:3px solid #0077b6;">
+<svg width="36" height="36" style="margin:0 auto 8px;" aria-hidden="true"><circle cx="18" cy="18" r="16" fill="#0077b6" opacity="0.15"/><text x="18" y="23" text-anchor="middle" font-family=""Times New Roman", serif" font-size="14" fill="#0077b6">C</text></svg>
+<div style="font-size:15px;font-weight:700;color:#0077b6;margin-bottom:4px;">Cervical Ripening</div>
+<div style="font-size:12px;color:#03045e;line-height:1.4;">Softening of the cervix in preparation for labor.</div>
+</div>
+<div style="background:#caf0f8;border-radius:8px;padding:18px;text-align:center;border-top:3px solid #03045e;">
+<svg width="36" height="36" style="margin:0 auto 8px;" aria-hidden="true"><circle cx="18" cy="18" r="16" fill="#03045e" opacity="0.1"/><text x="18" y="23" text-anchor="middle" font-family=""Times New Roman", serif" font-size="14" fill="#0077b6">!</text></svg>
+<div style="font-size:15px;font-weight:700;color:#0077b6;margin-bottom:4px;">False Labor Pains</div>
+<div style="font-size:12px;color:#03045e;line-height:1.4;">Irregular contractions that do not lead to cervical dilatation.</div>
+</div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;" width="40" height="40" aria-hidden="true">
+<rect x="0" y="0" width="40" height="40" rx="6" fill="#03045e" opacity="0.85"/>
+<text x="20" y="27" text-anchor="middle" font-family="Times New Roman", serif font-size="16" font-weight="700" fill="#ffffff">05</text>
+</svg>
+</div>
+</body>
+</html>

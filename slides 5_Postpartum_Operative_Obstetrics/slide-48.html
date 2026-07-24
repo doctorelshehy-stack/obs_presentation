@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px; height:540px; background:#fdf0d5; font-family:'Times New Roman',serif; color:#264653; overflow:hidden;">
+
+<div style="position:absolute; top:20px; left:36px;">
+  <p style="font-size:20px; color:#2a9d8f; font-weight:700; margin:0 0 2px 0;">Episiotomy</p>
+  <p style="font-size:13px; color:#264653; margin:0 0 6px 0;">Operative Obstetrics</p>
+  <div style="width:60px; height:3px; background:#e9c46a; margin-bottom:6px;"></div>
+</div>
+<div style="position:absolute; top:74px; left:36px; right:36px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+  <div style="background:#ffffff; border-radius:8px; padding:10px 14px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    <p style="font-size:15px; color:#2a9d8f; font-weight:700; margin:0 0 4px 0;">Definition</p>
+    <p style="font-size:13px; color:#264653; margin:0 0 8px 0;">An incision into the perineal body to enlarge the outlet area and facilitate delivery.</p>
+    <p style="font-size:15px; color:#2a9d8f; font-weight:700; margin:0 0 4px 0;">Types</p>
+    <ul style="font-size:13px; color:#264653; margin:0; padding-left:18px; line-height:1.5;">
+      <li><strong>Median type:</strong> Easier to repair but possible risk of unintended extension to anal sphincter complex.</li>
+      <li><strong>Mediolateral type:</strong> Requires more skill for repair.</li>
+    </ul>
+    <p style="font-size:15px; color:#2a9d8f; font-weight:700; margin:8px 0 4px 0;">Anesthesia</p>
+    <p style="font-size:13px; color:#264653; margin:0;">Local infiltration anesthesia.</p>
+  </div>
+  <div style="display:grid; grid-template-columns:1fr; gap:8px;">
+    <div style="background:#ffffff; border-radius:8px; padding:8px 14px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <p style="font-size:14px; color:#2a9d8f; font-weight:700; margin:0 0 2px 0;">Indications</p>
+      <ol style="font-size:12px; color:#264653; margin:0; padding-left:16px; line-height:1.4;">
+        <li>When there is impending perineal tear.</li>
+        <li>Vaginal delivery after complete perineal tear repair.</li>
+        <li>In cases of forceps or ventouse delivery, breech and preterm delivery.</li>
+      </ol>
+    </div>
+    <div style="background:#ffffff; border-radius:8px; padding:8px 14px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <p style="font-size:14px; color:#e76f51; font-weight:700; margin:0 0 2px 0;">Episiotomy Repair</p>
+      <p style="font-size:12px; color:#264653; margin:0; line-height:1.5;">Three parts: vaginal mucosal, perineal part, and skin of perineal part. Vaginal part repaired by continuous absorbable sutures. Perineal part by continuous or intermittent sutures. Skin closed by subcutaneous absorbable sutures.</p>
+    </div>
+    <div style="background:#ffffff; border-radius:8px; padding:8px 14px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+      <p style="font-size:14px; color:#e76f51; font-weight:700; margin:0 0 2px 0;">Complications</p>
+      <ul style="font-size:12px; color:#264653; margin:0; padding-left:16px; line-height:1.4;">
+        <li>Vulvar hematoma (due to lack of good surgical hemostasis)</li>
+        <li>Infection of episiotomy wound</li>
+        <li>Rectovaginal fistula (bad surgical repair)</li>
+        <li>Allergic reaction to local infiltration anesthesia</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+<div style="position:absolute; right:32px; bottom:24px; z-index:100;">
+  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="18" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+    <text x="20" y="26" text-anchor="middle" font-family="Times New Roman, serif" font-size="16" font-weight="700" fill="#ffffff">48</text>
+  </svg>
+</div>
+</div>
+</body>
+</html>

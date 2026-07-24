@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#264653;font-family:'Times New Roman',serif;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#264653;"></div>
+<div style="position:absolute;top:25px;left:60px;z-index:10;">
+  <p style="font-size:30px;font-weight:700;color:#ffffff;margin:0;">Methods for Delivering the Aftercoming Head</p>
+  <div style="width:60px;height:4px;background:#2a9d8f;margin:6px 0 12px 0;"></div>
+</div>
+<div style="position:absolute;top:78px;left:60px;right:60px;z-index:10;">
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:10px;">
+    <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #e9c46a;">
+      <p style="font-size:17px;font-weight:700;color:#e9c46a;margin:0 0 6px 0;">Mauriceau-Smellie-Veit (MSV)</p>
+      <ul style="margin:0;padding-left:16px;color:#ffffff;font-size:13px;line-height:1.4;">
+        <li>Two fingers of left hand on maxilla to avoid jaw dislocation</li>
+        <li>Index &amp; ring finger of right hand on each shoulder</li>
+        <li>Middle finger pressing against occiput to promote flexion</li>
+        <li>Splints neck, prevents hyperextension → cervical spine injury</li>
+        <li>Traction downwards &amp; backwards until nape appears, then lift body towards mother's abdomen</li>
+      </ul>
+    </div>
+    <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #e9c46a;">
+      <p style="font-size:17px;font-weight:700;color:#e9c46a;margin:0 0 6px 0;">Burns-Marshall Method</p>
+      <ul style="margin:0;padding-left:16px;color:#ffffff;font-size:13px;line-height:1.4;">
+        <li>Let the baby hang down by its own weight</li>
+        <li>Suprapubic pressure given by flat hand in downward &amp; backward direction</li>
+        <li>As nape of neck visible, grasp the feet and lift body towards mother's abdomen</li>
+      </ul>
+    </div>
+  </div>
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:14px;border-left:4px solid #2a9d8f;">
+    <p style="font-size:17px;font-weight:700;color:#e9c46a;margin:0 0 6px 0;">Piper's Forceps Delivery</p>
+    <p style="font-size:14px;color:#ffffff;margin:0 0 8px 0;">Piper's forceps are specially designed forceps for delivery of the aftercoming head in breech presentation.</p>
+    <p style="font-size:15px;font-weight:700;color:#f4a261;margin:0 0 4px 0;">Advantages of Piper's Forceps</p>
+    <ul style="margin:0;padding-left:18px;color:#ffffff;font-size:13px;line-height:1.5;">
+      <li>Protect the head from sudden compression-decompression and intracranial hemorrhage</li>
+      <li>Minimize traction on the fetal neck</li>
+      <li>Maintain flexion of the head</li>
+      <li>Decrease incidence of perineal tears</li>
+    </ul>
+  </div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="40" height="32" rx="4" fill="#2a9d8f"/>
+  <text x="20" y="22" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">16</text>
+</svg>
+</div>
+</body>
+</html>

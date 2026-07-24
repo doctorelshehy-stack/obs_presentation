@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#264653;font-family:'Times New Roman',serif;overflow:hidden;">
+<div style="position:absolute;top:0;left:0;width:960px;height:540px;background:#264653;"></div>
+<div style="position:absolute;top:22px;left:60px;z-index:10;">
+  <p style="font-size:30px;color:#ffffff;font-weight:700;margin:0;">CTG Interpretation (NICE, 2022)</p>
+  <div style="width:60px;height:4px;background:#2a9d8f;margin:6px 0 10px 0;"></div>
+</div>
+<div style="position:absolute;top:70px;left:55px;right:55px;bottom:50px;z-index:10;overflow:hidden;">
+  <div style="font-size:12px;color:#ffffff;margin-bottom:4px;">
+  <b style="color:#e9c46a;font-size:14px;">CTG Interpretation (NICE, 2022)</b>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:6px;font-size:11px;line-height:1.2;">
+  <div style="background:rgba(42,157,143,0.1);border-radius:6px;padding:6px;border-left:3px solid #ffffff;">
+    <p style="font-size:12px;font-weight:700;color:#ffffff;margin:0 0 3px 0;">White (Normal)</p>
+    <p style="color:#ffffff;margin:0;"><b>UC:</b> &lt;5 in 10 min</p>
+    <p style="color:#ffffff;margin:0;"><b>FHR:</b> 110-160 bpm stable</p>
+    <p style="color:#ffffff;margin:0;"><b>Variability:</b> 5-25 bpm</p>
+    <p style="color:#ffffff;margin:0;"><b>Decels:</b> None or early</p>
+  </div>
+  <div style="background:rgba(233,196,106,0.12);border-radius:6px;padding:6px;border-left:3px solid #e9c46a;">
+    <p style="font-size:12px;font-weight:700;color:#e9c46a;margin:0 0 3px 0;">Amber (Intermediate)</p>
+    <p style="color:#ffffff;margin:0;"><b>UC:</b> ≥5 in 10 min or hypertonus</p>
+    <p style="color:#ffffff;margin:0;"><b>FHR:</b> 100-109 or ↑20 bpm from baseline</p>
+    <p style="color:#ffffff;margin:0;"><b>Variability:</b> &lt;5 for 30-50 min or >25 for ≤10 min</p>
+    <p style="color:#ffffff;margin:0;"><b>Decels:</b> Repetitive variable &lt;30 min or repetitive late &lt;30 min</p>
+  </div>
+  <div style="background:rgba(231,111,81,0.15);border-radius:6px;padding:6px;border:1px solid #e76f51;">
+    <p style="font-size:12px;font-weight:700;color:#e76f51;margin:0 0 3px 0;">Red (Abnormal)</p>
+    <p style="color:#ffffff;margin:0;"><b>FHR:</b> &lt;100 or >160 bpm</p>
+    <p style="color:#ffffff;margin:0;"><b>Variability:</b> &lt;5 for >50 min or >25 for >10 min</p>
+    <p style="color:#ffffff;margin:0;"><b>Decels:</b> Repetitive variable >30 min or repetitive late >30 min</p>
+  </div>
+</div>
+<div style="margin-top:6px;">
+  <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #2a9d8f;margin-bottom:8px;">
+  <div style="font-size:12px;color:#ffffff;margin:0;line-height:1.4;"><p style="font-size:12px;color:#ffffff;margin:0;line-height:1.3;"><b style="color:{GOLD};">Fetal Hypoxia/Acidosis:</b> Fetal acid-base determination from scalp blood sample during labor (risks: fetal infection, hemorrhage).</p></div>
+</div>
+</div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="40" height="32" rx="4" fill="#2a9d8f"/>
+  <text x="20" y="22" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">62</text>
+</svg>
+</div>
+</body>
+</html>

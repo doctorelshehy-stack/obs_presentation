@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script></head>
+<body>
+<div class="slide-content" style="background:#ffffff;font-family:"Times New Roman", serif;overflow:hidden;">
+<svg style="position:absolute;top:0;left:0;width:960px;height:8px;" aria-hidden="true"><rect x="0" y="0" width="960" height="8" fill="#00b4d8"/></svg>
+<p style="position:absolute;top:-5px;left:60px;font-size:26px;font-weight:700;color:#03045e;">Abnormalities of Active Phase</p>
+<div style="position:absolute;top:48px;left:60px;width:80px;height:3px;background:#00b4d8;border-radius:1.5px;"></div>
+<p style="position:absolute;top:66px;left:60px;font-size:14px;font-weight:700;color:#0077b6;">Protracted Active Phase (slow cervical dilatation or descent)</p>
+<table style="position:absolute;top:112px;left:60px;width:840px;border-collapse:collapse;font-size:12px;">
+<tr style="background:#03045e;color:#ffffff;">
+<th style="padding:8px 12px;text-align:left;">Feature</th>
+<th style="padding:8px 12px;text-align:center;">Nulliparous</th>
+<th style="padding:8px 12px;text-align:center;">Multiparous</th>
+<th style="padding:8px 12px;text-align:left;">Management</th>
+</tr>
+<tr style="background:#caf0f8;"><td style="padding:8px 12px;">Cervical dilatation</td><td style="padding:8px 12px;text-align:center;">&lt; 1.2 cm/hr</td><td style="padding:8px 12px;text-align:center;">&lt; 1.5 cm/hr</td><td style="padding:8px 12px;" rowspan="2">Expectant &amp; support. If CPD → CS</td></tr>
+<tr><td style="padding:8px 12px;">Descent of head</td><td style="padding:8px 12px;text-align:center;">&lt; 1 cm/hr</td><td style="padding:8px 12px;text-align:center;">&lt; 2 cm/hr</td></tr>
+</table>
+<div style="position:absolute;top:250px;left:60px;font-size:14px;font-weight:700;color:#0077b6;margin-bottom:6px;">Arrest Disorders</div>
+<div style="position:absolute;top:276px;left:60px;display:flex;gap:14px;width:840px;">
+<div style="flex:1;background:#caf0f8;border-radius:8px;padding:12px;">
+<div style="font-size:13px;font-weight:700;color:#0077b6;">Arrest of Dilatation</div>
+<div style="font-size:12px;color:#03045e;line-height:1.5;">Cessation of dilatation for <b>2 or more hours</b>.</div>
+</div>
+<div style="flex:1;background:#caf0f8;border-radius:8px;padding:12px;">
+<div style="font-size:13px;font-weight:700;color:#0077b6;">Arrest of Descent</div>
+<div style="font-size:12px;color:#03045e;line-height:1.5;">Cessation of descent for <b>1 or more hours</b>.</div>
+</div>
+</div>
+<div style="position:absolute;top:360px;left:60px;font-size:13px;color:#03045e;line-height:1.5;">
+<b>Factors contributing:</b> Excessive sedation, Epidural analgesia, Fetal malposition, CPD.<br>
+<b>Treatment:</b> Expectant management and oxytocin in absence of any cephalopelvic disproportion.
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;" width="40" height="40" aria-hidden="true">
+<rect x="0" y="0" width="40" height="40" rx="6" fill="#03045e" opacity="0.85"/>
+<text x="20" y="27" text-anchor="middle" font-family="Times New Roman", serif font-size="16" font-weight="700" fill="#ffffff">14</text>
+</svg>
+</div>
+</body>
+</html>

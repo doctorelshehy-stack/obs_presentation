@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script></head>
+<body>
+<div class="slide-content" style="background:#ffffff;font-family:"Times New Roman", serif;overflow:hidden;">
+<svg style="position:absolute;top:0;left:0;width:960px;height:8px;" aria-hidden="true"><rect x="0" y="0" width="960" height="8" fill="#00b4d8"/></svg>
+<p style="position:absolute;top:-5px;left:60px;font-size:24px;font-weight:700;color:#03045e;">Active Management: Procedures (1st &amp; 2nd Stage)</p>
+<div style="position:absolute;top:44px;left:60px;width:80px;height:3px;background:#00b4d8;border-radius:1.5px;"></div>
+<div style="position:absolute;top:60px;left:60px;display:flex;gap:16px;width:840px;">
+<div style="flex:1;">
+<div style="font-size:14px;font-weight:700;color:#0077b6;margin-bottom:6px;">1st Stage Procedures</div>
+<div style="font-size:12px;color:#03045e;line-height:1.55;">
+<ul style="margin:0;padding-left:18px;">
+<li>Evacuation of the rectum and bladder</li>
+<li>Analgesia</li>
+<li><b>Partogram:</b> graphic recording of all events of labor — maternal (vital signs, uterine contractions, cervical dilatation, fluids and drugs) or fetal (fetal heart rate, head descent)</li>
+<li><b>Amniotomy</b></li>
+<li><b>Oxytocin</b> to augment labor and regulate uterine contraction (3 in 10 minutes)</li>
+<li>Fetal monitoring</li>
+</ul>
+</div>
+</div>
+<div style="flex:1;">
+<div style="font-size:14px;font-weight:700;color:#0077b6;margin-bottom:6px;">2nd Stage Procedures</div>
+<div style="font-size:12px;color:#03045e;line-height:1.55;">
+<ul style="margin:0;padding-left:18px;">
+<li>Transfer to delivery room</li>
+<li><b>Delivery of the head:</b> important goal is prevention of perineal lacerations by good support of the perineum and episiotomy</li>
+<li><b>Clamping of the cord:</b> contraindicated in preterm baby and in Rh – ve mothers</li>
+</ul>
+</div>
+</div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;" width="40" height="40" aria-hidden="true">
+<rect x="0" y="0" width="40" height="40" rx="6" fill="#03045e" opacity="0.85"/>
+<text x="20" y="27" text-anchor="middle" font-family="Times New Roman", serif font-size="16" font-weight="700" fill="#ffffff">20</text>
+</svg>
+</div>
+</body>
+</html>

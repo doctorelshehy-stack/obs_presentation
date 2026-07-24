@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform=`scale(${sc})`;s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px; height:540px; background:#fdf0d5; font-family:'Times New Roman',serif; color:#264653; overflow:hidden;">
+
+<div style="position:absolute; top:24px; left:40px;">
+  <p style="font-size:20px; color:#2a9d8f; font-weight:700; margin:0 0 4px 0;">Management of Atonic PPH — Initial Measures</p>
+  <p style="font-size:14px; color:#264653; margin:0 0 10px 0;">Complications of Third Stage of Labor</p>
+  <div style="width:60px; height:3px; background:#e9c46a; margin-bottom:10px;"></div>
+</div>
+<div style="position:absolute; top:96px; left:40px; right:40px; display:grid; grid-template-columns:1fr 1fr; gap:10px;">
+  <div style="background:#ffffff; border-radius:8px; padding:12px 16px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    <p style="font-size:15px; color:#e76f51; font-weight:700; margin:0 0 4px 0;">IV Fluids &amp; Blood Products</p>
+    <p style="font-size:13px; color:#264653; margin:0; line-height:1.4;">Intravenous (IV) fluids, blood, and blood products should be given <strong>rapidly</strong> to prevent shock.</p>
+  </div>
+  <div style="background:#ffffff; border-radius:8px; padding:12px 16px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    <p style="font-size:15px; color:#2a9d8f; font-weight:700; margin:0 0 4px 0;">Uterine Massage</p>
+    <p style="font-size:13px; color:#264653; margin:0; line-height:1.4;">A simple first-line treatment that helps the uterus contract to reduce bleeding.</p>
+  </div>
+  <div style="background:#ffffff; border-radius:8px; padding:12px 16px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    <p style="font-size:15px; color:#264653; font-weight:700; margin:0 0 4px 0;">Bimanual Compression</p>
+    <p style="font-size:13px; color:#264653; margin:0; line-height:1.4;">One hand in the vagina pushing against the body of the uterus while the other hand compresses the fundus from above through the abdominal wall. The posterior aspect of the uterus is massaged with the abdominal hand and the anterior aspect with the vaginal hand.</p>
+  </div>
+  <div style="background:#ffffff; border-radius:8px; padding:12px 16px; box-shadow:0 2px 8px rgba(0,0,0,0.08);">
+    <p style="font-size:15px; color:#e76f51; font-weight:700; margin:0 0 4px 0;">Manual Aortic Compression</p>
+    <p style="font-size:13px; color:#264653; margin:0; line-height:1.4;">If there is severe bleeding (within a few minutes), apply direct pressure to the aorta to compress it against the vertebrae a few centimeters superior to the sacral promontory using a closed fist.</p>
+  </div>
+</div>
+
+
+<div style="position:absolute; right:32px; bottom:24px; z-index:100;">
+  <svg width="40" height="40" viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="20" cy="20" r="18" fill="#264653" stroke="#2a9d8f" stroke-width="2"/>
+    <text x="20" y="26" text-anchor="middle" font-family="Times New Roman, serif" font-size="16" font-weight="700" fill="#ffffff">10</text>
+  </svg>
+</div>
+</div>
+</body>
+</html>

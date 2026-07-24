@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+html, body { margin:0; padding:0; width:100%; height:100%; overflow:hidden; display:flex; justify-content:center; align-items:center; background:#000; }
+.slide-content { width:960px; height:540px; position:relative; transform-origin:center center; }
+</style>
+<script>
+function scaleSlide(){const s=document.querySelector('.slide-content');if(!s)return;const sx=window.innerWidth/960;const sy=window.innerHeight/540;const sc=Math.min(sx,sy);s.style.width='960px';s.style.height='540px';s.style.transform='scale('+sc+')';s.style.transformOrigin='center center';s.style.flexShrink='0';}
+window.addEventListener('load',scaleSlide);window.addEventListener('resize',scaleSlide);
+</script>
+</head>
+<body>
+<div class="slide-content" style="width:960px;height:540px;background:#264653;font-family:'Times New Roman',serif;overflow:hidden;">
+<div style="position:absolute;top:20px;left:60px;z-index:10;">
+  <p style="font-size:32px;font-weight:700;color:#ffffff;margin:0;">Summary</p>
+  <div style="width:60px;height:4px;background:#e9c46a;margin:6px 0 14px 0;"></div>
+</div>
+<div style="position:absolute;top:68px;left:50px;right:50px;bottom:50px;z-index:10;">
+  <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:8px;">
+    <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #2a9d8f;margin-bottom:8px;">
+  <p style="font-size:14px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Physiology of Reproduction</p>
+  <div style="font-size:11px;color:#ffffff;margin:0;line-height:1.4;"><ul style="margin:0;padding-left:18px;color:#ffffff;font-size:11px;line-height:1.5;">
+      <li>Fertilization→implantation (6-7d)</li>
+      <li>Placenta: 500g, gas/nutrition/hormones</li>
+      <li>HCG, HPL, estrogen, progesterone</li>
+      <li>Amniotic fluid: 800-1000ml</li>
+      <li>Cord: 2A+1V in Wharton jelly</li>
+</ul></div>
+</div>
+    <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #e9c46a;margin-bottom:8px;">
+  <p style="font-size:14px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Maternal Adaptation</p>
+  <div style="font-size:11px;color:#ffffff;margin:0;line-height:1.4;"><ul style="margin:0;padding-left:18px;color:#ffffff;font-size:11px;line-height:1.5;">
+      <li>Uterus: 50g→1000g, Braxton Hicks</li>
+      <li>Blood vol ↑30-40%, hypercoagulable</li>
+      <li>CO ↑40%, BP ↓ (2nd tri)</li>
+      <li>Nausea, heartburn, constipation</li>
+      <li>Chloasma, striae, linea nigra</li>
+</ul></div>
+</div>
+    <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #f4a261;margin-bottom:8px;">
+  <p style="font-size:14px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Diagnosis & Antenatal Care</p>
+  <div style="font-size:11px;color:#ffffff;margin:0;line-height:1.4;"><ul style="margin:0;padding-left:18px;color:#ffffff;font-size:11px;line-height:1.5;">
+      <li>1st tri: amenorrhea, Hegar, hCG, US</li>
+      <li>2nd tri: quickening, ballottement, FHS</li>
+      <li>3rd tri: engagement, sure signs</li>
+      <li>Visits: monthly→2wk→weekly</li>
+      <li>Screening: CBC, Rh, glucose, rubella</li>
+</ul></div>
+</div>
+    <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #2a9d8f;margin-bottom:8px;">
+  <p style="font-size:14px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Female Pelvis & Fetal Skull</p>
+  <div style="font-size:11px;color:#ffffff;margin:0;line-height:1.4;"><ul style="margin:0;padding-left:18px;color:#ffffff;font-size:11px;line-height:1.5;">
+      <li>Pelvis: Gynecoid (50%), Android (20%)</li>
+      <li>Inlet: True conj. 11cm, Obst. 10.5cm</li>
+      <li>Outlet: Bituberous 11cm</li>
+      <li>Skull: Biparietal 9.5cm, OF 11.5cm</li>
+      <li>Fontanelles: Bregma & Lambda</li>
+</ul></div>
+</div>
+  </div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:6px;">
+    <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #e76f51;margin-bottom:8px;">
+  <p style="font-size:14px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Puerperium</p>
+  <div style="font-size:11px;color:#ffffff;margin:0;line-height:1.4;"><ul style="margin:0;padding-left:18px;color:#ffffff;font-size:11px;line-height:1.5;">
+      <li>6 wks postpartum, uterus 1000g→60g</li>
+      <li>Subinvolution: retained fragments/infection</li>
+      <li>Puerperal pyrexia: ≥38°C ≥24h in 10 days</li>
+      <li>Mgmt: massage, anti-D if Rh-ve, contraception</li>
+</ul></div>
+</div>
+    <div style="background:rgba(42,157,143,0.1);border-radius:8px;padding:12px;border-left:4px solid #2a9d8f;margin-bottom:8px;">
+  <p style="font-size:14px;font-weight:700;color:#e9c46a;margin:0 0 4px 0;">Fetal Well-being Assessment</p>
+  <div style="font-size:11px;color:#ffffff;margin:0;line-height:1.4;"><ul style="margin:0;padding-left:18px;color:#ffffff;font-size:11px;line-height:1.5;">
+      <li>NST: ≥2 accelerations in 20 min</li>
+      <li>CST: Negative/Positive/Equivocal</li>
+      <li>CTG: Baseline 110-160, variability 6-25</li>
+      <li>BPP: 5 components, score 8-10=normal</li>
+      <li>Doppler: S/D ratio, absent/reversed EDF</li>
+</ul></div>
+</div>
+  </div>
+</div>
+<svg style="position:absolute;right:32px;bottom:24px;width:40px;height:32px;z-index:100;" aria-hidden="true">
+  <rect x="0" y="0" width="40" height="32" rx="4" fill="#2a9d8f"/>
+  <text x="20" y="22" font-family="Times New Roman,serif" font-size="16" font-weight="700" fill="#ffffff" text-anchor="middle">65</text>
+</svg>
+</div>
+</body>
+</html>
