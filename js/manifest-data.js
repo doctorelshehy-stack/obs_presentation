@@ -15,6 +15,7 @@ window.__MANIFEST__ = {
       "description": "Antepartum hemorrhage and disseminated intravascular coagulopathy",
       "icon": "🩸",
       "folder": "3a_Hemorrhage_Coagulation",
+      "mindmapPath": "3a_Hemorrhage_Coagulation/hemorrhage_coagulation_mindmap.html",
       "slidesPath": "3a_Hemorrhage_Coagulation/slides",
       "slideCount": 31,
       "slides": [
@@ -66,6 +67,7 @@ window.__MANIFEST__ = {
       "description": "Vomiting, anemia, cardiac disease, hypertension, diabetes, UTI, and thromboembolism in pregnancy",
       "icon": "🏥",
       "folder": "3b_Medical_Diseases",
+      "mindmapPath": "3b_Medical_Diseases/medical_disorders_mindmap.html",
       "slidesPath": "3b_Medical_Diseases/slides",
       "slideCount": 74,
       "slides": [
@@ -168,6 +170,7 @@ window.__MANIFEST__ = {
       "description": "Infectious diseases in pregnancy and RH incompatibility",
       "icon": "🔬",
       "folder": "3c_Infections_Immunological",
+      "mindmapPath": "3c_Infections_Immunological/infectious_diseases_rh_mindmap.html",
       "slidesPath": "3c_Infections_Immunological/slides",
       "slideCount": 26,
       "slides": [
@@ -213,6 +216,7 @@ window.__MANIFEST__ = {
       "description": "Multiple pregnancy, preterm labor, and premature rupture of membranes",
       "icon": "👶",
       "folder": "3d_Multiple_Pregnancy_Preterm",
+      "mindmapPath": "3d_Multiple_Pregnancy_Preterm/multiple_pregnancy_mindmap.html",
       "slidesPath": "3d_Multiple_Pregnancy_Preterm/slides",
       "slideCount": 22,
       "slides": [
@@ -253,6 +257,7 @@ window.__MANIFEST__ = {
       "description": "Amniotic fluid abnormalities, IUGR, postterm pregnancy, macrosomia, intrauterine fetal death, and birth injuries",
       "icon": "🩺",
       "folder": "3e_Fetal_Complications",
+      "mindmapPath": "3e_Fetal_Complications/fetal_complications_mindmap.html",
       "slidesPath": "3e_Fetal_Complications/slides",
       "slideCount": 38,
       "slides": [
@@ -318,6 +323,7 @@ window.__MANIFEST__ = {
       "description": "Physiological changes in pregnancy, antenatal care, and the puerperium",
       "icon": "👶",
       "folder": "1_Normal_Pregnancy_Puerperium",
+      "mindmapPath": "1_Normal_Pregnancy_Puerperium/normal_pregnancy_puerperium_mindmap.html",
       "slidesPath": "1_Normal_Pregnancy_Puerperium",
       "slideCount": 65,
       "slides": [
@@ -358,6 +364,7 @@ window.__MANIFEST__ = {
       "description": "Miscarriage, ectopic pregnancy, gestational trophoblastic disease, hyperemesis gravidarum",
       "icon": "⚠️",
       "folder": "2_Early_Pregnancy_Complications slides",
+      "mindmapPath": "2_Early_Pregnancy_Complications slides/early_pregnancy_complications_mindmap.html",
       "slidesPath": "2_Early_Pregnancy_Complications slides",
       "slideCount": 61,
       "slides": [
@@ -404,6 +411,7 @@ window.__MANIFEST__ = {
       "description": "Mechanism and management of normal labor",
       "icon": "👩‍⚕️",
       "folder": "19_Normal_Labor",
+      "mindmapPath": "19_Normal_Labor/19_Normal_Labor_mindmap.html",
       "slidesPath": "19_Normal_Labor/slides",
       "slideCount": 23,
       "slides": [
@@ -428,6 +436,7 @@ window.__MANIFEST__ = {
       "description": "Disorders of uterine action, obstructed labor, and abnormal labor patterns",
       "icon": "⚡",
       "folder": "slides_abnormal_labor",
+      "mindmapPath": "slides_abnormal_labor/abnormal_labor_mindmap.html",
       "slidesPath": "slides_abnormal_labor",
       "slideCount": 23,
       "slides": [
@@ -452,6 +461,7 @@ window.__MANIFEST__ = {
       "description": "Breech presentation, transverse lie, compound presentation, and unstable lie",
       "icon": "🔄",
       "folder": "slides_malpresentations",
+      "mindmapPath": "slides_malpresentations/malpresentations_mindmap.html",
       "slidesPath": "slides_malpresentations",
       "slideCount": 40,
       "slides": [
@@ -482,6 +492,7 @@ window.__MANIFEST__ = {
       "description": "Persistent occipitoposterior position, diagnosis, and management",
       "icon": "🩺",
       "folder": "22_Occipitoposterior_Position",
+      "mindmapPath": "22_Occipitoposterior_Position/occipitoposterior_mindmap.html",
       "slidesPath": "22_Occipitoposterior_Position/slides",
       "slideCount": 15,
       "slides": [
@@ -502,6 +513,7 @@ window.__MANIFEST__ = {
       "description": "Face presentation, diagnosis, mechanism of labor, and management",
       "icon": "🩺",
       "folder": "23_Face_Presentation",
+      "mindmapPath": "23_Face_Presentation/face_presentation_mindmap.html",
       "slidesPath": "23_Face_Presentation/slides",
       "slideCount": 12,
       "slides": [
@@ -528,6 +540,7 @@ window.__MANIFEST__ = {
       "description": "Postpartum hemorrhage, retained placenta, uterine inversion, operative vaginal delivery, and cesarean section",
       "icon": "🔧",
       "folder": "slides 5_Postpartum_Operative_Obstetrics",
+      "mindmapPath": "slides 5_Postpartum_Operative_Obstetrics/postpartum_operative_obstetrics_mindmap.html",
       "slidesPath": "slides 5_Postpartum_Operative_Obstetrics",
       "slideCount": 62,
       "slides": [

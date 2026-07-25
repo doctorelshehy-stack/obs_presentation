@@ -348,6 +348,14 @@ img { max-width: 100%; display: block; }
 .card-status.completed { color: var(--success); }
 .card-status.new { color: var(--text-tertiary); }
 
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 16px;
+  align-self: flex-start;
+}
+
 .card-open {
   display: inline-flex;
   align-items: center;
@@ -359,13 +367,35 @@ img { max-width: 100%; display: block; }
   background: var(--accent);
   border-radius: var(--radius-sm);
   transition: all var(--transition);
-  margin-top: 16px;
-  align-self: flex-start;
 }
 
 .topic-card:hover .card-open {
   background: var(--accent-light);
   transform: translateX(2px);
+}
+
+.card-mindmap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  font-size: 1.2rem;
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all var(--transition);
+  cursor: pointer;
+}
+
+.card-mindmap:hover {
+  background: var(--accent-glow);
+  border-color: var(--accent);
+  color: var(--accent);
+  transform: scale(1.1);
+  box-shadow: 0 0 12px var(--accent-glow);
 }
 
 /* --- Resume Modal --- */

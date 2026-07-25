@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Malpresentations of Labor — Mind Map</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; background: #ffffff; }
+
+  :root {
+    --connector-color: #7a9bb5;
+    --root-bg: #2d5a3d;
+    --root-text: #ffffff;
+    --focus-ring: #4a90d9;
+    --toolbar-bg: rgba(255,255,255,0.92);
+    --toolbar-border: #e0e0e0;
+    --tab-bg: #f5f5f5;
+    --tab-active-bg: #ffffff;
+    --tab-border: #e0e0e0;
+    --tab-active-border: #7a9bb5;
+    --tab-text: #555;
+    --tab-active-text: #2d5a3d;
+  }
+
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    display: flex; flex-wrap: wrap; gap: 4px;
+    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+    border-bottom: 1px solid var(--tab-border);
+    padding: 8px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .tab-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 14px; border: 1px solid var(--tab-border);
+    border-radius: 6px 6px 0 0; background: var(--tab-bg);
+    color: var(--tab-text); font-size: 13px; font-weight: 500;
+    cursor: pointer; white-space: nowrap;
+    transition: all 0.15s ease;
+    position: relative; z-index: 1; margin-bottom: -1px;
+  }
+  .tab-btn:hover { background: #eee; color: #333; }
+  .tab-btn.active {
+    background: var(--tab-active-bg);
+    border-color: var(--tab-active-border);
+    border-bottom-color: var(--tab-active-bg);
+    color: var(--tab-active-text);
+    font-weight: 600;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.04);
+  }
+  .tab-btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+  .tab-btn .count { font-size: 11px; font-weight: 600; opacity: 0.7; }
+
+  .toolbar {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    display: flex; gap: 6px; align-items: center;
+    background: var(--toolbar-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--toolbar-border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .toolbar button {
+    display: flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; border: none; border-radius: 6px;
+    background: transparent; color: #666;
+    cursor: pointer; font-size: 15px; line-height: 1;
+    transition: background 0.15s, color 0.15s;
+  }
+  .toolbar button:hover { background: #e8e8e8; color: #333; }
+  .toolbar button:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+  .toolbar .sep { width: 1px; height: 22px; background: #e0e0e0; margin: 0 4px; }
+  .toolbar .expand-all { font-size: 12px; font-weight: 600; padding: 0 12px; width: auto; gap: 4px; color: #555; }
+  .toolbar .zoom-fit { font-size: 12px; font-weight: 600; padding: 0 12px; width: auto; gap: 4px; color: #555; }
+
+  #svg-container {
+    width: 100%; height: 100vh; overflow: hidden;
+    cursor: grab; background: #ffffff;
+  }
+  #svg-container:active { cursor: grabbing; }
+  svg { width: 100%; height: 100%; display: block; }
+
+  .node-group { cursor: pointer; }
+  .node-group:focus-visible { outline: none; }
+
+  .node-bg {
+    fill: var(--node-fill, #d4edda);
+    stroke: var(--node-stroke, #b8dabe);
+    stroke-width: 1;
+    rx: 8; ry: 8;
+    filter: drop-shadow(0 1px 4px rgba(0,0,0,0.06));
+    transition: fill 0.15s, stroke 0.15s;
+  }
+  .node-group:hover .node-bg {
+    fill: var(--node-fill-hover, #c3e6cb);
+    stroke: #a8ccb0;
+  }
+  .node-group:focus-visible .node-bg {
+    stroke: var(--focus-ring);
+    stroke-width: 2;
+    filter: drop-shadow(0 0 0 3px rgba(74,144,217,0.2));
+  }
+
+  .is-root .node-bg {
+    fill: var(--root-bg);
+    stroke: var(--root-bg);
+    filter: drop-shadow(0 2px 8px rgba(45,90,61,0.2));
+  }
+  .is-root:hover .node-bg { fill: #3a6e4e; }
+  .is-root .node-text { fill: var(--root-text); }
+
+  .node-text {
+    fill: var(--node-text-color, #1a1a2e);
+    font-family: Arial, Helvetica, sans-serif;
+    dominant-baseline: central;
+    text-anchor: middle;
+    pointer-events: none;
+    user-select: none;
+  }
+  .is-root .node-text { fill: #ffffff; }
+  .node-text .label { font-weight: 500; }
+
+  .toggle-circle { transition: fill 0.15s; }
+  .toggle-text {
+    fill: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    pointer-events: none;
+    user-select: none;
+    dominant-baseline: central;
+    text-anchor: middle;
+  }
+
+  .connector {
+    stroke: var(--connector-color);
+    stroke-width: 1.5;
+    fill: none;
+    stroke-linecap: round;
+  }
+  @keyframes node-appear {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .node-group {
+    animation: node-appear 0.18s ease-out forwards;
+  }
+  @keyframes connector-appear {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .connector {
+    animation: connector-appear 0.22s ease-out;
+  }
+
+  .connector.focused { stroke: #4a90d9; stroke-width: 2.5; }
+  .node-group.focused .node-bg { stroke: #4a90d9; stroke-width: 2; filter: drop-shadow(0 0 6px rgba(74,144,217,0.4)); }
+
+  .color-0 { --node-fill: #d4edda; --node-fill-hover: #c3e6cb; --node-stroke: #b8dabe; --node-text-color: #1a3a1a; --toggle-fill: #7a9bb5; }
+  .color-1 { --node-fill: #d6ecf0; --node-fill-hover: #c5e0e6; --node-stroke: #b0d0d8; --node-text-color: #1a2a3a; --toggle-fill: #6b8f9e; }
+  .color-2 { --node-fill: #fce4d6; --node-fill-hover: #f5d5c0; --node-stroke: #e8c4a8; --node-text-color: #3a2a1a; --toggle-fill: #b88d7a; }
+  .color-3 { --node-fill: #f0d9f0; --node-fill-hover: #e5c8e5; --node-stroke: #d8b8d8; --node-text-color: #2a1a3a; --toggle-fill: #9a7a9e; }
+  .color-4 { --node-fill: #d6e4f0; --node-fill-hover: #c5d8e6; --node-stroke: #b0c8d8; --node-text-color: #1a2a3a; --toggle-fill: #6b8a9e; }
+  .color-5 { --node-fill: #e8f0d6; --node-fill-hover: #dae6c5; --node-stroke: #c8d8b0; --node-text-color: #2a3a1a; --toggle-fill: #8a9e6b; }
+  .color-6 { --node-fill: #fce8d6; --node-fill-hover: #f5dcc0; --node-stroke: #e8ccb0; --node-text-color: #3a2a1a; --toggle-fill: #b88a6b; }
+  .color-7 { --node-fill: #f0d6d6; --node-fill-hover: #e5c5c5; --node-stroke: #d8b0b0; --node-text-color: #3a1a1a; --toggle-fill: #9e6b6b; }
+
+  .node-group .toggle-circle { fill: var(--toggle-fill, #7a9bb5); }
+  .node-group:hover .toggle-circle { fill: #5a7a9a; }
+
+  @media (max-width: 600px) {
+    .topbar { padding: 6px 8px; gap: 2px; }
+    .tab-btn { padding: 6px 10px; font-size: 12px; }
+    .toolbar { top: 10px; right: 10px; padding: 4px 8px; }
+    .toolbar button { width: 26px; height: 26px; font-size: 13px; }
+    .toolbar .expand-all, .toolbar .zoom-fit { padding: 0 8px; font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar" role="tablist" aria-label="Malpresentations topics" id="topbar"></div>
+
+<div id="svg-container">
+  <svg id="mindmap-svg" role="tree" aria-label="Interactive mind map" style="overflow:visible;">
+    <defs>
+      <filter id="node-shadow" x="-10%" y="-10%" width="130%" height="130%">
+        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>
+      </filter>
+      <filter id="root-shadow" x="-10%" y="-10%" width="130%" height="130%">
+        <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.15"/>
+      </filter>
+    </defs>
+    <g id="connections-layer"></g>
+    <g id="nodes-layer"></g>
+  </svg>
+</div>
+
+<div class="toolbar" role="toolbar" aria-label="Mind map controls">
+  <button id="zoom-in" aria-label="Zoom in" title="Zoom in">+</button>
+  <button id="zoom-out" aria-label="Zoom out" title="Zoom out">−</button>
+  <button id="zoom-reset" aria-label="Reset zoom & view" title="Reset zoom & view">⟲</button>
+  <div class="sep"></div>
+  <button id="expand-all-btn" class="expand-all" title="Expand all branches">
+    <span>▸</span> Expand all
+  </button>
+  <div class="sep"></div>
+  <button id="collapse-all-btn" class="expand-all" title="Collapse all, return to root">
+    <span>▾</span> Collapse all
+  </button>
+  <div class="sep"></div>
+  <button id="fit-branch-btn" class="zoom-fit" title="Zoom to focused branch" disabled>
+    <span>🔍</span> Focus branch
+  </button>
+</div>
+
+<script>
+/* ==================================================================
+   fullTreeData — Malpresentations of Labor
+   ================================================================== */
+const fullTreeData = {
+  label: "Malpresentations of Labor",
+  children: [
+    {
+      label: "Brow Presentation",
+      children: [
+        {
+          label: "Definition & Denominator",
+          children: [
+            { label: "Cephalic presentation, head midway between flexion & extension" },
+            { label: "Denominator: Frontal bone" }
+          ]
+        },
+        {
+          label: "Positions & Causes",
+          children: [
+            { label: "Frontoanterior (R/L) & Frontoposterior (R/L)" },
+            { label: "Similar causes as occipito-posterior" }
+          ]
+        },
+        {
+          label: "Diagnosis",
+          children: [
+            { label: "During pregnancy: occiput & sinciput at same level; US confirms" },
+            { label: "During labor: frontal bone, supraorbital ridge, root of nose felt; chin NOT felt" }
+          ]
+        },
+        {
+          label: "Mechanism of Labor",
+          children: [
+            { label: "Engaged diameter: mentovertical 13.75 cm" },
+            { label: "Longer than any pelvic inlet diameter" },
+            { label: "Result: obstructed labor from the start" }
+          ]
+        },
+        {
+          label: "Management: Cesarean Section",
+          children: [
+            { label: "Vaginal delivery impossible due to obstruction" }
+          ]
+        },
+        {
+          label: "Complications",
+          children: [
+            { label: "Maternal: PROM, cord prolapse" },
+            { label: "Fetal: related to operative delivery & obstructed labor" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Compound Presentation",
+      children: [
+        {
+          label: "Definition",
+          children: [
+            { label: "Cephalic presentation + prolapsed limb beside presenting part" },
+            { label: "Usually upper limb, less commonly lower limb" }
+          ]
+        },
+        {
+          label: "Causes",
+          children: [
+            { label: "Prematurity & PROM" },
+            { label: "Polyhydramnios & Multiparity" },
+            { label: "Contracted pelvis & Pelvic tumors" },
+            { label: "Twins" }
+          ]
+        },
+        {
+          label: "Diagnosis",
+          children: [
+            { label: "Delayed engagement of presenting part" },
+            { label: "PV: prolapsed limb felt beside presenting part" }
+          ]
+        },
+        {
+          label: "Management",
+          children: [
+            { label: "First attempt: gently reduce prolapsed limb upward" },
+            { label: "CS if: abnormal FHR, cord prolapse, poor progress" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Breech Presentation",
+      children: [
+        {
+          label: "Overview",
+          children: [
+            { label: "Longitudinal lie, buttocks/feet presenting" },
+            { label: "Incidence: 3-4% of deliveries" },
+            { label: "Denominator: sacrum — LSA most common" }
+          ]
+        },
+        {
+          label: "Etiology",
+          children: [
+            { label: "Accommodation theory: pyriform uterine shape" },
+            { label: "Prematurity & Multiple gestations" },
+            { label: "Uterine malformations/fibroids & Polyhydramnios" },
+            { label: "Placenta previa & Pelvic tumors" },
+            { label: "Fetal abnormalities & Cord around neck" }
+          ]
+        },
+        {
+          label: "Types",
+          children: [
+            { label: "Frank (50-70%): hips flexed, knees extended" },
+            { label: "Complete (5-10%): hips & knees flexed" },
+            { label: "Footling (10-30%): one/both hips extended" },
+            { label: "Knee: hip extended, knee flexed" }
+          ]
+        },
+        {
+          label: "Diagnosis",
+          children: [
+            { label: "Palpation: head felt in fundus, breech in pelvis" },
+            { label: "Auscultation: FHR heard higher in abdomen" },
+            { label: "Pelvic exam: head not felt, thick meconium after ROM" },
+            { label: "Ultrasound: confirms type & fetal/uterine abnormalities" }
+          ]
+        },
+        {
+          label: "Mechanism of Labor",
+          children: [
+            { label: "Buttocks: descent, engagement, internal rotation, lateral flexion, delivery" },
+            { label: "Shoulders: bisacromial diameter, internal rotation, delivery" },
+            { label: "Aftercoming head: occipito-frontal 11.5 cm, internal rotation, flexion delivery" }
+          ]
+        },
+        {
+          label: "Delivering Aftercoming Head",
+          children: [
+            { label: "MSV: fingers on maxilla + occiput pressure" },
+            { label: "Burns-Marshall: gravity + suprapubic pressure" },
+            { label: "Piper's forceps: protect head, minimize neck traction" }
+          ]
+        },
+        {
+          label: "External Cephalic Version",
+          children: [
+            { label: "Timing: offered from 36-37 weeks" },
+            { label: "Technique: tocolysis, US, CTG, max 4 attempts in 10 min" },
+            { label: "Contraindications: ROM, severe pre-eclampsia, abnormal CTG, scarred uterus, placenta previa, Rh isoimmunization" },
+            { label: "Complications: FHR abnormalities, placental abruption, uterine rupture, preterm labor, cord prolapse" }
+          ]
+        },
+        {
+          label: "Vaginal Breech Delivery",
+          children: [
+            { label: "Criteria: EFW 2500-3800 g, flexed head, frank/complete, skilled clinician, CS standby" },
+            { label: "Contraindications: cord presentation, FGR/macrosomia, head extension, contracted pelvis, previous CS" },
+            { label: "Methods: spontaneous, assisted (most common), total extraction" },
+            { label: "Assisted technique: Løvset maneuver for arms, MSV/Piper for head" }
+          ]
+        },
+        {
+          label: "Total Breech Extraction",
+          children: [
+            { label: "Main indication: second twin" },
+            { label: "Prerequisite: fully dilated cervix" },
+            { label: "Technique: GA, episiotomy, dislodge breech, bring down legs, deliver trunk" }
+          ]
+        },
+        {
+          label: "CS Indications in Breech",
+          children: [
+            { label: "Primigravida & Footling presentation" },
+            { label: "Hyperextension of fetal head" },
+            { label: "EFW > 3800 g & Contracted pelvis" },
+            { label: "Premature viable infant" },
+            { label: "Chronic fetal distress & General CS indications" },
+            { label: "Prolapsed pulsating cord + incompletely dilated cervix" }
+          ]
+        },
+        {
+          label: "Complicated Breech",
+          children: [
+            { label: "Arrest of buttocks: inertia (oxytocin), contracted pelvis/large fetus (CS)" },
+            { label: "Impacted breech: groin traction, Pinard maneuver, CS" },
+            { label: "Arrested shoulders: classical method or Løvset maneuver" },
+            { label: "Nuchal arm: rotate trunk toward fingertips" },
+            { label: "Arrested head: symphysiotomy (alive), craniotomy (dead)" },
+            { label: "Rigid perineum: episiotomy" },
+            { label: "Incomplete cervix: Dührssen incisions at 2, 6, 10 o'clock" }
+          ]
+        },
+        {
+          label: "Complications",
+          children: [
+            { label: "Maternal: lacerations, PPH, infection, obstructed labor" },
+            { label: "Fetal: fractures, brachial plexus palsy, asphyxia, ICH, spinal cord injury, cord prolapse" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Shoulder Presentation (Transverse Lie)",
+      children: [
+        {
+          label: "Definition & Denominators",
+          children: [
+            { label: "Transverse lie, vertebral column perpendicular to mother" },
+            { label: "Denominator: scapula (Sc)" },
+            { label: "Positions: LScA, RScA, LScP, RScP (LScA most common)" }
+          ]
+        },
+        {
+          label: "Etiology",
+          children: [
+            { label: "Grand multiparity & Lax abdominal wall" },
+            { label: "Uterine malformations/fibroids" },
+            { label: "Twin pregnancy & Polyhydramnios" },
+            { label: "Prematurity & Fetal malformation" },
+            { label: "Placenta previa & Feto-pelvic disproportion" }
+          ]
+        },
+        {
+          label: "Diagnosis",
+          children: [
+            { label: "Inspection: wide abdomen side-to-side" },
+            { label: "Palpation: head in one flank, buttock in other" },
+            { label: "Auscultation: FHR at umbilical level" },
+            { label: "Pelvic exam: presenting part not felt" },
+            { label: "US: confirms transverse lie & possible causes" }
+          ]
+        },
+        {
+          label: "Management",
+          children: [
+            { label: "ECV at 36 weeks gestation" },
+            { label: "ECV fails → Cesarean section" },
+            { label: "First twin transverse → CS" },
+            { label: "Second twin transverse → internal podalic version + extraction" },
+            { label: "CS safest even if baby dead (persistent transverse lie)" }
+          ]
+        },
+        {
+          label: "Neglected Shoulder",
+          children: [
+            { label: "Impacted shoulder + prolapsed arm + drained fluid + dead/distressed fetus" },
+            { label: "Management: Cesarean section" }
+          ]
+        },
+        {
+          label: "Internal Podalic Version",
+          children: [
+            { label: "Convert transverse lie to breech for extraction" },
+            { label: "Main indication: second twin" },
+            { label: "Technique: asepsis, grasp foot, gentle traction, complete as breech" },
+            { label: "Explore uterus post-delivery for rupture" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Cord Presentation & Prolapse",
+      children: [
+        {
+          label: "Definitions",
+          children: [
+            { label: "Cord presentation: cord below presenting part, intact membranes" },
+            { label: "Cord prolapse: cord below presenting part after ROM" }
+          ]
+        },
+        {
+          label: "Risk Factors",
+          children: [
+            { label: "Prematurity & Low birth weight" },
+            { label: "Malpresentation (breech, transverse, oblique)" },
+            { label: "CPD & Polyhydramnios" },
+            { label: "Long cord & Low-lying placenta" },
+            { label: "Second twin & Multiparity" },
+            { label: "Macrosomia & Fetal abnormality" }
+          ]
+        },
+        {
+          label: "Diagnosis & Investigations",
+          children: [
+            { label: "Abdominal: non-engaged presenting part" },
+            { label: "Vaginal: cord seen protruding or palpated" },
+            { label: "Pulsating cord = fetus alive" },
+            { label: "Occult prolapse: only FHR changes" },
+            { label: "Color Doppler: cord loops in front of presenting part" }
+          ]
+        },
+        {
+          label: "Management",
+          children: [
+            { label: "Cord presentation: knee-chest position, emergency CS" },
+            { label: "Cord prolapse + living fetus + partially dilated cervix: immediate CS" },
+            { label: "Cord prolapse + living fetus + fully dilated cervix: forceps (engaged) or CS (non-engaged)" },
+            { label: "Cord prolapse + dead fetus: spontaneous delivery" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Shoulder Dystocia",
+      children: [
+        {
+          label: "Definition & Incidence",
+          children: [
+            { label: "Arrested shoulder delivery after head delivery" },
+            { label: "Incidence: 0.2-0.3% of deliveries" },
+            { label: "Unpredictable & unpreventable" }
+          ]
+        },
+        {
+          label: "Risk Factors",
+          children: [
+            { label: "Antepartum: previous SD, macrosomia, DM, BMI > 30, IOL" },
+            { label: "Intrapartum: prolonged labor, secondary arrest, oxytocin, assisted delivery" }
+          ]
+        },
+        {
+          label: "Diagnosis: Turtle Sign",
+          children: [
+            { label: "Fetal head emerges then retracts against perineum" }
+          ]
+        },
+        {
+          label: "Management — HELPERR Steps",
+          children: [
+            { label: "Step 1: Call extra help (senior OB, pediatrician, anesthetist)" },
+            { label: "Step 2: Episiotomy to facilitate maneuvers" },
+            { label: "Step 3: McRobert's maneuver (hip flexion/abduction) — resolves 90%" },
+            { label: "Step 4: Suprapubic pressure + McRobert's" },
+            { label: "Step 5: Deliver posterior arm (sweep across chest)" },
+            { label: "Step 6: Rubin maneuver (rotate anterior shoulder obliquely)" },
+            { label: "Step 7: Wood corkscrew (rotate posterior shoulder 180°)" },
+            { label: "Step 8: Gaskin maneuver (all-fours position)" },
+            { label: "Step 9: Cleidotomy (cut clavicle to reduce bisacromial diameter)" },
+            { label: "Step 10: Symphysiotomy (incise symphysis pubis)" },
+            { label: "Step 11: Zavanelli maneuver (replace head, emergent CS)" }
+          ]
+        },
+        {
+          label: "Complications",
+          children: [
+            { label: "Fetal: brachial plexus injury, Erb's palsy, fractures, hypoxic injury, death" },
+            { label: "Maternal: PPH, vaginal/anal tears, uterine rupture, psychological stress" }
+          ]
+        }
+      ]
+    }
+  ]
+};
+/* ==================================================================
+   END fullTreeData — rendering engine below
+   ================================================================== */
+
+(() => {
+  'use strict';
+
+  // ==== Topics =====
+  const TOPICS = [
+    { key: 'all', label: 'All Topics', count: 6 },
+    { key: 'brow', label: 'Brow Presentation', count: 14 },
+    { key: 'compound', label: 'Compound Presentation', count: 10 },
+    { key: 'breech', label: 'Breech Presentation', count: 55 },
+    { key: 'shoulder-pres', label: 'Shoulder (Transverse Lie)', count: 20 },
+    { key: 'cord', label: 'Cord Prolapse', count: 14 },
+    { key: 'dystocia', label: 'Shoulder Dystocia', count: 18 },
+  ];
+  const topicKeys = ['brow','compound','breech','shoulder-pres','cord','dystocia'];
+
+  // ==== DOM refs ====
+  const svg = document.getElementById('mindmap-svg');
+  const connectionsLayer = document.getElementById('connections-layer');
+  const nodesLayer = document.getElementById('nodes-layer');
+  const container = document.getElementById('svg-container');
+  const topbar = document.getElementById('topbar');
+
+  // ==== State ====
+  const state = {
+    expanded: new Set(),
+    nodeMap: {},
+    focusedNodeId: null,
+    activeTopic: 'all',
+  };
+
+  let nodeCounter = 0;
+  const X_GAP = 90;
+  const Y_GAP = 14;
+  let needsViewFit = true;
+
+  // ================================================================
+  //  TREE BUILDING
+  // ================================================================
+
+  function buildTree() {
+    state.nodeMap = {};
+    nodeCounter = 0;
+
+    function cloneAndId(node, parentId) {
+      const n = { label: node.label };
+      n.id = 'n' + (nodeCounter++);
+      if (node.children) n.children = node.children.map(c => cloneAndId(c, n.id));
+      n.parentId = parentId || null;
+      state.nodeMap[n.id] = n;
+      return n;
+    }
+
+    let root;
+    if (state.activeTopic === 'all') {
+      root = cloneAndId(fullTreeData, null);
+    } else {
+      const idx = topicKeys.indexOf(state.activeTopic);
+      if (idx === -1) root = cloneAndId(fullTreeData, null);
+      else {
+        const branch = fullTreeData.children[idx];
+        const clonedBranch = cloneAndId(branch, null);
+        root = { label: clonedBranch.label, children: clonedBranch.children, id: clonedBranch.id, parentId: null };
+        state.nodeMap[clonedBranch.id] = root;
+      }
+    }
+
+    state.expanded.add(root.id);
+    return root;
+  }
+
+  // ================================================================
+  //  COLOR ASSIGNMENT
+  // ================================================================
+
+  function assignColors(node, depth, branchIdx) {
+    const colors = ['color-0','color-1','color-2','color-3','color-4','color-5','color-6','color-7'];
+    if (depth === 0) node._colorClass = 'is-root';
+    else if (depth === 1) node._colorClass = colors[branchIdx % colors.length];
+    else node._colorClass = colors[branchIdx % colors.length];
+    if (node.children) node.children.forEach((c, i) => assignColors(c, depth + 1, depth === 0 ? i : branchIdx));
+  }
+
+  // ================================================================
+  //  TEXT MEASUREMENT
+  // ================================================================
+
+  function measureText(text, fontSize) {
+    const c = document.createElement('canvas');
+    const ctx = c.getContext('2d');
+    ctx.font = fontSize + 'px Arial, Helvetica, sans-serif';
+    return ctx.measureText(text || '').width;
+  }
+
+  function wrapText(text, maxWidth, fontSize) {
+    if (!text) return [{ text: '', width: 0 }];
+    const words = text.split(/\s+/);
+    const lines = [];
+    let cur = '', curW = 0;
+    for (const w of words) {
+      const ww = measureText(w + ' ', fontSize);
+      if (curW + ww > maxWidth && cur) {
+        lines.push({ text: cur.trim(), width: curW });
+        cur = w + ' '; curW = ww;
+      } else { cur += w + ' '; curW += ww; }
+    }
+    if (cur.trim()) lines.push({ text: cur.trim(), width: curW });
+    return lines.slice(0, 3);
+  }
+
+  function computeDims(label, fontSize, isRoot) {
+    const maxChars = isRoot ? 28 : 32;
+    const cw = fontSize * 0.58;
+    const maxTW = maxChars * cw;
+    const lines = wrapText(label, maxTW, fontSize);
+    const lh = fontSize * 1.35;
+    const tw = Math.max(...lines.map(l => l.width));
+    const th = lines.length * lh;
+    const px = isRoot ? 24 : 12;
+    const py = isRoot ? 14 : 8;
+    return {
+      width: Math.max(isRoot ? 100 : 48, tw + px * 2),
+      height: Math.max(isRoot ? 40 : 26, th + py * 2),
+      lines, lineHeight: lh,
+    };
+  }
+
+  // ================================================================
+  //  LAYOUT
+  // ================================================================
+
+  function layout(node, depth, startX, startY) {
+    const isRoot = depth === 0;
+    const fs = isRoot ? 15 : 11;
+    const dims = computeDims(node.label, fs, isRoot);
+    node.isRoot = isRoot;
+    node._dims = dims;
+    node._x = startX;
+    node._y = startY;
+    node._w = dims.width;
+    node._h = dims.height;
+
+    if (!node.children || node.children.length === 0 || !state.expanded.has(node.id)) return;
+
+    const childX = startX + dims.width + X_GAP;
+    let curY = startY;
+    for (const child of node.children) {
+      layout(child, depth + 1, childX, curY);
+      curY += subtreeHeight(child) + Y_GAP;
+    }
+  }
+
+  function subtreeHeight(node) {
+    if (!node._h) return 0;
+    if (!node.children || node.children.length === 0 || !state.expanded.has(node.id)) return node._h;
+    let total = 0;
+    for (const c of node.children) total += subtreeHeight(c);
+    return Math.max(node._h, total + (node.children.length - 1) * Y_GAP);
+  }
+
+  function computeBounds(root) {
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    function walk(n) {
+      if (n._x === undefined) return;
+      const pad = 50;
+      minX = Math.min(minX, n._x - pad);
+      minY = Math.min(minY, n._y - pad);
+      maxX = Math.max(maxX, n._x + n._w + pad);
+      maxY = Math.max(maxY, n._y + n._h + pad);
+      if (n.children && state.expanded.has(n.id)) n.children.forEach(walk);
+    }
+    walk(root);
+    if (minX === Infinity) return { minX: -200, minY: -200, maxX: 200, maxY: 200 };
+    return { minX, minY, maxX, maxY };
+  }
+
+  // ================================================================
+  //  RENDER
+  // ================================================================
+
+  function render() {
+    const root = state.currentRoot;
+    if (!root) return;
+
+    connectionsLayer.innerHTML = '';
+    nodesLayer.innerHTML = '';
+
+    layout(root, 0, 30, 30);
+
+    if (needsViewFit) {
+      needsViewFit = false;
+      const b = computeBounds(root);
+      const pad = 60;
+      const vw = (b.maxX - b.minX) + pad * 2;
+      const vh = (b.maxY - b.minY) + pad * 2;
+      const vcx = (b.minX + b.maxX) / 2;
+      const vcy = (b.minY + b.maxY) / 2;
+      svg.setAttribute('viewBox', `${vcx - vw / 2} ${vcy - vh / 2} ${vw} ${vh}`);
+      svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    }
+
+    function renderNode(node) {
+      if (node._x === undefined) return;
+
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.classList.add('node-group', node._colorClass || 'color-0');
+      if (node.isRoot) g.classList.add('is-root');
+      if (node.id === state.focusedNodeId) g.classList.add('focused');
+      g.setAttribute('role', 'treeitem');
+      const hasCh = !!(node.children && node.children.length > 0);
+      const isExp = state.expanded.has(node.id);
+      g.setAttribute('aria-expanded', hasCh ? (isExp ? 'true' : 'false') : 'undefined');
+      g.setAttribute('aria-label', node.label + (hasCh ? (isExp ? ' — expanded' : ' — collapsed, ' + node.children.length + ' items') : ''));
+      g.setAttribute('tabindex', '0');
+      g.dataset.nodeId = node.id;
+
+      const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      rect.setAttribute('x', 0); rect.setAttribute('y', 0);
+      rect.setAttribute('width', node._w); rect.setAttribute('height', node._h);
+      rect.setAttribute('rx', '8'); rect.setAttribute('ry', '8');
+      rect.classList.add('node-bg');
+      rect.setAttribute('filter', node.isRoot ? 'url(#root-shadow)' : 'url(#node-shadow)');
+      g.appendChild(rect);
+
+      const txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      txt.classList.add('node-text');
+      txt.setAttribute('font-size', node.isRoot ? 15 : 11);
+      const d = node._dims;
+      const th = d.lines.length * d.lineHeight;
+      const sy = (node._h - th) / 2 + d.lineHeight / 2;
+      d.lines.forEach((line, i) => {
+        const t = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+        t.setAttribute('x', node._w / 2);
+        t.setAttribute('y', sy + i * d.lineHeight);
+        t.setAttribute('class', 'label');
+        t.textContent = line.text;
+        txt.appendChild(t);
+      });
+      g.appendChild(txt);
+
+      if (hasCh) {
+        const cx = node._w + 10, cy = node._h / 2;
+        const circ = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circ.setAttribute('cx', cx); circ.setAttribute('cy', cy);
+        circ.setAttribute('r', '8');
+        circ.classList.add('toggle-circle');
+        g.appendChild(circ);
+        const ic = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        ic.setAttribute('x', cx); ic.setAttribute('y', cy);
+        ic.setAttribute('text-anchor', 'middle');
+        ic.setAttribute('font-size', '11'); ic.setAttribute('font-weight', '700');
+        ic.setAttribute('fill', '#ffffff'); ic.setAttribute('dominant-baseline', 'central');
+        ic.textContent = isExp ? '−' : '+';
+        ic.classList.add('toggle-text');
+        g.appendChild(ic);
+      }
+
+      g.setAttribute('transform', `translate(${node._x}, ${node._y})`);
+
+      if (node.parentId && state.nodeMap[node.parentId]) {
+        const p = state.nodeMap[node.parentId];
+        if (p._x !== undefined) {
+          const sx = p._x + p._w, sy2 = p._y + p._h / 2;
+          const ex = node._x, ey = node._y + node._h / 2;
+          const cp = sx + (ex - sx) * 0.5;
+          const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path.setAttribute('d', `M${sx},${sy2} C${cp},${sy2} ${cp},${ey} ${ex},${ey}`);
+          path.classList.add('connector');
+          if (node.id === state.focusedNodeId || p.id === state.focusedNodeId) path.classList.add('focused');
+          connectionsLayer.appendChild(path);
+        }
+      }
+
+      nodesLayer.appendChild(g);
+
+      if (hasCh && isExp) node.children.forEach(renderNode);
+    }
+
+    renderNode(root);
+  }
+
+  // ================================================================
+  //  TOPIC SWITCHING
+  // ================================================================
+
+  function switchTopic(key) {
+    state.activeTopic = key;
+    state.expanded.clear();
+    state.focusedNodeId = null;
+    state.currentRoot = buildTree();
+    assignColors(state.currentRoot, 0, 0);
+    needsViewFit = true;
+    document.getElementById('fit-branch-btn').disabled = true;
+    renderTopbar();
+    render();
+  }
+
+  function renderTopbar() {
+    topbar.innerHTML = '';
+    TOPICS.forEach(t => {
+      const btn = document.createElement('button');
+      btn.className = 'tab-btn' + (t.key === state.activeTopic ? ' active' : '');
+      btn.setAttribute('role', 'tab');
+      btn.setAttribute('aria-selected', t.key === state.activeTopic ? 'true' : 'false');
+      btn.dataset.topic = t.key;
+      btn.innerHTML = `${t.label} <span class="count">(${t.count})</span>`;
+      btn.addEventListener('click', () => switchTopic(t.key));
+      topbar.appendChild(btn);
+    });
+  }
+
+  // ================================================================
+  //  TOGGLE / FOCUS / ZOOM
+  // ================================================================
+
+  function toggleNode(nodeId) {
+    const node = state.nodeMap[nodeId];
+    if (!node || !node.children || node.children.length === 0) return;
+
+    if (state.expanded.has(nodeId)) {
+      state.expanded.delete(nodeId);
+      function closeDesc(n) {
+        if (n.children) n.children.forEach(c => { state.expanded.delete(c.id); closeDesc(c); });
+      }
+      closeDesc(node);
+    } else {
+      state.expanded.add(nodeId);
+    }
+    render();
+  }
+
+  function focusNode(nodeId) {
+    const node = state.nodeMap[nodeId];
+    if (!node) return;
+    let cur = node;
+    while (cur.parentId) {
+      state.expanded.add(cur.parentId);
+      cur = state.nodeMap[cur.parentId];
+    }
+    if (node.children && node.children.length > 0) state.expanded.add(node.id);
+
+    state.focusedNodeId = nodeId;
+    render();
+    zoomToNode(node);
+    document.getElementById('fit-branch-btn').disabled = false;
+  }
+
+  function zoomToNode(node) {
+    if (!node._x) return;
+    const pad = 80;
+    const startX = node.parentId ? state.nodeMap[node.parentId]._x - 40 : state.currentRoot._x - 40;
+    const endX = branchRightmost(node);
+    const w = endX - startX + pad * 2;
+    const cy = node._y + node._h / 2;
+    const h = Math.max(w * 0.7, node._h * 6);
+    animateViewBox({ x: startX - pad, y: cy - h / 2, w, h });
+  }
+
+  function branchRightmost(node) {
+    if (!node.children || node.children.length === 0 || !state.expanded.has(node.id)) return node._x + node._w;
+    let max = node._x + node._w;
+    for (const c of node.children) max = Math.max(max, branchRightmost(c));
+    return max;
+  }
+
+  function animateViewBox(target) {
+    const cur = svg.getAttribute('viewBox').split(' ').map(Number);
+    const [cx, cy, cw, ch] = cur;
+    const [tx, ty, tw, th] = [target.x, target.y, target.w, target.h];
+    const dur = 200;
+    const t0 = performance.now();
+    function step(now) {
+      const p = Math.min(1, (now - t0) / dur);
+      const e = 1 - (1 - p) * (1 - p) * (1 - p);
+      svg.setAttribute('viewBox',
+        `${cx + (tx - cx) * e} ${cy + (ty - cy) * e} ${cw + (tw - cw) * e} ${ch + (th - ch) * e}`);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function expandAll() {
+    function ex(n) { if (n.children) { state.expanded.add(n.id); n.children.forEach(ex); } }
+    ex(state.currentRoot);
+    state.focusedNodeId = null;
+    document.getElementById('fit-branch-btn').disabled = true;
+    render();
+  }
+
+  function collapseAll() {
+    function col(n) {
+      if (n.id !== state.currentRoot.id && n.children) {
+        state.expanded.delete(n.id);
+        n.children.forEach(col);
+      }
+    }
+    col(state.currentRoot);
+    state.focusedNodeId = null;
+    document.getElementById('fit-branch-btn').disabled = true;
+    render();
+    resetView();
+  }
+
+  function resetView() {
+    const b = computeBounds(state.currentRoot);
+    const pad = 60;
+    const vw = (b.maxX - b.minX) + pad * 2;
+    const vh = (b.maxY - b.minY) + pad * 2;
+    const vcx = (b.minX + b.maxX) / 2;
+    const vcy = (b.minY + b.maxY) / 2;
+    animateViewBox({ x: vcx - vw / 2, y: vcy - vh / 2, w: vw, h: vh });
+  }
+
+  // ================================================================
+  //  EVENTS
+  // ================================================================
+
+  function setupEvents() {
+    nodesLayer.addEventListener('click', (e) => {
+      const g = e.target.closest('.node-group');
+      if (!g) return;
+      const id = g.dataset.nodeId;
+
+      if (e.target.closest('.toggle-circle') || e.target.closest('.toggle-text')) {
+        toggleNode(id);
+        return;
+      }
+
+      if (id !== state.focusedNodeId) {
+        focusNode(id);
+      } else {
+        state.focusedNodeId = null;
+        document.getElementById('fit-branch-btn').disabled = true;
+        resetView();
+      }
+    });
+
+    nodesLayer.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const g = e.target.closest('.node-group');
+        if (g) focusNode(g.dataset.nodeId);
+      }
+    });
+
+    document.getElementById('zoom-in').addEventListener('click', () => zoomViewBox(0.75));
+    document.getElementById('zoom-out').addEventListener('click', () => zoomViewBox(1.33));
+    document.getElementById('zoom-reset').addEventListener('click', resetView);
+
+    function zoomViewBox(factor) {
+      const vb = svg.getAttribute('viewBox').split(' ').map(Number);
+      const [vx, vy, vw, vh] = vb;
+      const nw = vw * factor, nh = vh * factor;
+      svg.setAttribute('viewBox', `${vx + (vw - nw) / 2} ${vy + (vh - nh) / 2} ${nw} ${nh}`);
+    }
+
+    const eab = document.getElementById('expand-all-btn');
+    eab.addEventListener('click', () => {
+      if (eab.dataset.mode === 'collapse') {
+        collapseAll();
+        eab.innerHTML = '<span>▸</span> Expand all';
+        eab.dataset.mode = 'expand';
+      } else {
+        expandAll();
+        eab.innerHTML = '<span>▾</span> Collapse all';
+        eab.dataset.mode = 'collapse';
+      }
+    });
+
+    document.getElementById('collapse-all-btn').addEventListener('click', collapseAll);
+    document.getElementById('fit-branch-btn').addEventListener('click', () => {
+      if (state.focusedNodeId) zoomToNode(state.nodeMap[state.focusedNodeId]);
+    });
+
+    container.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const vb = svg.getAttribute('viewBox').split(' ').map(Number);
+      const [vx, vy, vw, vh] = vb;
+
+      if (e.shiftKey) {
+        const panX = e.deltaY * vw / container.clientWidth * 0.5;
+        svg.setAttribute('viewBox', `${vx + panX} ${vy} ${vw} ${vh}`);
+      } else {
+        const rect = container.getBoundingClientRect();
+        const relX = (e.clientX - rect.left) / container.clientWidth;
+        const relY = (e.clientY - rect.top) / container.clientHeight;
+        const factor = e.deltaY > 0 ? 1.12 : 0.89;
+        const nw = vw * factor, nh = vh * factor;
+        const nx = vx + relX * (vw - nw);
+        const ny = vy + relY * (vh - nh);
+        svg.setAttribute('viewBox', `${nx} ${ny} ${nw} ${nh}`);
+      }
+    }, { passive: false });
+
+    let drag = false, dsx, dsy, dvb;
+    container.addEventListener('mousedown', (e) => {
+      if (e.target.closest('.toolbar') || e.target.closest('.topbar') || e.target.closest('.node-group')) return;
+      drag = true;
+      dsx = e.clientX; dsy = e.clientY;
+      const vb = svg.getAttribute('viewBox').split(' ').map(Number);
+      dvb = { x: vb[0], y: vb[1], w: vb[2], h: vb[3] };
+      container.style.cursor = 'grabbing';
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!drag) return;
+      const dx = e.clientX - dsx, dy = e.clientY - dsy;
+      const sx = dvb.w / container.clientWidth, sy = dvb.h / container.clientHeight;
+      svg.setAttribute('viewBox', `${dvb.x - dx * sx} ${dvb.y - dy * sy} ${dvb.w} ${dvb.h}`);
+    });
+    window.addEventListener('mouseup', () => { if (drag) { drag = false; container.style.cursor = 'grab'; } });
+
+    let tsx, tsy, tvb;
+    container.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1 && !e.target.closest('.toolbar') && !e.target.closest('.topbar')) {
+        tsx = e.touches[0].clientX; tsy = e.touches[0].clientY;
+        const vb = svg.getAttribute('viewBox').split(' ').map(Number);
+        tvb = { x: vb[0], y: vb[1], w: vb[2], h: vb[3] };
+      }
+    }, { passive: true });
+    container.addEventListener('touchmove', (e) => {
+      if (e.touches.length === 1 && tvb) {
+        e.preventDefault();
+        const dx = e.touches[0].clientX - tsx, dy = e.touches[0].clientY - tsy;
+        const sx = tvb.w / container.clientWidth, sy = tvb.h / container.clientHeight;
+        svg.setAttribute('viewBox', `${tvb.x - dx * sx} ${tvb.y - dy * sy} ${tvb.w} ${tvb.h}`);
+      }
+    }, { passive: false });
+    container.addEventListener('touchend', () => { tvb = null; }, { passive: true });
+  }
+
+  // ================================================================
+  //  INIT
+  // ================================================================
+
+  renderTopbar();
+  state.currentRoot = buildTree();
+  assignColors(state.currentRoot, 0, 0);
+  needsViewFit = true;
+  render();
+  setupEvents();
+})();
+</script>
+</body>
+</html>

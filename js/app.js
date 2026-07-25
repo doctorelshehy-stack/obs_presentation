@@ -220,8 +220,9 @@
     // Event: card clicks
     $$('.topic-card').forEach(card => {
       card.addEventListener('click', (e) => {
-        if (e.target.closest('.card-open')) {
-          e.preventDefault();
+        // If clicking the mindmap link, let it open in a new tab naturally
+        if (e.target.closest('.card-mindmap')) {
+          return;
         }
         const topicId = card.dataset.topicId;
         openTopic(topicId);
@@ -274,7 +275,10 @@
               <span class="card-status ${statusClass}">${visited}/${topic.slideCount}</span>
             </div>
           </div>
-          <div class="card-open">${statusText} →</div>
+          <div class="card-actions">
+            <div class="card-open">${statusText} →</div>
+            ${topic.mindmapPath ? `<a class="card-mindmap" href="${topic.mindmapPath}" target="_blank" title="Open Mind Map">🧠</a>` : ''}
+          </div>
         </div>`;
     }).join('');
   }

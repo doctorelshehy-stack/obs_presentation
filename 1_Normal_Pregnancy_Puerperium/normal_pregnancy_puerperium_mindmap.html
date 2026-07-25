@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Normal Pregnancy & Puerperium — Mind Map</title>
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 100%; height: 100%; overflow: hidden; font-family: Arial, Helvetica, sans-serif; background: #ffffff; }
+
+  :root {
+    --connector-color: #7a9bb5;
+    --root-bg: #2d5a3d;
+    --root-text: #ffffff;
+    --focus-ring: #4a90d9;
+    --toolbar-bg: rgba(255,255,255,0.92);
+    --toolbar-border: #e0e0e0;
+    --tab-bg: #f5f5f5;
+    --tab-active-bg: #ffffff;
+    --tab-border: #e0e0e0;
+    --tab-active-border: #7a9bb5;
+    --tab-text: #555;
+    --tab-active-text: #2d5a3d;
+  }
+
+  .topbar {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 200;
+    display: flex; flex-wrap: wrap; gap: 4px;
+    background: linear-gradient(180deg, #ffffff 0%, #fafafa 100%);
+    border-bottom: 1px solid var(--tab-border);
+    padding: 8px 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .tab-btn {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 8px 14px; border: 1px solid var(--tab-border);
+    border-radius: 6px 6px 0 0; background: var(--tab-bg);
+    color: var(--tab-text); font-size: 13px; font-weight: 500;
+    cursor: pointer; white-space: nowrap;
+    transition: all 0.15s ease;
+    position: relative; z-index: 1; margin-bottom: -1px;
+  }
+  .tab-btn:hover { background: #eee; color: #333; }
+  .tab-btn.active {
+    background: var(--tab-active-bg);
+    border-color: var(--tab-active-border);
+    border-bottom-color: var(--tab-active-bg);
+    color: var(--tab-active-text);
+    font-weight: 600;
+    box-shadow: 0 -2px 6px rgba(0,0,0,0.04);
+  }
+  .tab-btn:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+  .tab-btn .count { font-size: 11px; font-weight: 600; opacity: 0.7; }
+
+  .toolbar {
+    position: fixed; top: 16px; right: 16px; z-index: 100;
+    display: flex; gap: 6px; align-items: center;
+    background: var(--toolbar-bg);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid var(--toolbar-border);
+    border-radius: 8px;
+    padding: 6px 10px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    font-family: Arial, Helvetica, sans-serif;
+  }
+  .toolbar button {
+    display: flex; align-items: center; justify-content: center;
+    width: 30px; height: 30px; border: none; border-radius: 6px;
+    background: transparent; color: #666;
+    cursor: pointer; font-size: 15px; line-height: 1;
+    transition: background 0.15s, color 0.15s;
+  }
+  .toolbar button:hover { background: #e8e8e8; color: #333; }
+  .toolbar button:focus-visible { outline: 2px solid var(--focus-ring); outline-offset: 2px; }
+  .toolbar .sep { width: 1px; height: 22px; background: #e0e0e0; margin: 0 4px; }
+  .toolbar .expand-all { font-size: 12px; font-weight: 600; padding: 0 12px; width: auto; gap: 4px; color: #555; }
+  .toolbar .zoom-fit { font-size: 12px; font-weight: 600; padding: 0 12px; width: auto; gap: 4px; color: #555; }
+
+  #svg-container {
+    width: 100%; height: 100vh; overflow: hidden;
+    cursor: grab; background: #ffffff;
+  }
+  #svg-container:active { cursor: grabbing; }
+  svg { width: 100%; height: 100%; display: block; }
+
+  .node-group { cursor: pointer; }
+  .node-group:focus-visible { outline: none; }
+
+  .node-bg {
+    fill: var(--node-fill, #d4edda);
+    stroke: var(--node-stroke, #b8dabe);
+    stroke-width: 1;
+    rx: 8; ry: 8;
+    filter: drop-shadow(0 1px 4px rgba(0,0,0,0.06));
+    transition: fill 0.15s, stroke 0.15s;
+  }
+  .node-group:hover .node-bg {
+    fill: var(--node-fill-hover, #c3e6cb);
+    stroke: #a8ccb0;
+  }
+  .node-group:focus-visible .node-bg {
+    stroke: var(--focus-ring);
+    stroke-width: 2;
+    filter: drop-shadow(0 0 0 3px rgba(74,144,217,0.2));
+  }
+
+  .is-root .node-bg {
+    fill: var(--root-bg);
+    stroke: var(--root-bg);
+    filter: drop-shadow(0 2px 8px rgba(45,90,61,0.2));
+  }
+  .is-root:hover .node-bg { fill: #3a6e4e; }
+  .is-root .node-text { fill: var(--root-text); }
+
+  .node-text {
+    fill: var(--node-text-color, #1a1a2e);
+    font-family: Arial, Helvetica, sans-serif;
+    dominant-baseline: central;
+    text-anchor: middle;
+    pointer-events: none;
+    user-select: none;
+  }
+  .is-root .node-text { fill: #ffffff; }
+  .node-text .label { font-weight: 500; }
+
+  .toggle-circle { transition: fill 0.15s; }
+  .toggle-text {
+    fill: #ffffff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    pointer-events: none;
+    user-select: none;
+    dominant-baseline: central;
+    text-anchor: middle;
+  }
+
+  .connector {
+    stroke: var(--connector-color);
+    stroke-width: 1.5;
+    fill: none;
+    stroke-linecap: round;
+  }
+  @keyframes node-appear {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .node-group {
+    animation: node-appear 0.18s ease-out forwards;
+  }
+  @keyframes connector-appear {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+  }
+  .connector {
+    animation: connector-appear 0.22s ease-out;
+  }
+
+  .connector.focused { stroke: #4a90d9; stroke-width: 2.5; }
+  .node-group.focused .node-bg { stroke: #4a90d9; stroke-width: 2; filter: drop-shadow(0 0 6px rgba(74,144,217,0.4)); }
+
+  .color-0 { --node-fill: #d4edda; --node-fill-hover: #c3e6cb; --node-stroke: #b8dabe; --node-text-color: #1a3a1a; --toggle-fill: #7a9bb5; }
+  .color-1 { --node-fill: #d6ecf0; --node-fill-hover: #c5e0e6; --node-stroke: #b0d0d8; --node-text-color: #1a2a3a; --toggle-fill: #6b8f9e; }
+  .color-2 { --node-fill: #fce4d6; --node-fill-hover: #f5d5c0; --node-stroke: #e8c4a8; --node-text-color: #3a2a1a; --toggle-fill: #b88d7a; }
+  .color-3 { --node-fill: #f0d9f0; --node-fill-hover: #e5c8e5; --node-stroke: #d8b8d8; --node-text-color: #2a1a3a; --toggle-fill: #9a7a9e; }
+  .color-4 { --node-fill: #d6e4f0; --node-fill-hover: #c5d8e6; --node-stroke: #b0c8d8; --node-text-color: #1a2a3a; --toggle-fill: #6b8a9e; }
+  .color-5 { --node-fill: #e8f0d6; --node-fill-hover: #dae6c5; --node-stroke: #c8d8b0; --node-text-color: #2a3a1a; --toggle-fill: #8a9e6b; }
+  .color-6 { --node-fill: #fce8d6; --node-fill-hover: #f5dcc0; --node-stroke: #e8ccb0; --node-text-color: #3a2a1a; --toggle-fill: #b88a6b; }
+  .color-7 { --node-fill: #f0d6d6; --node-fill-hover: #e5c5c5; --node-stroke: #d8b0b0; --node-text-color: #3a1a1a; --toggle-fill: #9e6b6b; }
+
+  .node-group .toggle-circle { fill: var(--toggle-fill, #7a9bb5); }
+  .node-group:hover .toggle-circle { fill: #5a7a9a; }
+
+  @media (max-width: 600px) {
+    .topbar { padding: 6px 8px; gap: 2px; }
+    .tab-btn { padding: 6px 10px; font-size: 12px; }
+    .toolbar { top: 10px; right: 10px; padding: 4px 8px; }
+    .toolbar button { width: 26px; height: 26px; font-size: 13px; }
+    .toolbar .expand-all, .toolbar .zoom-fit { padding: 0 8px; font-size: 11px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar" role="tablist" aria-label="Normal Pregnancy & Puerperium" id="topbar"></div>
+
+<div id="svg-container">
+  <svg id="mindmap-svg" role="tree" aria-label="Interactive mind map" style="overflow:visible;">
+    <defs>
+      <filter id="node-shadow" x="-10%" y="-10%" width="130%" height="130%">
+        <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>
+      </filter>
+      <filter id="root-shadow" x="-10%" y="-10%" width="130%" height="130%">
+        <feDropShadow dx="0" dy="2" stdDeviation="4" flood-opacity="0.15"/>
+      </filter>
+    </defs>
+    <g id="connections-layer"></g>
+    <g id="nodes-layer"></g>
+  </svg>
+</div>
+
+<div class="toolbar" role="toolbar" aria-label="Mind map controls">
+  <button id="zoom-in" aria-label="Zoom in" title="Zoom in">+</button>
+  <button id="zoom-out" aria-label="Zoom out" title="Zoom out">−</button>
+  <button id="zoom-reset" aria-label="Reset zoom & view" title="Reset zoom & view">⟲</button>
+  <div class="sep"></div>
+  <button id="expand-all-btn" class="expand-all" title="Expand all branches">
+    <span>▸</span> Expand all
+  </button>
+  <div class="sep"></div>
+  <button id="collapse-all-btn" class="expand-all" title="Collapse all, return to root">
+    <span>▾</span> Collapse all
+  </button>
+  <div class="sep"></div>
+  <button id="fit-branch-btn" class="zoom-fit" title="Zoom to focused branch" disabled>
+    <span>🔍</span> Focus branch
+  </button>
+</div>
+
+<script>
+/* ==================================================================
+   fullTreeData
+   ================================================================== */
+const fullTreeData = {
+  label: "Normal Pregnancy & Puerperium",
+  children: [
+    {
+      label: "Fertilization & Implantation",
+      children: [
+        { label: "Sperm capacitation → ampulla" },
+        { label: "Zygote → Morula → Blastocyst" },
+        { label: "Implantation: Days 6-7" },
+        { label: "Trophoblast: Cyto- & Syncytiotrophoblast" },
+        { label: "Villus stages: Primary → Secondary → Tertiary" }
+      ]
+    },
+    {
+      label: "Placenta: Structure & Abnormalities",
+      children: [
+        {
+          label: "Normal structure",
+          children: [
+            { label: "Discoid, 500g, 20-25cm" },
+            { label: "Chorion frondosum & Decidua basalis" },
+            { label: "Fetal surface smooth; Maternal cotyledons" },
+            { label: "Placental barrier: Trophoblast, stroma, endothelium" }
+          ]
+        },
+        {
+          label: "Transport mechanisms",
+          children: [
+            { label: "Simple diffusion: H₂O, electrolytes" },
+            { label: "Facilitated: Glucose, amino acids" },
+            { label: "Active transport: Ca, Fe, minerals" },
+            { label: "Pinocytosis: Ig, LDL" }
+          ]
+        },
+        {
+          label: "Abnormal shapes",
+          children: [
+            { label: "Bipartite & Bilobate" },
+            { label: "Succenturiata (accessory lobe)" },
+            { label: "Circumvallate (whitish ring)" },
+            { label: "Fenestrate (opening)" }
+          ]
+        },
+        {
+          label: "Other abnormalities",
+          children: [
+            { label: "Previa: Lower segment site" },
+            { label: "Small → IUGR; Large → DM/Rh" },
+            { label: "Accreta: Abnormal adherence" },
+            { label: "Tumors: Mole, choriocarcinoma" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Umbilical Cord & Amniotic Fluid",
+      children: [
+        {
+          label: "Umbilical cord",
+          children: [
+            { label: "50cm long × 2cm diameter" },
+            { label: "2 arteries + 1 vein in Wharton jelly" },
+            { label: "Vein carries oxygenated blood to fetus" },
+            { label: "Anomalies: Length, battledore, vasa previa, knots" }
+          ]
+        },
+        {
+          label: "Amniotic fluid",
+          children: [
+            { label: "Origin: Maternal transudation + fetal urine" },
+            { label: "Dynamic circulation via fetal swallowing" },
+            { label: "Protection, thermoregulation, free movement" },
+            { label: "Labor: Cervical dilatation, washes birth canal" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Placental Hormones",
+      children: [
+        {
+          label: "HCG",
+          children: [
+            { label: "Maintains corpus luteum (10 wks)" },
+            { label: "Immunosuppressive action" },
+            { label: "Diagnosis of pregnancy & abnormalities" },
+            { label: "Stimulates fetal testosterone" }
+          ]
+        },
+        {
+          label: "HPL",
+          children: [
+            { label: "Anti-insulin effect" },
+            { label: "Sparses glucose & fatty acids for fetus" },
+            { label: "Stimulates breast growth" }
+          ]
+        },
+        {
+          label: "Estrogen",
+          children: [
+            { label: "From DHEAS (maternal & fetal adrenals)" },
+            { label: "Estradiol (E2) & Estriol (E3)" },
+            { label: "Genital tract & breast changes" }
+          ]
+        },
+        {
+          label: "Progesterone",
+          children: [
+            { label: "Synthesized by syncytiotrophoblast" },
+            { label: "From maternal cholesterol" },
+            { label: "Precursor for fetal glucocorticoids" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Maternal Genital Changes",
+      children: [
+        {
+          label: "Uterus",
+          children: [
+            { label: "Weight: 50g → 1000g at term" },
+            { label: "Hypertrophy (estrogen) + Hyperplasia (progesterone)" },
+            { label: "Isthmus → Lower uterine segment (10cm)" },
+            { label: "Braxton Hicks contractions" }
+          ]
+        },
+        {
+          label: "Cervix",
+          children: [
+            { label: "Soft, bluish (Jacquemier sign)" },
+            { label: "Increased vascularity" }
+          ]
+        },
+        {
+          label: "Vagina & Vulva",
+          children: [
+            { label: "Violet discoloration (Chadwick sign)" },
+            { label: "Edematous, increased vascularity" }
+          ]
+        },
+        {
+          label: "Ovaries & Breasts",
+          children: [
+            { label: "Ovary enlarged with corpus luteum" },
+            { label: "Breasts: Enlarged, Montgomery tubercles, colostrum" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Maternal Systemic Changes",
+      children: [
+        {
+          label: "Cardiovascular",
+          children: [
+            { label: "CO ↑40% by 20w, constant till term" },
+            { label: "BP ↓ especially 2nd trimester" },
+            { label: "Pulse ↑10 bpm, apex displaced up/left" },
+            { label: "Blood vol ↑30-40%, hypercoagulable" }
+          ]
+        },
+        {
+          label: "Respiratory",
+          children: [
+            { label: "Tidal volume ↑40%" },
+            { label: "Hyperventilation (progesterone)" },
+            { label: "Diaphragm displaced up 4cm" }
+          ]
+        },
+        {
+          label: "Renal",
+          children: [
+            { label: "GFR ↑50%, ↓creatinine & urea" },
+            { label: "Renal glucosuria (↓threshold)" },
+            { label: "Ureters dilated (R > L)" },
+            { label: "Urinary frequency" }
+          ]
+        },
+        {
+          label: "GIT",
+          children: [
+            { label: "Nausea/vomiting: 4-12 wks" },
+            { label: "Heartburn: ↓esophageal sphincter" },
+            { label: "Constipation: ↓motility" },
+            { label: "Piles: Laxity of vein walls" },
+            { label: "Gall bladder: Delayed emptying → stones" }
+          ]
+        },
+        {
+          label: "Skin & Metabolic",
+          children: [
+            { label: "Chloasma, linea nigra, striae gravidarum" },
+            { label: "Weight gain: 10-12kg" },
+            { label: "Diabetogenic: Mild fasting hypoglycemia" },
+            { label: "↑Lipids, ↑cholesterol" }
+          ]
+        },
+        {
+          label: "Hematology & Endocrine",
+          children: [
+            { label: "Fibrinogen doubled, Factor VIII tripled" },
+            { label: "↓Fibrinolytic activity" },
+            { label: "Thyroid: ↑TBG, ↑T3/T4, ↓TSH" },
+            { label: "Suprarenal: ↑aldosterone & cortisol" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Diagnosis of Pregnancy",
+      children: [
+        {
+          label: "1st Trimester (0-12w)",
+          children: [
+            { label: "Secondary amenorrhea" },
+            { label: "Nausea, frequency, breast symptoms" },
+            { label: "Hegar sign & Palmar sign" },
+            { label: "hCG in urine/serum (1 wk before missed period)" }
+          ]
+        },
+        {
+          label: "2nd Trimester (13-28w)",
+          children: [
+            { label: "Quickening: 18-20w (P), 16-18w (M)" },
+            { label: "Braxton Hicks contractions" },
+            { label: "Ballottement: External 20w, Internal 16w" },
+            { label: "FHS & Uterine soufflé" },
+            { label: "Umbilical soufflé — sure sign" }
+          ]
+        },
+        {
+          label: "3rd Trimester (29-40w)",
+          children: [
+            { label: "Engagement symptoms: Lightening, frequency" },
+            { label: "Palpation of fetal parts & movement" },
+            { label: "Auscultation of FHS" },
+            { label: "Ultrasonography diagnostic" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Antenatal Care",
+      children: [
+        {
+          label: "Goals",
+          children: [
+            { label: "Diagnosis & accurate dating" },
+            { label: "Identify high-risk pregnancy" },
+            { label: "Early detection of complications" },
+            { label: "Patient advice & education" }
+          ]
+        },
+        {
+          label: "Visit schedule",
+          children: [
+            { label: "Monthly up to 28 weeks" },
+            { label: "Every 2 weeks 28-36 weeks" },
+            { label: "Weekly after 36 weeks" }
+          ]
+        },
+        {
+          label: "Initial screening",
+          children: [
+            { label: "CBC, ABO, Rh typing" },
+            { label: "Urine albumin, sugar, culture" },
+            { label: "1hr postprandial glucose" },
+            { label: "HBsAg, Rubella, HIV, Syphilis" }
+          ]
+        },
+        {
+          label: "Advice & precautions",
+          children: [
+            { label: "Clothing loose, avoid high heels" },
+            { label: "Sleep 8hr night + 2hr afternoon" },
+            { label: "Avoid smoking & alcohol" },
+            { label: "Live vaccines contraindicated" },
+            { label: "Drugs: Avoid 1st trimester" }
+          ]
+        },
+        {
+          label: "Danger signs",
+          children: [
+            { label: "Persistent headache, blurring, epigastric pain" },
+            { label: "Edema of face & limbs" },
+            { label: "Vaginal bleeding" },
+            { label: "Decreased fetal kicks" },
+            { label: "Fever, dyspnea, severe pain" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Pelvis & Fetal Skull",
+      children: [
+        {
+          label: "Pelvis types",
+          children: [
+            { label: "Gynecoid: 50% — round inlet" },
+            { label: "Android: 20% — triangular inlet" },
+            { label: "Anthropoid & Platypelloid" }
+          ]
+        },
+        {
+          label: "Pelvic diameters",
+          children: [
+            { label: "Inlet: True conj 11cm, Obstetric 10.5cm" },
+            { label: "Cavity: Wide, rounded" },
+            { label: "Outlet: Bituberous 11cm" },
+            { label: "Pelvic axis: J-shaped curve" }
+          ]
+        },
+        {
+          label: "Fetal skull",
+          children: [
+            { label: "2 Frontal + 2 Parietal + Occipital bones" },
+            { label: "Sutures: Frontal, sagittal, coronal, lambdoid" },
+            { label: "Bregma (ant. fontanelle) & Lambda (post.)" },
+            { label: "Regions: Vertex, brow, face" }
+          ]
+        },
+        {
+          label: "Key skull diameters",
+          children: [
+            { label: "Suboccipitobregmatic: 9.5cm" },
+            { label: "Occipitofrontal (OF): 11.5cm" },
+            { label: "Suboccipitofrontal: 10cm" },
+            { label: "Mentovertical: 13.5cm" },
+            { label: "Submentobregmatic: 9.5cm" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Puerperium",
+      children: [
+        {
+          label: "Normal involution",
+          children: [
+            { label: "Duration: 6 weeks postpartum" },
+            { label: "Uterus: 1000g → 60g" },
+            { label: "Afterpains (↑ with suckling)" },
+            { label: "Lochia: Rubra → Serosa → Alba" },
+            { label: "Breasts: Colostrum → milk in 2-3 days" }
+          ]
+        },
+        {
+          label: "Management",
+          children: [
+            { label: "Vital signs & uterine massage every 15 min" },
+            { label: "Semi-sitting position for lochia drainage" },
+            { label: "Early ambulation → ↓DVT" },
+            { label: "Perineal care with antiseptic" },
+            { label: "Anti-D if Rh-ve mother / Rh+ve baby" },
+            { label: "Pelvic floor exercises" },
+            { label: "Contraception counseling" }
+          ]
+        },
+        {
+          label: "Subinvolution",
+          children: [
+            { label: "Retained placental fragments" },
+            { label: "Infection" },
+            { label: "Antepartum overdistension" },
+            { label: "Non-lactating women" }
+          ]
+        },
+        {
+          label: "Puerperal pyrexia",
+          children: [
+            { label: "≥38°C for ≥24hr in first 10 days" },
+            { label: "Milk engorgement (most common)" },
+            { label: "Puerperal sepsis (most serious)" },
+            { label: "UTI, breast infection, DVT" }
+          ]
+        }
+      ]
+    },
+    {
+      label: "Fetal Well-being",
+      children: [
+        {
+          label: "Kick count",
+          children: [
+            { label: "After 30 weeks' gestation" },
+            { label: "Count kicks 3hr/day → ×4 = 12hr total" },
+            { label: "<10 kicks → Non-Stress Test" }
+          ]
+        },
+        {
+          label: "Non-Stress Test (NST)",
+          children: [
+            { label: "After 32 weeks" },
+            { label: "Reactive: ≥2 accels ≥15bpm ×15sec in 20min" },
+            { label: "Non-reactive: Further evaluation needed" }
+          ]
+        },
+        {
+          label: "Contraction Stress Test (CST)",
+          children: [
+            { label: "FHR response to 3 contractions/10min" },
+            { label: "Negative: No late decelerations" },
+            { label: "Positive: Late decelerations" }
+          ]
+        },
+        {
+          label: "CTG components",
+          children: [
+            { label: "Baseline FHR: 110-160 bpm" },
+            { label: "Variability: 6-25 bpm" },
+            { label: "Accelerations & decelerations" },
+            { label: "Uterine contractions" }
+          ]
+        },
+        {
+          label: "BPP & Doppler",
+          children: [
+            { label: "5 components: Breathing, movement, tone, AFV, NST" },
+            { label: "Score 8-10 = normal" },
+            { label: "Doppler: S/D ratio, absent/reversed EDF" }
+          ]
+        }
+      ]
+    }
+  ]
+};
+/* ==================================================================
+   END fullTreeData
+   ================================================================== */
+
+(() => {
+  'use strict';
+
+  // ==== Topics =====
+  const TOPICS = [
+    { key: 'all', label: 'All Topics', count: 11 },
+    { key: 'topic0', label: 'Fertilization & Implantation', count: 5 },
+    { key: 'topic1', label: 'Placenta: Structure & Abnormalities', count: 16 },
+    { key: 'topic2', label: 'Umbilical Cord & Amniotic Fluid', count: 8 },
+    { key: 'topic3', label: 'Placental Hormones', count: 13 },
+    { key: 'topic4', label: 'Maternal Genital Changes', count: 9 },
+    { key: 'topic5', label: 'Maternal Systemic Changes', count: 18 },
+    { key: 'topic6', label: 'Diagnosis of Pregnancy', count: 11 },
+    { key: 'topic7', label: 'Antenatal Care', count: 16 },
+    { key: 'topic8', label: 'Pelvis & Fetal Skull', count: 14 },
+    { key: 'topic9', label: 'Puerperium', count: 16 },
+    { key: 'topic10', label: 'Fetal Well-being', count: 15 },
+  ];
+  const topicKeys = ['topic0','topic1','topic2','topic3','topic4','topic5','topic6','topic7','topic8','topic9','topic10'];
+
+  // ==== DOM refs ====
+  const svg = document.getElementById('mindmap-svg');
+  const connectionsLayer = document.getElementById('connections-layer');
+  const nodesLayer = document.getElementById('nodes-layer');
+  const container = document.getElementById('svg-container');
+  const topbar = document.getElementById('topbar');
+
+  // ==== State ====
+  const state = {
+    expanded: new Set(),
+    nodeMap: {},
+    focusedNodeId: null,
+    activeTopic: 'all',
+  };
+
+  let nodeCounter = 0;
+  const X_GAP = 90;
+  const Y_GAP = 14;
+  let needsViewFit = true;
+
+  // ================================================================
+  function buildTree() {
+    state.nodeMap = {};
+    nodeCounter = 0;
+
+    function cloneAndId(node, parentId) {
+      const n = { label: node.label };
+      n.id = 'n' + (nodeCounter++);
+      if (node.children) n.children = node.children.map(c => cloneAndId(c, n.id));
+      n.parentId = parentId || null;
+      state.nodeMap[n.id] = n;
+      return n;
+    }
+
+    let root;
+    if (state.activeTopic === 'all') {
+      root = cloneAndId(fullTreeData, null);
+    } else {
+      const idx = topicKeys.indexOf(state.activeTopic);
+      if (idx === -1) root = cloneAndId(fullTreeData, null);
+      else {
+        const branch = fullTreeData.children[idx];
+        const clonedBranch = cloneAndId(branch, null);
+        root = { label: clonedBranch.label, children: clonedBranch.children, id: clonedBranch.id, parentId: null };
+        state.nodeMap[clonedBranch.id] = root;
+      }
+    }
+
+    state.expanded.add(root.id);
+    return root;
+  }
+
+  // ================================================================
+  function assignColors(node, depth, branchIdx) {
+    const colors = ['color-0','color-1','color-2','color-3','color-4','color-5','color-6','color-7'];
+    if (depth === 0) node._colorClass = 'is-root';
+    else if (depth === 1) node._colorClass = colors[branchIdx % colors.length];
+    else node._colorClass = colors[branchIdx % colors.length];
+    if (node.children) node.children.forEach((c, i) => assignColors(c, depth + 1, depth === 0 ? i : branchIdx));
+  }
+
+  // ================================================================
+  function measureText(text, fontSize) {
+    const c = document.createElement('canvas');
+    const ctx = c.getContext('2d');
+    ctx.font = fontSize + 'px Arial, Helvetica, sans-serif';
+    return ctx.measureText(text || '').width;
+  }
+
+  function wrapText(text, maxWidth, fontSize) {
+    if (!text) return [{ text: '', width: 0 }];
+    const words = text.split(/\s+/);
+    const lines = [];
+    let cur = '', curW = 0;
+    for (const w of words) {
+      const ww = measureText(w + ' ', fontSize);
+      if (curW + ww > maxWidth && cur) {
+        lines.push({ text: cur.trim(), width: curW });
+        cur = w + ' '; curW = ww;
+      } else { cur += w + ' '; curW += ww; }
+    }
+    if (cur.trim()) lines.push({ text: cur.trim(), width: curW });
+    return lines.slice(0, 3);
+  }
+
+  function computeDims(label, fontSize, isRoot) {
+    const maxChars = isRoot ? 28 : 24;
+    const cw = fontSize * 0.58;
+    const maxTW = maxChars * cw;
+    const lines = wrapText(label, maxTW, fontSize);
+    const lh = fontSize * 1.35;
+    const tw = Math.max(...lines.map(l => l.width));
+    const th = lines.length * lh;
+    const px = isRoot ? 24 : 16;
+    const py = isRoot ? 14 : 10;
+    return {
+      width: Math.max(isRoot ? 100 : 56, tw + px * 2),
+      height: Math.max(isRoot ? 40 : 30, th + py * 2),
+      lines, lineHeight: lh,
+    };
+  }
+
+  // ================================================================
+  function layout(node, depth, startX, startY) {
+    const isRoot = depth === 0;
+    const fs = isRoot ? 15 : 13;
+    const dims = computeDims(node.label, fs, isRoot);
+    node.isRoot = isRoot;
+    node._dims = dims;
+    node._x = startX;
+    node._y = startY;
+    node._w = dims.width;
+    node._h = dims.height;
+
+    if (!node.children || node.children.length === 0 || !state.expanded.has(node.id)) return;
+
+    const childX = startX + dims.width + X_GAP;
+    let curY = startY;
+    for (const child of node.children) {
+      layout(child, depth + 1, childX, curY);
+      curY += subtreeHeight(child) + Y_GAP;
+    }
+  }
+
+  function subtreeHeight(node) {
+    if (!node._h) return 0;
+    if (!node.children || node.children.length === 0 || !state.expanded.has(node.id)) return node._h;
+    let total = 0;
+    for (const c of node.children) total += subtreeHeight(c);
+    return Math.max(node._h, total + (node.children.length - 1) * Y_GAP);
+  }
+
+  function computeBounds(root) {
+    let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+    function walk(n) {
+      if (n._x === undefined) return;
+      const pad = 50;
+      minX = Math.min(minX, n._x - pad);
+      minY = Math.min(minY, n._y - pad);
+      maxX = Math.max(maxX, n._x + n._w + pad);
+      maxY = Math.max(maxY, n._y + n._h + pad);
+      if (n.children && state.expanded.has(n.id)) n.children.forEach(walk);
+    }
+    walk(root);
+    if (minX === Infinity) return { minX: -200, minY: -200, maxX: 200, maxY: 200 };
+    return { minX, minY, maxX, maxY };
+  }
+
+  // ================================================================
+  function render() {
+    const root = state.currentRoot;
+    if (!root) return;
+
+    connectionsLayer.innerHTML = '';
+    nodesLayer.innerHTML = '';
+
+    layout(root, 0, 30, 30);
+
+    if (needsViewFit) {
+      needsViewFit = false;
+      const b = computeBounds(root);
+      const pad = 60;
+      const vw = (b.maxX - b.minX) + pad * 2;
+      const vh = (b.maxY - b.minY) + pad * 2;
+      const vcx = (b.minX + b.maxX) / 2;
+      const vcy = (b.minY + b.maxY) / 2;
+      svg.setAttribute('viewBox', `${vcx - vw / 2} ${vcy - vh / 2} ${vw} ${vh}`);
+      svg.setAttribute('preserveAspectRatio', 'xMidYMid meet');
+    }
+
+    function renderNode(node) {
+      if (node._x === undefined) return;
+
+      const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+      g.classList.add('node-group', node._colorClass || 'color-0');
+      if (node.isRoot) g.classList.add('is-root');
+      if (node.id === state.focusedNodeId) g.classList.add('focused');
+      g.setAttribute('role', 'treeitem');
+      const hasCh = !!(node.children && node.children.length > 0);
+      const isExp = state.expanded.has(node.id);
+      g.setAttribute('aria-expanded', hasCh ? (isExp ? 'true' : 'false') : 'undefined');
+      g.setAttribute('aria-label', node.label + (hasCh ? (isExp ? ' — expanded' : ' — collapsed, ' + node.children.length + ' items') : ''));
+      g.setAttribute('tabindex', '0');
+      g.dataset.nodeId = node.id;
+
+      const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+      rect.setAttribute('x', 0); rect.setAttribute('y', 0);
+      rect.setAttribute('width', node._w); rect.setAttribute('height', node._h);
+      rect.setAttribute('rx', '8'); rect.setAttribute('ry', '8');
+      rect.classList.add('node-bg');
+      rect.setAttribute('filter', node.isRoot ? 'url(#root-shadow)' : 'url(#node-shadow)');
+      g.appendChild(rect);
+
+      const txt = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+      txt.classList.add('node-text');
+      txt.setAttribute('font-size', node.isRoot ? 15 : 13);
+      const d = node._dims;
+      const th = d.lines.length * d.lineHeight;
+      const sy = (node._h - th) / 2 + d.lineHeight / 2;
+      d.lines.forEach((line, i) => {
+        const t = document.createElementNS('http://www.w3.org/2000/svg', 'tspan');
+        t.setAttribute('x', node._w / 2);
+        t.setAttribute('y', sy + i * d.lineHeight);
+        t.setAttribute('class', 'label');
+        t.textContent = line.text;
+        txt.appendChild(t);
+      });
+      g.appendChild(txt);
+
+      if (hasCh) {
+        const cx = node._w + 10, cy = node._h / 2;
+        const circ = document.createElementNS('http://www.w3.org/2000/svg', 'circle');
+        circ.setAttribute('cx', cx); circ.setAttribute('cy', cy);
+        circ.setAttribute('r', '8');
+        circ.classList.add('toggle-circle');
+        g.appendChild(circ);
+        const ic = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+        ic.setAttribute('x', cx); ic.setAttribute('y', cy);
+        ic.setAttribute('text-anchor', 'middle');
+        ic.setAttribute('font-size', '11'); ic.setAttribute('font-weight', '700');
+        ic.setAttribute('fill', '#ffffff'); ic.setAttribute('dominant-baseline', 'central');
+        ic.textContent = isExp ? '−' : '+';
+        ic.classList.add('toggle-text');
+        g.appendChild(ic);
+      }
+
+      g.setAttribute('transform', `translate(${node._x}, ${node._y})`);
+
+      if (node.parentId && state.nodeMap[node.parentId]) {
+        const p = state.nodeMap[node.parentId];
+        if (p._x !== undefined) {
+          const sx = p._x + p._w, sy2 = p._y + p._h / 2;
+          const ex = node._x, ey = node._y + node._h / 2;
+          const cp = sx + (ex - sx) * 0.5;
+          const path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+          path.setAttribute('d', `M${sx},${sy2} C${cp},${sy2} ${cp},${ey} ${ex},${ey}`);
+          path.classList.add('connector');
+          if (node.id === state.focusedNodeId || p.id === state.focusedNodeId) path.classList.add('focused');
+          connectionsLayer.appendChild(path);
+        }
+      }
+
+      nodesLayer.appendChild(g);
+
+      if (hasCh && isExp) node.children.forEach(renderNode);
+    }
+
+    renderNode(root);
+  }
+
+  // ================================================================
+  function switchTopic(key) {
+    state.activeTopic = key;
+    state.expanded.clear();
+    state.focusedNodeId = null;
+    state.currentRoot = buildTree();
+    assignColors(state.currentRoot, 0, 0);
+    needsViewFit = true;
+    document.getElementById('fit-branch-btn').disabled = true;
+    renderTopbar();
+    render();
+  }
+
+  function renderTopbar() {
+    topbar.innerHTML = '';
+    TOPICS.forEach(t => {
+      const btn = document.createElement('button');
+      btn.className = 'tab-btn' + (t.key === state.activeTopic ? ' active' : '');
+      btn.setAttribute('role', 'tab');
+      btn.setAttribute('aria-selected', t.key === state.activeTopic ? 'true' : 'false');
+      btn.dataset.topic = t.key;
+      btn.innerHTML = `${t.label} <span class="count">(${t.count})</span>`;
+      btn.addEventListener('click', () => switchTopic(t.key));
+      topbar.appendChild(btn);
+    });
+  }
+
+  // ================================================================
+  function toggleNode(nodeId) {
+    const node = state.nodeMap[nodeId];
+    if (!node || !node.children || node.children.length === 0) return;
+
+    if (state.expanded.has(nodeId)) {
+      state.expanded.delete(nodeId);
+      function closeDesc(n) {
+        if (n.children) n.children.forEach(c => { state.expanded.delete(c.id); closeDesc(c); });
+      }
+      closeDesc(node);
+    } else {
+      state.expanded.add(nodeId);
+    }
+    render();
+  }
+
+  function focusNode(nodeId) {
+    const node = state.nodeMap[nodeId];
+    if (!node) return;
+    let cur = node;
+    while (cur.parentId) {
+      state.expanded.add(cur.parentId);
+      cur = state.nodeMap[cur.parentId];
+    }
+    if (node.children && node.children.length > 0) state.expanded.add(node.id);
+
+    state.focusedNodeId = nodeId;
+    render();
+
+    zoomToNode(node);
+    document.getElementById('fit-branch-btn').disabled = false;
+  }
+
+  function zoomToNode(node) {
+    if (!node._x) return;
+    const pad = 80;
+    const startX = node.parentId ? state.nodeMap[node.parentId]._x - 40 : state.currentRoot._x - 40;
+    const endX = branchRightmost(node);
+    const w = endX - startX + pad * 2;
+    const cy = node._y + node._h / 2;
+    const h = Math.max(w * 0.7, node._h * 6);
+    animateViewBox({ x: startX - pad, y: cy - h / 2, w, h });
+  }
+
+  function branchRightmost(node) {
+    if (!node.children || node.children.length === 0 || !state.expanded.has(node.id)) return node._x + node._w;
+    let max = node._x + node._w;
+    for (const c of node.children) max = Math.max(max, branchRightmost(c));
+    return max;
+  }
+
+  function animateViewBox(target) {
+    const cur = svg.getAttribute('viewBox').split(' ').map(Number);
+    const [cx, cy, cw, ch] = cur;
+    const [tx, ty, tw, th] = [target.x, target.y, target.w, target.h];
+    const dur = 200;
+    const t0 = performance.now();
+    function step(now) {
+      const p = Math.min(1, (now - t0) / dur);
+      const e = 1 - (1 - p) * (1 - p) * (1 - p);
+      svg.setAttribute('viewBox',
+        `${cx + (tx - cx) * e} ${cy + (ty - cy) * e} ${cw + (tw - cw) * e} ${ch + (th - ch) * e}`);
+      if (p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  function expandAll() {
+    function ex(n) { if (n.children) { state.expanded.add(n.id); n.children.forEach(ex); } }
+    ex(state.currentRoot);
+    state.focusedNodeId = null;
+    document.getElementById('fit-branch-btn').disabled = true;
+    render();
+  }
+
+  function collapseAll() {
+    function col(n) {
+      if (n.id !== state.currentRoot.id && n.children) {
+        state.expanded.delete(n.id);
+        n.children.forEach(col);
+      }
+    }
+    col(state.currentRoot);
+    state.focusedNodeId = null;
+    document.getElementById('fit-branch-btn').disabled = true;
+    render();
+    resetView();
+  }
+
+  function resetView() {
+    const b = computeBounds(state.currentRoot);
+    const pad = 60;
+    const vw = (b.maxX - b.minX) + pad * 2;
+    const vh = (b.maxY - b.minY) + pad * 2;
+    const vcx = (b.minX + b.maxX) / 2;
+    const vcy = (b.minY + b.maxY) / 2;
+    animateViewBox({ x: vcx - vw / 2, y: vcy - vh / 2, w: vw, h: vh });
+  }
+
+  // ================================================================
+  function setupEvents() {
+    nodesLayer.addEventListener('click', (e) => {
+      const g = e.target.closest('.node-group');
+      if (!g) return;
+      const id = g.dataset.nodeId;
+
+      if (e.target.closest('.toggle-circle') || e.target.closest('.toggle-text')) {
+        toggleNode(id);
+        return;
+      }
+
+      if (id !== state.focusedNodeId) {
+        focusNode(id);
+      } else {
+        state.focusedNodeId = null;
+        document.getElementById('fit-branch-btn').disabled = true;
+        resetView();
+      }
+    });
+
+    nodesLayer.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const g = e.target.closest('.node-group');
+        if (g) focusNode(g.dataset.nodeId);
+      }
+    });
+
+    document.getElementById('zoom-in').addEventListener('click', () => zoomViewBox(0.75));
+    document.getElementById('zoom-out').addEventListener('click', () => zoomViewBox(1.33));
+    document.getElementById('zoom-reset').addEventListener('click', resetView);
+
+    function zoomViewBox(factor) {
+      const vb = svg.getAttribute('viewBox').split(' ').map(Number);
+      const [vx, vy, vw, vh] = vb;
+      const nw = vw * factor, nh = vh * factor;
+      svg.setAttribute('viewBox', `${vx + (vw - nw) / 2} ${vy + (vh - nh) / 2} ${nw} ${nh}`);
+    }
+
+    const eab = document.getElementById('expand-all-btn');
+    eab.addEventListener('click', () => {
+      if (eab.dataset.mode === 'collapse') {
+        collapseAll();
+        eab.innerHTML = '<span>▸</span> Expand all';
+        eab.dataset.mode = 'expand';
+      } else {
+        expandAll();
+        eab.innerHTML = '<span>▾</span> Collapse all';
+        eab.dataset.mode = 'collapse';
+      }
+    });
+
+    document.getElementById('collapse-all-btn').addEventListener('click', collapseAll);
+
+    document.getElementById('fit-branch-btn').addEventListener('click', () => {
+      if (state.focusedNodeId) zoomToNode(state.nodeMap[state.focusedNodeId]);
+    });
+
+    container.addEventListener('wheel', (e) => {
+      e.preventDefault();
+      const vb = svg.getAttribute('viewBox').split(' ').map(Number);
+      const [vx, vy, vw, vh] = vb;
+
+      if (e.shiftKey) {
+        const panX = e.deltaY * vw / container.clientWidth * 0.5;
+        svg.setAttribute('viewBox', `${vx + panX} ${vy} ${vw} ${vh}`);
+      } else {
+        const rect = container.getBoundingClientRect();
+        const relX = (e.clientX - rect.left) / container.clientWidth;
+        const relY = (e.clientY - rect.top) / container.clientHeight;
+        const factor = e.deltaY > 0 ? 1.12 : 0.89;
+        const nw = vw * factor, nh = vh * factor;
+        const nx = vx + relX * (vw - nw);
+        const ny = vy + relY * (vh - nh);
+        svg.setAttribute('viewBox', `${nx} ${ny} ${nw} ${nh}`);
+      }
+    }, { passive: false });
+
+    let drag = false, dsx, dsy, dvb;
+    container.addEventListener('mousedown', (e) => {
+      if (e.target.closest('.toolbar') || e.target.closest('.topbar') || e.target.closest('.node-group')) return;
+      drag = true;
+      dsx = e.clientX; dsy = e.clientY;
+      const vb = svg.getAttribute('viewBox').split(' ').map(Number);
+      dvb = { x: vb[0], y: vb[1], w: vb[2], h: vb[3] };
+      container.style.cursor = 'grabbing';
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (!drag) return;
+      const dx = e.clientX - dsx, dy = e.clientY - dsy;
+      const sx = dvb.w / container.clientWidth, sy = dvb.h / container.clientHeight;
+      svg.setAttribute('viewBox', `${dvb.x - dx * sx} ${dvb.y - dy * sy} ${dvb.w} ${dvb.h}`);
+    });
+    window.addEventListener('mouseup', () => { if (drag) { drag = false; container.style.cursor = 'grab'; } });
+
+    let tsx, tsy, tvb;
+    container.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1 && !e.target.closest('.toolbar') && !e.target.closest('.topbar')) {
+        tsx = e.touches[0].clientX; tsy = e.touches[0].clientY;
+        const vb = svg.getAttribute('viewBox').split(' ').map(Number);
+        tvb = { x: vb[0], y: vb[1], w: vb[2], h: vb[3] };
+      }
+    }, { passive: true });
+    container.addEventListener('touchmove', (e) => {
+      if (e.touches.length === 1 && tvb) {
+        e.preventDefault();
+        const dx = e.touches[0].clientX - tsx, dy = e.touches[0].clientY - tsy;
+        const sx = tvb.w / container.clientWidth, sy = tvb.h / container.clientHeight;
+        svg.setAttribute('viewBox', `${tvb.x - dx * sx} ${tvb.y - dy * sy} ${tvb.w} ${tvb.h}`);
+      }
+    }, { passive: false });
+    container.addEventListener('touchend', () => { tvb = null; }, { passive: true });
+  }
+
+  // ================================================================
+  renderTopbar();
+  state.currentRoot = buildTree();
+  assignColors(state.currentRoot, 0, 0);
+  needsViewFit = true;
+  render();
+  setupEvents();
+})();
+</script>
+</body>
+</html>
